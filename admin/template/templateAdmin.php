@@ -10,6 +10,7 @@ $html= new Html();
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/front/js/DataTables-1.10.6/media/css/dataTables.bootstrap.css"/>
     <link rel="stylesheet" href="/front/css/style.css"/>
+    <link rel="stylesheet" href="/front/css/form.css"/>
 </head>
 <body>
 <header class="col-md-2 padding-none" >
@@ -17,10 +18,10 @@ $html= new Html();
     <?=$html->nav(array(
       array('href'=>'#','label'=>$html->icon("home").' Inicio'),
       array('href'=>'/admin/user','label'=>$html->icon("user").' Perfil'),
-      array('href'=>'#','label'=>$html->icon("setting").' Matriz'),
-      array('href'=>'#','label'=>$html->icon("bock").' Contacto'),
-      array('href'=>'#','label'=>$html->icon("help").' Ayuda'),
-      array('href'=>'/admin/logout','label'=>$html->icon("close").' Salir'),
+      array('href'=>'#','label'=>$html->icon("cog").' Matriz'),
+      array('href'=>'#','label'=>$html->icon("list-alt").' Contacto'),
+      array('href'=>'#','label'=>$html->icon("question-sign").' Ayuda'),
+      array('href'=>'/admin/logout','label'=>$html->icon("off").' Salir'),
     ))?>
     <img src="/front/img/inferior.jpg" alt="FullScream NOAH"/>
 </header>
@@ -40,9 +41,6 @@ $html= new Html();
 <script src="/middelend/js/bootstrap.file-input.js"></script>
 <script src="/middelend/js/Util.js"></script>
 <script>
-    $(document).ready(function() {
-        $('table').dataTable();
-    });
 </script>
 </body>
 </html>

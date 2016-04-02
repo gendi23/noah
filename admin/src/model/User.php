@@ -14,6 +14,7 @@ class User {
     private $email;
     private $phone;
     private $patrocinator;
+    private $code;
 
     function __construct($rs)
     {
@@ -24,6 +25,23 @@ class User {
         $this->setEmail($rs["email"]);
         $this->setPhone($rs["phone"]);
         $this->setPatrocinator($rs["patrocinator"]);
+        $this->setCode($rs["code"]);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * @param mixed $code
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
     }
 
     /**

@@ -16,7 +16,8 @@ class UserController extends Controller {
             "token"=>"'".$model->getToken()."'",
             "email"=>"'".$model->getEmail()."'",
             "phone"=>"'".$model->getPhone()."'",
-            "patrocinator"=>"'".$model->getPatrocinator()."'"
+            "patrocinator"=>"'".$model->getPatrocinator()."'",
+            "code"=>"'".$model->getCode()."'"
         );
     }
 

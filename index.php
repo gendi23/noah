@@ -58,12 +58,6 @@ $app->get(
         require_once 'view/layout.php';
     }
 );
-$app->get(
-    '/admin/home',
-    function () {
-        require_once 'admin/template/templateAdmin.php';
-    }
-);
 
 $app->get(
     '/admin/:model',

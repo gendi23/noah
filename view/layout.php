@@ -6,6 +6,7 @@
         <title>NOAH Corporation</title>
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/middelend/css/style.css"/>
+        <link rel="stylesheet" href="/front/css/form.css"/>
     </head>
     <body>
         <header>
@@ -28,9 +29,7 @@
         </header>
         <div class="container-fluid">
             <?php
-                if(isset($body)&&$body!=''){
-                    require_once $body;
-                }
+                require_once $body;
             ?>
         </div>
         <footer>
