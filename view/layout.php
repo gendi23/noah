@@ -6,6 +6,7 @@
         <title>NOAH Corporation</title>
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/middelend/css/style.css"/>
+        <link rel="stylesheet" href="/front/css/form.css"/>
     </head>
     <body>
         <header>

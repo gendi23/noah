@@ -10,6 +10,7 @@ $html= new Html();
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/front/js/DataTables-1.10.6/media/css/dataTables.bootstrap.css"/>
     <link rel="stylesheet" href="/front/css/style.css"/>
+    <link rel="stylesheet" href="/front/css/form.css"/>
 </head>
 <body>
 <header class="col-md-2 padding-none" >
