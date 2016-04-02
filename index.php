@@ -11,6 +11,7 @@ session_start();
 require_once 'admin/require.php';
 
 
+
 \Slim\Slim::registerAutoloader();
 
 /**
