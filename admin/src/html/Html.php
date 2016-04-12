@@ -143,5 +143,25 @@ class Html{
                     </div>';
         return $div;
     }
+    public static  function Popup ($id,$idClose, $title, $body){
+        $html='<div id="'.$id.'" class="popup" style="display: none;">
+                    <div class="content-popup">
+                        <div class="close-pop"><a href="#" id="'.$idClose.'">x</a></div>
+                        <div>
+                            <div class="line-title">'.$title.'</div>
+                            <article>'.$body.'</article>
+                        </div>
+                    </div>
+                </div>';
+        return $html;
+    }
+
+    public static function getHtml($include){
+        ob_start();
+        require_once $include;
+        $html = ob_get_clean();
+
+        return $html;
+    }
 }
 ?>

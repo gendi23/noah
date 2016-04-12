@@ -39,8 +39,8 @@ $require= array(
     /**
      * Util
      */
-    //'src/util/config.php',
-    //'src/util/SendEmail.php',
+    'src/util/config.php',
+    'src/util/SendEmail.php',
     'src/util/Tables.php',
 );
 

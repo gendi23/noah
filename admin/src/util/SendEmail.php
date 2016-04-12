@@ -10,25 +10,25 @@ class SendEmail {
 
     public function setMailer(){
         $mail= new PHPMailer();
-        $config = new Config();
+        //$config = new Config();
 
         $mail->IsSMTP();
-        $mail->Host = $config->hostSMTP;
-        $mail->Port = 587;
+        $mail->Host = Config::$hostSMTP;
+        $mail->Port = Config::$port;
         $mail->SMTPAuth = true;
-        $mail->Username = $config->userSMTP;
-        $mail->Password = $config->passSMTP;
+        $mail->Username = Config::$userSMTP;
+        $mail->Password = Config::$passSMTP;
         $mail->SMTPSecure = 'tls';
         $mail->IsHTML(true);
 
         return $mail;
     }
 
-    public function sendAll($from, $fromName, $subject, $body, $to){
+    public function sendAll( $subject, $body, $to){
         $mail= self::setMailer();
 
-        $mail->From =$from;
-        $mail->FromName = $fromName;
+        $mail->From =Config::$fromAddress;
+        $mail->FromName = Config::$fromName;
         $mail->Subject = $subject;
         $mail->Body =$body;
 
@@ -40,11 +40,11 @@ class SendEmail {
         }
 
     }
-    public function sendOne($from, $fromName, $subject, $body, $email){
+    public function sendOne( $subject, $body, $email){
         $mail= self::setMailer();
 
-        $mail->From =$from;
-        $mail->FromName = $fromName;
+        $mail->From =Config::$fromAddress;
+        $mail->FromName =Config::$fromName;
         $mail->Subject = $subject;
         $mail->Body =$body;
 

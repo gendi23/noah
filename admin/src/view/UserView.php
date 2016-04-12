@@ -11,7 +11,7 @@ class UserView{
         $userController= new UserController();
         $form=new Form();
         $value = $value!=''&&$value!=null?$userController->get(Tables::$User,$value):'';
-
+        $title='<h3 style="left: 30%; position:relative;">Registrarse</h3><br>';
         $id= $form->Hidden(array(
             "name"=>"id",
             "value"=>$value!=""?$value["id"]:$value
@@ -20,46 +20,57 @@ class UserView{
             "type"=>"text",
             "name"=>"user",
             "label"=>"Usuario",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["user"]:$value);
         $pass=$form->input(array(
             "type"=>"password",
             "name"=>"pass",
             "label"=>"Contraseña",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),"");
         $confirm=$form->input(array(
             "type"=>"password",
             "name"=>"confirm",
-            "label"=>"Confirmar contraseña",
-            "required"=>""
+            "label"=>"Confirma contraseña",
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),"");
         $email=$form->input(array(
             "type"=>"email",
             "name"=>"email",
-            "label"=>"Correo",
-            "required"=>""
+            "label"=>"Correo GMAIL",
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["email"]:$value);
         $phone=$form->input(array(
             "type"=>"text",
             "name"=>"phone",
             "label"=>"Telefono",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["phone"]:$value);
         $patrocinator=$form->input(array(
             "type"=>"text",
             "name"=>"patrocinator",
             "label"=>"Patrocinador",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["zone"]:$value);
 
 
-        $action=$value!=''?'update':'new';
-        $body= $id.$user.$pass.$confirm.$email.$phone.$patrocinator;
+        $body= $title.$id.$user.$pass.$confirm.$phone.$email.$patrocinator;
         return $form->showForm(array(
             "action"=>'/user/register',
             "method"=>"post",
-            "submit"=>"Registrar",
+            "submit"=>"Aceptar",
             "btnId"=>"btn-reg",
             "formId"=>"form-reg"
         ),$body);

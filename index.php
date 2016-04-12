@@ -47,8 +47,15 @@ $app->get(
         if(isset($_SESSION['user'])){
             unset($_SESSION["user"]);
             session_destroy();
-            echo "<script>window.location='/login';</script>";
+            echo "<script>window.location='/';</script>";
         }
+    }
+);
+$app->get(
+    '/enviar',
+    function () {
+        $sendMail= new SendEmail();
+        $sendMail->sendOne("prueba de ellos","prueba body de ellos","wiljacaular@gmail.com");
     }
 );
 
@@ -59,6 +66,7 @@ $app->get(
         require_once 'view/layout.php';
     }
 );
+
 
 $app->get(
     '/admin/:model',
@@ -115,11 +123,19 @@ $app->post(
         $userController= new UserController();
 
         $userArray= $_POST;
-        $userArray["token"]= md5($userArray['pass']);
+        $userArray["token"]= md5($userArray['user']);
         $user= new User($userArray);
+
 
         echo $userController->getInsertJson($user);
 
+        $user->setId($userController->lastInsert(Tables::$User)["id"]);
+        ob_start();
+        require_once "view/bodyEmail.php";
+        $html = ob_get_clean();
+
+        $sendEmail= new SendEmail();
+        $sendEmail->sendOne("Activa tu cuenta",$html,$user->getEmail());
        // echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
 
     }

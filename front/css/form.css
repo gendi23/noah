@@ -14,3 +14,11 @@ body{
     font: Arial;
     font-size: 12pt;
 }
+#codigoCaptcha{
+    color:#0016b0;
+    font: 14pt forte;
+    font-weight: bold;
+}
+.margin-none{
+    margin: 0 !important;
+}

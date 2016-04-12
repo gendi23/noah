@@ -1,4 +1,7 @@
-
+.padding-none{
+    padding: 0 !important;
+    margin: 0 !important;
+}
 header{
     height: 100px;
 }
@@ -23,25 +26,20 @@ header .line{
     height: 410px;
 }
 
-.nav-noah{
-    top: 50px;
-    padding-left: 20%;
-    position: relative;
-}
-.nav-noah>ul{
-    list-style: none;
-}
-.nav-noah li>a{
+
+.link-more{
     text-decoration: none;
-    font-size: 12pt;
-    color: #fff;
+    border: 1px solid #00ccff;
+    color: #00ccff;
+    padding: 13px;
+}
+.link-more:hover{
+    text-decoration: none;
+    border: 2px solid #54bef6;
+    color: #54bef6;
+
     font-weight: bold;
 }
-.nav-noah li>a:hover{
-    color: #2ebd94;
+article p{
+    padding-bottom: 20px;
 }
-.nav-noah li{
-    float: left;
-    padding-right: 25px;
-}
-

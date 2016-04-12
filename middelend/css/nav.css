@@ -1,0 +1,56 @@
+
+.nav-noah{
+    top: 50px;
+    padding-left: 20%;
+    position: relative;
+}
+nav ul{
+    list-style: none;
+}
+nav li>a{
+    text-decoration: none;
+    font-size: 12pt;
+    color: #fff;
+    font-weight: bold;
+}
+nav li.parent>a:hover{
+    color: #2ebd94;
+    background-color: #fff;
+    border: 2px solid #2ebd94;
+    opacity: 0.8;
+    text-decoration: none;
+    padding: 10px;
+}
+nav li{
+    float: left;
+    padding-right: 25px;
+}
+
+nav li ul{
+    display: none;
+    top: 27px;
+    position: absolute;
+    min-width: 160px;
+    padding-left: 10px;
+    background-color: #fff;
+    border: 2px solid #2ebd94;
+    opacity: 0.8;
+    z-index: 50;
+}
+nav li:hover  ul{
+    display: block;
+}
+nav li ul li {
+    z-index: 100;
+    position: relative;
+    float: none;
+}
+nav li ul li>a {
+    color: #000000;
+    font-weight: normal;
+}
+nav li ul li>a:hover {
+    color: #000000 !important;
+    font-weight: bold;
+    text-decoration: none;
+}
