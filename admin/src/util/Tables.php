@@ -13,6 +13,8 @@ class Tables {
     public static $DataUser = 'data_user';
     public static $Role = 'role';
     public static $UserRole = 'user_role';
+    public static $Level = 'level';
+    public static $Deposit = 'deposit';
 
 }
 ?> 

@@ -16,6 +16,8 @@ $require= array(
      */
     'src/model/User.php',
     'src/model/DataUser.php',
+    'src/model/Level.php',
+    'src/model/Deposit.php',
 
     /**
      * Controladores de vista
@@ -29,6 +31,7 @@ $require= array(
     'src/controller/Controller/Controller.php',
     'src/controller/users/UserController.php',
     'src/controller/users/DataUserController.php',
+    'src/controller/DepositController.php',
     /**
      * Objeto de HTML
      */
