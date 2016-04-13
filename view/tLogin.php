@@ -4,7 +4,7 @@
 <div class="col-md-6">
     <div class="container">
         <div class="row">
-            <h2>Ingresa a tu Cuenta</h2>
+            <h2 style="">Ingresa a tu Cuenta</h2>
         </div>
     </div>
     <br/>

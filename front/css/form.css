@@ -16,9 +16,12 @@ body{
 }
 #codigoCaptcha{
     color:#0016b0;
-    font: 14pt forte;
+    font: 21px forte;
     font-weight: bold;
 }
 .margin-none{
     margin: 0 !important;
+}
+#btn-reg,#button-login{
+    margin-left: 25px;
 }

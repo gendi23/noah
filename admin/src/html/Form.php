@@ -42,14 +42,16 @@ class Form {
     public function showForm($values,$body){
         $btn='';
         $formId='';
+        $multi='';
         if(isset($values["btnId"]))$btn=$values["btnId"];
         if(isset($values["formId"]))$formId=' id="'.$values["formId"].'" ';
+        if(isset($values["multipart"]))$multi='enctype="multipart/form-data"';
 
         $form='
-        <form action="'.$values["action"].'" class="form-horizontal" role="form" '.$formId.' method="'.$values["method"].'">
+        <form action="'.$values["action"].'" class="form-horizontal" role="form" '.$formId.' method="'.$values["method"].' '.$multi.'">
             '.$body.'
             <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
+            <div class="col-sm-offset-4 col-sm-8">
                 <button type="submit" class="btn btn-primary" id="'.$btn.'"><span class="glyphicon glyphicon-ok"></span> '.$values["submit"].'</button>
             </div>
             </div>

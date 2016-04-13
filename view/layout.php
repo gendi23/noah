@@ -10,7 +10,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>NOAH Corporation</title>
+        <title>Corporación NOAH</title>
         <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="/middelend/css/style.css"/>
         <link rel="stylesheet" href="/middelend/css/nav.css"/>
@@ -20,7 +20,7 @@
     <body>
         <header>
             <div class="col-md-4">
-                <h1 style="color: #fff">NOAH</h1>
+                <img src="/front/img/noah.png" alt="Corporacion NOAH" style="width: 45%; margin-top: 15px;"/>
             </div>
             <div class="col-md-8">
                 <nav class="nav-noah">
@@ -44,13 +44,13 @@
             </div>
             <div class="line"></div>
         </header>
-        <div class="row body">
+        <div class="body">
             <?php
-                if(isset($body)&&$body!=""){
-                    require_once $body;
-                }else{
-                    require_once 'tIndex.php';
-                }
+            if(isset($body)&&$body!=""){
+                require_once $body;
+            }else{
+                require_once 'tIndex.php';
+            }
             ?>
         </div>
         <?=Html::Popup(
@@ -63,7 +63,7 @@
         <?=Html::Popup(
             'popup-sesion',
             'close-session',
-            '<h3>Ingresa a tu cuenta</h3>',
+            '<h3 style="margin-left: 20%">Ingresa a tu cuenta</h3>',
             Html::getHtml('admin/template/sessionForm.php')
         )?>
         <?php

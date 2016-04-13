@@ -17,7 +17,6 @@ class DepositController extends Controller {
             "amount"=>$model->getAmount(),
             "date_deposit"=>"'".$model->getDateDeposit()."'",
             "photo"=>"'".$model->getPhoto()."'",
-
         );
     }
     public function getInsertJson(DataUser $model)
@@ -33,6 +32,7 @@ class DepositController extends Controller {
     {
         return json_encode($this->Select($this->getSet($model), Tables::$DataUser,$model->getId()));
     }
+
 
 }
 
