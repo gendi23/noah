@@ -93,9 +93,6 @@ img.logo{
 .content>div{
     margin-top: 10px;
 }
-.padding-none{
-    padding: 0;
-}
 
 footer{
     height: 230px;
@@ -111,4 +108,11 @@ footer a{
 }
 footer a:hover{
     color: #edb678;
+}
+.padding-none{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.marging-none{
+    margin: 0 !important;
 }
