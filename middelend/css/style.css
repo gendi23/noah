@@ -52,3 +52,24 @@ article p{
     padding-left: 40px;
     padding-right: 40px;
 }
+/* Tamaños para md */
+@media (min-width: 992px){
+    .logo-noah{
+        width: 45%;
+        margin-top: 15px;
+    }
+}
+/* Tamaños para lg */
+@media (min-width: 1180px){
+    .logo-noah{
+        width: 45%;
+        margin-top: 15px;
+    }
+}
+/* Tamaños para sm */
+@media (min-width: 1179px){
+    .logo-noah{
+        width: 70%;
+        margin-top: 15px;
+    }
+}

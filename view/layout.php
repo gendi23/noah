@@ -19,10 +19,10 @@
     </head>
     <body>
         <header>
-            <div class="col-md-4">
-                <img src="/front/img/noah.png" alt="Corporacion NOAH" style="width: 45%; margin-top: 15px;"/>
+            <div class="col-lg-4 col-md-3 col-sm-3">
+                <img src="/front/img/noah.png" alt="Corporacion NOAH" class="logo-noah"/>
             </div>
-            <div class="col-md-8">
+            <div class="col-lg-8 col-md-9 col-sm-9">
                 <nav class="nav-noah">
                     <ul>
                         <li class="parent"><a href="#">Inicio</a></li>
@@ -56,7 +56,7 @@
         <?=Html::Popup(
             'popup-reg',
             'close-reg',
-            '<h4>Lee y acepta los terminos de servicios &nbsp;<input type="checkbox" id="license"/></h4>',
+            '<h4><center> Lee y acepta los terminos de servicios &nbsp;<input type="checkbox" id="license"/></center></h4>',
             '<div id="control-error-reg"></div>'.$userView->FormRegister()
         )?>
 
