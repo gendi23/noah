@@ -18,6 +18,11 @@ footer{
     background-color: #2ebd94;
     position: relative;
 }
+.line-quienes{
+    width: 15%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 footer .line{
     top: 3px !important;
 }
@@ -44,6 +49,7 @@ header .line{
 }
 article p{
     padding-bottom: 20px;
+
 }
 
 .quienes.somos{
@@ -53,9 +59,9 @@ article p{
     padding-right: 40px;
 }
 /* Tamaños para md */
-@media (min-width: 992px){
+@media (min-width: 900px){
     .logo-noah{
-        width: 45%;
+        width: 70%;
         margin-top: 15px;
     }
 }
@@ -65,11 +71,30 @@ article p{
         width: 45%;
         margin-top: 15px;
     }
+
 }
 /* Tamaños para sm */
-@media (min-width: 1179px){
+@media only screen and (max-width: 1180px) and (min-width: 1000px){
     .logo-noah{
         width: 70%;
         margin-top: 15px;
     }
+    article p{
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
+    article h2{
+        font-size: 25px;
+        padding-bottom: 17px;
+    }
+    .link-more{
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .line-quienes{
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+
 }

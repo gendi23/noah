@@ -2,10 +2,10 @@ body{
     background-color: #f2f2f2;
 }
 .notification-pago{
-    margin-left: -1%;
+
     padding: 20px;
     border: solid 2px;
-    width: 70%;
+    /*width: 70%;*/
 }
 .title-matriz{
     margin-left: 1%;
@@ -16,4 +16,13 @@ body{
     width: 30%;
     border-color: #006699 !important;
     color: #215bbd !important;
+}
+.box-publicidad{
+    border: solid 2px #868484;
+    height: 211px;
+    margin:0 !important;
+
+    }
+#tuto-matriz{
+    margin-left: -1% !important;
 }
