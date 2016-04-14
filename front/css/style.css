@@ -22,10 +22,10 @@ Configuracion del menu
     margin-bottom: 0;
     height: 190px;
 }
-ul{
+.nav-style ul{
     list-style: none;
     position: relative;
-    left: -15%;
+    left: -10%;
 }
 .nav-style ul span{
     margin-right: 10px;
