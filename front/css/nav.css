@@ -1,8 +1,9 @@
 
-.nav-noah{
-    top: 50px;
-    padding-left: 20%;
+nav{
+    float: right;
     position: relative;
+    top: -2px;
+    right: 20px;
 }
 nav ul{
     list-style: none;

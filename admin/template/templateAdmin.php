@@ -33,11 +33,11 @@ $html= new Html();
     }
     ?>
 </section>
-<script src="/middelend/js/jquery.js"></script>
+<script src="/front/js/jquery.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<script src="/middelend/js/bootstrap.file-input.js"></script>
-<script src="/middelend/js/Util.js"></script>
-<script src="/middelend/js/popup.js"></script>
+<script src="/front/js/bootstrap.file-input.js"></script>
+<script src="/front/js/Util.js"></script>
+<script src="/front/js/popup.js"></script>
 <script>
 </script>
 </body>

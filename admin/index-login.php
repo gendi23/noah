@@ -6,7 +6,7 @@
     <title>LRSports Digital CMS</title>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/middelend/css/style.css"/>
-    <script src="/middelend/js/jquery.js"></script>
+    <script src="/front/js/jquery.js"></script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>

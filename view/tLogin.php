@@ -20,4 +20,4 @@
         <?=$userView->FormRegister()?>
     </article>
 </div>
-<script src="/middelend/js/jquery.js"></script>
+<script src="/front/js/jquery.js"></script>
