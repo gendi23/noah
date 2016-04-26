@@ -11,7 +11,7 @@ if(isset($_GET["active"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Corporación NOAH</title>
-    <link rel="stylesheet" href="/front/css/style2.css"/>
+    <link rel="stylesheet" href="/front/css/style.css"/>
     <link rel="stylesheet" href="/front/css/nav.css"/>
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/front/css/popup.css"/>
@@ -32,7 +32,7 @@ if(isset($_GET["active"])){
                         <a href="#">Matriz</a>
                         <ul >
                             <li><a href="#" id="open-reg">Registrarse</a></li>
-                            <li><a href="#" id="open-sesion">Usuario</a></li>
+                            <li><a href="#" id="open-session">Usuario</a></li>
                             <li><a href="#">Video Tutorial</a></li>
                             <li><a href="#">Guia Tutorial</a></li>
                         </ul>
@@ -57,23 +57,20 @@ if(isset($_GET["active"])){
         </footer>
     </div>
     <?=Html::Popup(
-        'popup-reg',
-        'close-reg',
+        'reg',
         '<h4><center> Lee y acepta los terminos de servicios &nbsp;<input type="checkbox" id="license"/></center></h4>',
         '<div id="control-error-reg"></div>'.$userView->FormRegister()
     )?>
 
     <?=Html::Popup(
-        'popup-sesion',
-        'close-session',
+        'session',
         '<h3 style="margin-left: 20%">Ingresa a tu cuenta</h3>',
         Html::getHtml('admin/template/sessionForm.php')
     )?>
     <?php
     if(isset($_GET["id"])){
         echo Html::Popup(
-            'popup-data',
-            'close-data',
+            'data',
             '<h3>Registrarse</h3>',
             $userView->FormRegisterData($_GET["id"])
         );

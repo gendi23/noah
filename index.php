@@ -51,11 +51,13 @@ $app->get(
         }
     }
 );
+
 $app->get(
-    '/enviar',
-    function () {
-        $sendMail= new SendEmail();
-        $sendMail->sendOne("prueba de ellos","prueba body de ellos","wiljacaular@gmail.com");
+    '/validate/:user',
+    function ($user) {
+        $userController= new UserController();
+        echo $userController->validateUser($user);
+
     }
 );
 
@@ -137,6 +139,33 @@ $app->post(
         $sendEmail= new SendEmail();
         $sendEmail->sendOne("Activa tu cuenta",$html,$user->getEmail());
        // echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
+
+    }
+);
+$app->post(
+    '/admin/deposit/new',
+    function () {
+        $depositController= new DepositController();
+        $fileName= $_FILES["photo"]["name"];
+        $fileNameArray=explode(".",$_FILES["photo"]["name"]);
+        $ext= $fileNameArray[1];
+
+        $file= $_POST["referencer_number"].".".$ext;
+        $rute= "front/img/deposit/".$_POST["user"]."/";
+
+        if(!(file_exists ($rute) )){
+            mkdir ($rute);
+        }
+
+        if(move_uploaded_file ($_FILES['photo']['tmp_name'], $rute.$file)){
+            $deposit= $_POST;
+            $deposit["photo"]= "/".$rute.$file;
+
+            $depositController->getInsertJson(new Deposit($deposit));
+
+        }
+
+        echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
 
     }
 );

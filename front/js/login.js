@@ -10,6 +10,22 @@ $(document).ready(function(){
     var captcha= getCapchat(4);
     $('#codigoCaptcha').attr('value',captcha);
 
+    $('#pass').focus(function(){
+        var user=$('#user').val();
+        var validate= 0;
+        $.ajax({
+            cache: false,
+            dataType: "json",
+            type: 'GET',
+            url: "/validate/"+user,
+            async:false,
+            success: function (data) {
+                validate= data.status;
+            }
+        });
+        console.log (validate);
+    });
+
     $('#btn-reg').click(function(event) {
         event.preventDefault();
 

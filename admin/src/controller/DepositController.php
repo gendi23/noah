@@ -17,20 +17,21 @@ class DepositController extends Controller {
             "amount"=>$model->getAmount(),
             "date_deposit"=>"'".$model->getDateDeposit()."'",
             "photo"=>"'".$model->getPhoto()."'",
+            "referencer_number"=>"'".$model->getReferenceNumber()."'",
         );
     }
-    public function getInsertJson(DataUser $model)
+    public function getInsertJson(Deposit $model)
     {
-        return $this->Insert($this->getSet($model),Tables::$DataUser);
+        return $this->Insert($this->getSet($model),Tables::$Deposit);
     }
 
-    public function getUpdateJson(DataUser $model)
+    public function getUpdateJson(Deposit $model)
     {
-        return $this->Update($this->getSet($model),Tables::$DataUser,$model->getId());
+        return $this->Update($this->getSet($model),Tables::$Deposit,$model->getId());
     }
-    public function getSelectJson(DataUser $model)
+    public function getSelectJson(Deposit $model)
     {
-        return json_encode($this->Select($this->getSet($model), Tables::$DataUser,$model->getId()));
+        return json_encode($this->Select($this->getSet($model), Tables::$Deposit,$model->getId()));
     }
 
 

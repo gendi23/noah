@@ -47,19 +47,25 @@ class UserController extends Controller {
 
     public function getReferred($userId){
         $user= new User($this->get(Tables::$User,$userId));
-        return $this->getWhere(Tables::$User," patrocinator='".$user->getUser()."'");
+        $arrayUser= $this->getWhere(Tables::$User," patrocinator='".$user->getUser()."'");
+        if(count($arrayUser)==1){
+           array_push($arrayUser,array());
+        }
+        return $arrayUser;
     }
 
     public function getPyramid($userId){
         $pyramid=array();
 
-        $level1=$this->getReferred($userId);
-        $level2=$this->getLevel(2,$level1);
-       // $level3=$this->getLevel(3,$level2);
+        $level2=$this->getReferred($userId);
+        $level3=$this->getLevel(3,$level2);
+        $level4=$this->getLevel(4,$level3);
+        $level5=$this->getLevel(5,$level4);
 
-        $pyramid["level1"]=$level1;
         $pyramid["level2"]=$level2;
-        //$pyramid["level3"]=$level3;
+        $pyramid["level3"]=$level3;
+        $pyramid["level4"]=$level4;
+        $pyramid["level5"]=$level5;
 
         return $pyramid;
     }
@@ -68,18 +74,37 @@ class UserController extends Controller {
         $levelArray= array();
         $levelTemp=array();
         foreach($arrayUsers as $row1){
-            $user1= new User($row1);
-            foreach($this->getReferred($user1->getId()) as $row2){
-                array_push($levelTemp,$row2);
+            if(count($row1)>0){
+                $user1= new User($row1);
+                foreach($this->getReferred($user1->getId()) as $row2){
+                    array_push($levelTemp,$row2);
+                }
+            }elseif(count($row1)==0){}else{
+                array_push($levelTemp,array());
             }
         }
-        $levelArray["level".$level]=$levelTemp;
-        return $levelArray;
+
+        return $levelTemp;
     }
 
     public function setStatus($token){
         $user= new User($this->selectOne("select * from user where token ='$token'"));
         $this->Update(array("status"=>"1"),Tables::$User,$user->getId());
+    }
+
+    public function validateUser ($user){
+        $validate= $this->getWhere(Tables::$User, "user='$user'");
+        $validatejson= array();
+        if(count($validate)> 0){
+            $validatejson ['status']= 1;
+        }else{
+            $validatejson ['status']= 0;
+        }
+        return json_encode($validatejson);
+    }
+
+    public function getByUser($user){
+        return new User($this->selectOne("select * from user where user ='$user'"));
     }
 
 }

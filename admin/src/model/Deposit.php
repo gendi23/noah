@@ -15,6 +15,7 @@ class Deposit {
     private $amount;
     private $date_deposit;
     private $photo;
+    private $reference_number;
 
     function __construct($rs)
     {
@@ -25,8 +26,24 @@ class Deposit {
         $this->setAmount($rs["amount"]);
         $this->setDateDeposit($rs["date_deposit"]);
         $this->setPhoto($rs["photo"]);
+        $this->setReferenceNumber($rs["referencer_number"]);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getReferenceNumber()
+    {
+        return $this->reference_number;
+    }
+
+    /**
+     * @param mixed $reference_number
+     */
+    public function setReferenceNumber($reference_number)
+    {
+        $this->reference_number = $reference_number;
+    }
 
     /**
      * @return mixed

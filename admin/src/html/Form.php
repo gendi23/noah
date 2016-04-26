@@ -48,7 +48,7 @@ class Form {
         if(isset($values["multipart"]))$multi='enctype="multipart/form-data"';
 
         $form='
-        <form action="'.$values["action"].'" class="form-horizontal" role="form" '.$formId.' method="'.$values["method"].' '.$multi.'">
+        <form action="'.$values["action"].'" class="form-horizontal" role="form" '.$formId.' method="'.$values["method"].'" '.$multi.'>
             '.$body.'
             <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">

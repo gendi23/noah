@@ -23,6 +23,7 @@ $require= array(
      * Controladores de vista
      */
     'src/view/UserView.php',
+    'src/view/DepositView.php',
 
 
     /**

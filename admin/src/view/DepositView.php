@@ -1,91 +1,76 @@
 <?php
+
 /**
  * Created by PhpStorm.
- * User: waular
- * Date: 12/04/2016
- * Time: 03:05 PM
+ * User: GDiaz
+ * Date: 21/04/2016
+ * Time: 15:06
  */
+class DepositView
+{
 
-class DepositView {
-
-    public function FormRegister($userId,$value=null){
-        $depositController= new DepositController();
+    public static function depositPaymentForm($userId,$levelNumber){
         $form=new Form();
 
-        $value = $value!=''&&$value!=null?$depositController->get(Tables::$User,$value):'';
-
+        $title='<center><h3>Notifica tu pago</h3></center>';
         $id= $form->Hidden(array(
             "name"=>"id",
-            "value"=>$value!=""?$value["id"]:$value
+            "value"=>""
         ));
         $user= $form->Hidden(array(
             "name"=>"user",
-            "value"=>$value!=""?$value["user"]:$userId
+            "value"=>$userId
+        ));
+        $status= $form->Hidden(array(
+            "name"=>"status",
+            "value"=>0
         ));
         $level= $form->Hidden(array(
             "name"=>"level",
-            "value"=>$value!=""?$value["level"]:$userId
+            "value"=>$levelNumber
         ));
-        $user=$form->input(array(
-            "type"=>"text",
-            "name"=>"user",
-            "label"=>"Usuario",
+        $dateDeposit=$form->input(array(
+            "type"=>"date",
+            "name"=>"date_deposit",
+            "label"=>"Fecha de Deposito",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
-        ),$value!=""?$value["user"]:$value);
-        $pass=$form->input(array(
-            "type"=>"password",
-            "name"=>"pass",
-            "label"=>"Contraseña",
-            "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),"");
-        $confirm=$form->input(array(
-            "type"=>"password",
-            "name"=>"confirm",
-            "label"=>"Confirma contraseña",
+
+        $amount=$form->input(array(
+            "type"=>"number",
+            "name"=>"amount",
+            "label"=>"Monto depositado",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),"");
-        $email=$form->input(array(
-            "type"=>"email",
-            "name"=>"email",
-            "label"=>"Correo GMAIL",
-            "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
-        ),$value!=""?$value["email"]:$value);
-        $phone=$form->input(array(
-            "type"=>"text",
-            "name"=>"phone",
-            "label"=>"Telefono",
-            "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
-        ),$value!=""?$value["phone"]:$value);
-        $patrocinator=$form->input(array(
-            "type"=>"text",
-            "name"=>"patrocinator",
-            "label"=>"Patrocinador",
-            "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
-        ),$value!=""?$value["zone"]:$value);
 
+        $referenceNumber=$form->input(array(
+            "type"=>"text",
+            "name"=>"referencer_number",
+            "label"=>"Número de Referencia",
+            "required"=>"",
+            "width1"=>"6",
+            "width2"=>"6",
+        ),"");
+        $photo=$form->input(array(
+            "type"=>"file",
+            "name"=>"photo",
+            "label"=>"Foto del comprobante",
+            "width1"=>"6",
+            "width2"=>"6",
+        ),"");
 
-        $body= $title.$id.$user.$pass.$confirm.$phone.$email.$patrocinator;
+        $action='new';
+        $body= $title.$id.$user.$status.$level.$dateDeposit.$amount.$referenceNumber.$photo;
+
         return $form->showForm(array(
-            "action"=>'/user/register',
+            "action"=>'/admin/deposit/'.$action,
             "method"=>"post",
-            "submit"=>"Aceptar",
-            "btnId"=>"btn-reg",
-            "formId"=>"form-reg"
+            "submit"=>"Enviar",
+            "multipart"=>""
         ),$body);
-
     }
 }
-
-?> 
