@@ -65,7 +65,7 @@ class Html{
         return $html;
     }
 
-    public function icon($icon){
+    public static function icon($icon){
         return '<span class="glyphicon glyphicon-'.$icon.'"></span>';
     }
 
@@ -83,7 +83,8 @@ class Html{
      * @return string
      */
     public function btnShowModal($id,$btnParam,$body,$label,$zindex=null){
-        $edit='<button data-toggle="modal" data-target="#'.$id.'" class="btn btn-'.$btnParam["height"].' btn-'.$btnParam["color"].'">'.$btnParam["label"].'</button>';
+        $class= isset($btnParam["class"])?$btnParam["class"]:"";
+        $edit='<button data-toggle="modal" data-target="#'.$id.'" class="btn btn-'.$btnParam["height"].' btn-'.$btnParam["color"].' '.$class.'">'.$btnParam["label"].'</button>';
         return $edit.$this->showModal($id,$label,$body,$zindex);
     }
 

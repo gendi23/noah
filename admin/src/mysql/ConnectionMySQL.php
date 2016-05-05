@@ -8,15 +8,15 @@
 
 class ConnectionMySQL {
     /*
-        private $host="localhost";
-        private $database="nnoahcom_noahadmin";
-        private $user="nnoahcom_admin";
-        private $pa="Adm1n2016";
+            private $host="localhost";
+            private $database="nnoahcom_noahadmin";
+            private $user="nnoahcom_admin";
+            private $pass="m1n2016";
     */
-        private $host="localhost";
-        private $database="noah";
-        private $user="root";
-        private $pass="root";
+            private $host="localhost";
+            private $database="noah";
+            private $user="root";
+            private $pass="root";
 
     private function connection(){
         $pdo="";

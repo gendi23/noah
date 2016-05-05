@@ -46,6 +46,8 @@ $app->get(
     function () {
         if(isset($_SESSION['user'])){
             unset($_SESSION["user"]);
+            unset($_SESSION["userId"]);
+            unset($_SESSION["token"]);
             session_destroy();
             echo "<script>window.location='/';</script>";
         }
@@ -75,6 +77,13 @@ $app->get(
     function ($model) {
         $body='t'.ucwords($model).'.php';
         require_once 'admin/template/templateAdmin.php';
+    }
+);
+$app->get(
+    '/admin2/:model',
+    function ($model) {
+        $body='t'.ucwords($model).'.php';
+        require_once 'admin/template2/template2.php';
     }
 );
 
@@ -146,7 +155,7 @@ $app->post(
     '/admin/deposit/new',
     function () {
         $depositController= new DepositController();
-        $fileName= $_FILES["photo"]["name"];
+
         $fileNameArray=explode(".",$_FILES["photo"]["name"]);
         $ext= $fileNameArray[1];
 
@@ -209,8 +218,9 @@ $app->post(
 $app->post(
     '/admin/login',
     function () {
+        //print_r($_POST);die();
         $user = $_POST["user"];
-        $pass = $_POST["pass"];
+        $pass = $_POST["pass-login"];
         $userController = new UserController();
         $userModel = $userController->getUsersUP($user,$pass);
 
@@ -218,7 +228,7 @@ $app->post(
         $_SESSION['user']=$user;
         $_SESSION['token']=$userModel->getToken();
 
-        echo "<script>window.location='/admin/user';</script>";
+        echo "<script>window.location='/admin/home';</script>";
 
     }
 );

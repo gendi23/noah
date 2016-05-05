@@ -15,6 +15,9 @@ class UserView{
         $id= $form->Hidden(array(
             "name"=>"id",
             "value"=>$value!=""?$value["id"]:$value
+        ));$status= $form->Hidden(array(
+            "name"=>"status",
+            "value"=>"0"
         ));
         $user=$form->input(array(
             "type"=>"text",
@@ -66,7 +69,7 @@ class UserView{
         ),$value!=""?$value["zone"]:$value);
 
 
-        $body= $title.$id.$user.$pass.$confirm.$phone.$email.$patrocinator;
+        $body= $title.$id.$user.$pass.$confirm.$phone.$email.$patrocinator.$status;
         return $form->showForm(array(
             "action"=>'/user/register',
             "method"=>"post",
@@ -154,7 +157,8 @@ class UserView{
             "type"=>"text",
             "name"=>"account_number",
             "label"=>"Numero de Cuenta",
-            "required"=>""
+            "required"=>"",
+            "maxlength"=>"20"
         ),$value!=""?$value["account_number"]:$value);
 
         $action=$value!=''?'update':'new';

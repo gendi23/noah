@@ -5,10 +5,10 @@
  * Date: 02/04/2016
  * Time: 19:02
  */
-$userId=26;
+$userId=$USERID;
  $userController= new UserController();
 $user= new User($userController->get(Tables::$User,$userId));
-
+$pyramid= $userController->getPyramid($userId);
 function textLevel($level){
     $html='<div class="vertical level'.$level.'-color">
         <p>N</p>
@@ -45,14 +45,14 @@ function textLevel($level){
     </div>
 </div>
 <?php
-if(count($userController->getPyramid($userId)["level3"])>0){
+if(count($pyramid["level3"])>0){
 ?>
 <!-- Nivel 2 de la piramide -->
 <div class="level-container">
     <?=textLevel(2)?>
     <?php
     $count=1;
-    foreach($userController->getPyramid($userId)["level2"] as $level1){
+    foreach($pyramid["level2"] as $level1){
         if(count($level1)>0){
             $user1= new User($level1);
             ?>
@@ -69,15 +69,14 @@ if(count($userController->getPyramid($userId)["level3"])>0){
     }?>
 </div>
 <?php
-if(count($userController->getPyramid($userId)["level3"])>0){
+if(count($pyramid["level3"])>0){
 ?>
 <!-- Nivel 3 de la piramide -->
 <div class="level-container">
     <?=textLevel(3)?>
     <?php
     $count=1;
-    //echo count($userController->getPyramid($userId)["level3"]);die();
-    foreach($userController->getPyramid($userId)["level3"] as $level1){
+    foreach($pyramid["level3"] as $level1){
 
         if(count($level1)>0){
             $user1= new User($level1);
@@ -97,13 +96,13 @@ if(count($userController->getPyramid($userId)["level3"])>0){
     }?>
 </div>
 <?php
-if(count($userController->getPyramid($userId)["level4"])>0){
+if(count($pyramid["level4"])>0){
 ?>
 <div class="level-container">
     <?=textLevel(4)?>
     <?php
     $count=1;
-    foreach($userController->getPyramid($userId)["level4"] as $level1){
+    foreach($pyramid["level4"] as $level1){
         if(count($level1)>0){
         $user1= new User($level1);
         ?>
@@ -120,15 +119,16 @@ if(count($userController->getPyramid($userId)["level4"])>0){
     }
 }?>
 </div>
+    <!--
 <?php
-    if(count($userController->getPyramid($userId)["level5"])>0){
+    if(count($pyramid["level5"])>0){
 ?>
 <div class="level-container">
     <?= textLevel(5) ?>
     <div id="content-level5">
         <?php
         $count = 1;
-        foreach ($userController->getPyramid($userId)["level5"] as $level1) {
+        foreach ($pyramid["level5"] as $level1) {
             if(count($level1)>0){
                 $user1 = new User($level1);
                 ?>
@@ -148,13 +148,13 @@ if(count($userController->getPyramid($userId)["level4"])>0){
     </div>
 
 </div>
-
+->
 <?php
 for($i=1;$i<=5;$i++){
    echo Html::Popup(
         'patrocinator'.$i,
         '',
-        DepositView::depositPaymentForm(26,$i));
+        DepositView::depositPaymentForm($userId,$i));
 }
 
 ?>

@@ -82,7 +82,7 @@ if(isset($_GET["active"])){
     <script src="/front/js/Util.js"></script>
     <script src="/front/js/popup.js"></script>
     <script src="/front/js/login.js"></script>
-    <script>
+     <script>
         $(document).ready(function(){
             var active=<?=$active?>;
 
@@ -92,6 +92,18 @@ if(isset($_GET["active"])){
                 $('.popup-overlay').fadeIn('slow');
                 $('.popup-overlay').height($(window).height());
             }
+            $(function(){
+                $('#btn-reg').attr("disabled", "disabled");
+            });
+
+            $('#license').click(function(){
+                //var id=$(this).attr('id');
+                if($(this).is(':checked')){
+                    $('#btn-reg').removeAttr("disabled");
+                }else{
+                    $('#btn-reg').attr("disabled", "disabled");
+                }
+            });
         });
     </script>
 </body>

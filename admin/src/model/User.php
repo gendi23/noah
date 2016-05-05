@@ -25,6 +25,7 @@ class User {
         $this->setEmail($rs["email"]);
         $this->setPhone($rs["phone"]);
         $this->setPatrocinator($rs["patrocinator"]);
+        $this->setPatrocinator($rs["status"]);
 
     }
 
