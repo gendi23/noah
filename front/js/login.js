@@ -23,7 +23,22 @@ $(document).ready(function(){
                 validate= data.status;
             }
         });
-        console.log (validate);
+        if(validate==1){
+            $('#user').css({"border-color":"red"})
+            $('#btn-reg').attr("disabled", "disabled");
+            $("#control-error-reg").html("");
+            $("#control-error-reg").append('<div class="alert alert-danger">' +
+            'El usuario ingresado ya existe, intente con otro por favor.' +
+            '</div>');
+            $("#user").val("");
+            $("#user").focus();
+        }else{
+            $("#control-error-reg").html("");
+            $("#control-error-reg").append('<div class="alert alert-success">' +
+            'El usuario ingresado esta disponible.' +
+            '</div>');
+            $('#btn-reg').removeAttr("disabled");
+        }
     });
 
     $('#btn-reg').click(function(event) {
@@ -32,8 +47,20 @@ $(document).ready(function(){
         var pass=$('#pass').val();
         var confirm=$('#confirm').val();
 
-        //if ($('#license').val($(this).val(":checked"))) {
-
+        var user=$('#patrocinator').val();
+        var validate= 0;
+        $.ajax({
+            cache: false,
+            dataType: "json",
+            type: 'GET',
+            url: "/validate/"+user,
+            async:false,
+            success: function (data) {
+                validate= data.status;
+            }
+        });
+        if($("#license").is(':checked')){
+        if (validate==1) {
             if(pass!=''&&confirm!='') {
                 if (pass == confirm) {
                     $.ajax({
@@ -72,13 +99,20 @@ $(document).ready(function(){
                     '</div>');
                 }
             }
-       /* }else {
-            console.log("no checked");
+        }else {
+            $("#control-error-reg").html("");
+            $("#control-error-reg").append('<div class="alert alert-danger">' +
+            'El patrocinador ingresado no existe, intente nuevamente' +
+            '</div>');
+            $('#patrocinator').val("");
+            $('#patrocinator').focus();
+        }}else{
             $("#control-error-reg").html("");
             $("#control-error-reg").append('<div class="alert alert-warning">' +
-            'Debe aceptar los terminos de servicios' +
+            'Por favor acepte los términos.' +
             '</div>');
-        }*/
+
+        }
 });
 
     $('#button-login').click(function(event){
