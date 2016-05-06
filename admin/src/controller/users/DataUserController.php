@@ -36,4 +36,8 @@ class DataUserController extends Controller{
     {
         return json_encode($this->Select($this->getSet($model), Tables::$DataUser,$model->getId()));
     }
+
+    public function getByUser($userId){
+        return new DataUser($this->selectOne("select * from ".Tables::$DataUser." where user=".$userId));
+    }
 }

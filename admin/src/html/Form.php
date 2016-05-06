@@ -99,10 +99,13 @@ class Form {
      */
     public function Select($config,$option,$value){
         $selected= $value!=""?$value:"";
+
+        $width1=isset($config["width1"])?$config["width1"]:3;
+        $width2=isset($config["width2"])?$config["width2"]:9;
         $select='
         <div class="form-group">
-                <label class="control-label col-sm-3" for="tipo">'.$config["label"].':</label>
-                <div class="col-sm-9">
+                <label class="control-label col-sm-'.$width1.'" for="tipo">'.$config["label"].':</label>
+                <div class="col-sm-'.$width2.'">
                         <select name="'.$config["name"].'" id="'.$config["name"].'" class="form-control" >
                         <option selected>Seleccione...</option>';
                         foreach ($option as $row) {

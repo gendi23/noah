@@ -40,7 +40,7 @@ class SendEmail {
         }
 
     }
-    public function sendOne( $subject, $body, $email){
+    public function sendOne( $subject, $body, $email,$adjunt=null){
         $mail= self::setMailer();
 
         $mail->From =Config::$fromAddress;

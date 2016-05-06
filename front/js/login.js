@@ -69,6 +69,12 @@ $(document).ready(function(){
                         type: 'POST',
                         url: "/user/register",
                         data: $('#form-reg').serialize(),
+                        beforeSend: function( ) {
+                            $("#control-error-reg").html("");
+                            $("#control-error-reg").append('<div class="alert alert-warning">' +
+                            'Por favor espere mientras se cargan los datos...' +
+                            '</div>');
+                        },
                         success: function (data) {
                             if (data.update == 1) {
                                 $("#control-error-reg").html("");

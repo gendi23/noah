@@ -33,6 +33,7 @@ $require= array(
     'src/controller/users/UserController.php',
     'src/controller/users/DataUserController.php',
     'src/controller/DepositController.php',
+    'src/controller/LevelController.php',
     /**
      * Objeto de HTML
      */

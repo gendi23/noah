@@ -6,8 +6,8 @@
  * Time: 19:02
  */
 $userId=$USERID;
- $userController= new UserController();
-$user= new User($userController->get(Tables::$User,$userId));
+
+
 $pyramid= $userController->getPyramid($userId);
 function textLevel($level){
     $html='<div class="vertical level'.$level.'-color">
@@ -24,7 +24,7 @@ function textLevel($level){
 
 ?>
 <link rel="stylesheet" href="/front/css/matriz.css"/>
-<link rel="stylesheet" href="/middelend/css/popup.css"/>
+<link rel="stylesheet" href="/front/css/popup.css"/>
 <div id="container-publicity">
     <div  style="color: #0016b0"><h3><center>Noticias Noah</center></h3></div>
     <div  style="color: #0016b0"><h3><center>Patrocinador</center></h3>
@@ -32,7 +32,7 @@ function textLevel($level){
         <button class="button-patrocinador level2-color" id="open-patrocinator2"><strong>Pagar Patrocinador 2</strong></button>
         <button class="button-patrocinador level3-color" id="open-patrocinator3"><strong>Pagar Patrocinador 3</strong></button>
         <button class="button-patrocinador level4-color" id="open-patrocinator4"><strong>Pagar Patrocinador 4</strong></button>
-        <button class="button-patrocinador level5-color" id="open-patrocinator5"><strong>Pagar Patrocinador 5</strong></button>
+
     </div>
     <div  style="color: #0016b0"><h3><center>Publicidad</center></h3></div>
 
@@ -40,12 +40,12 @@ function textLevel($level){
 <div class="level-container">
     <?=textLevel(1)?>
     <div class="level-content" id="level1">
-        <img src="/front/img/avatar.png" alt=""/>
-        <?=$user->getUser()?>
+        <img src="/front/img/avatar-small.png" alt=""/>
+        <?=$dataUser->getName()." ".$dataUser->getLastName()?>
     </div>
 </div>
 <?php
-if(count($pyramid["level3"])>0){
+if(count($pyramid["level2"])>0){
 ?>
 <!-- Nivel 2 de la piramide -->
 <div class="level-container">
@@ -148,13 +148,13 @@ if(count($pyramid["level4"])>0){
     </div>
 
 </div>
-->
+-->
 <?php
-for($i=1;$i<=5;$i++){
+for($i=1;$i<=4;$i++){
    echo Html::Popup(
         'patrocinator'.$i,
         '',
-        DepositView::depositPaymentForm($userId,$i));
+        DepositView::depositPaymentForm($userId,$i,"waular@luniversal.com"));
 }
 
 ?>

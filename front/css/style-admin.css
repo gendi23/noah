@@ -26,6 +26,26 @@ header{
     left: 38px;
     position: relative;
     border-radius: 97px;
+    background-size: 193px 193px;
+}
+#update-photo{
+    position: relative;
+    top: 154px;
+    left: 50px;
+    color: #fff;
+    font-size: 12px;
+}
+#user-name{
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    top: 66px;
+}
+#user-level{
+    color: #fff;
+    font-size: 13px;
+    position: relative;
+    top: 70px;
 }
 header img{
     width: 100%;

@@ -34,7 +34,9 @@ class DepositController extends Controller {
         return json_encode($this->Select($this->getSet($model), Tables::$Deposit,$model->getId()));
     }
 
-
+    public function getByLevel($userId,$level){
+        return new Deposit($this->selectOne("select * from ".Tables::$Deposit." where user=".$userId." and level=".$level));
+    }
 }
 
 ?> 

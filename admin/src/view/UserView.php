@@ -97,51 +97,70 @@ class UserView{
             "type"=>"text",
             "name"=>"name",
             "label"=>"Nombre",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["name"]:$value);
         $lastName=$form->input(array(
             "type"=>"text",
             "name"=>"last_name",
             "label"=>"Apellido",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["last_name"]:$value);
         $cedula=$form->input(array(
             "type"=>"text",
             "name"=>"cedula",
             "label"=>"Cedula",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["cedula"]:$value);
         $country=$form->input(array(
             "type"=>"text",
             "name"=>"country",
             "label"=>"Pais",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["country"]:$value);
         $city=$form->input(array(
             "type"=>"text",
             "name"=>"city",
             "label"=>"Ciudad",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["city"]:$value);
         $zone=$form->input(array(
             "type"=>"text",
             "name"=>"zone",
             "label"=>"Zona",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["zone"]:$value);
-        $photo= $form->Hidden(array(
+        $photo=$form->input(array(
+            "type"=>"file",
             "name"=>"photo",
-            "value"=>$value!=""?$value["photo"]:$value
-        ));
+            "label"=>"Foto",
+            "width1"=>"5",
+            "width2"=>"7",
+        ),"");
         $bankName=$form->input(array(
             "type"=>"text",
             "name"=>"bank_name",
             "label"=>"Nombre del Banco",
-            "required"=>""
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["bank_name"]:$value);
         $accountType=$form->Select(array(
             "name"=>"account_type",
-            "label"=>"Tipo de Cuenta"),
+            "label"=>"Tipo de Cuenta",
+                "width1"=>"5",
+                "width2"=>"7",),
             array(
                 array(
                     "Corriente",
@@ -158,15 +177,18 @@ class UserView{
             "name"=>"account_number",
             "label"=>"Numero de Cuenta",
             "required"=>"",
-            "maxlength"=>"20"
+            "maxlength"=>"20",
+            "width1"=>"5",
+            "width2"=>"7",
         ),$value!=""?$value["account_number"]:$value);
 
         $action=$value!=''?'update':'new';
         $body= $id.$user.$name.$lastName.$cedula.$country.$city.$zone.$photo.$bankName.$accountType.$accountNumber;
         return $form->showForm(array(
-            "action"=>'/admin/dataUser/'.$action,
+            "action"=>'/admin/dataUser/insert',
             "method"=>"post",
-            "submit"=>"Guardar"
+            "submit"=>"Guardar",
+            "multipart"=>""
         ),$body);
 
     }

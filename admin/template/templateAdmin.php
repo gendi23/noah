@@ -1,8 +1,19 @@
 <?php
 $USERID="";
+
 if(isset($_SESSION)){
     if(isset($_SESSION["userId"]) && $_SESSION["userId"]!=""){
         $USERID= $_SESSION["userId"];
+
+        $userController= new UserController();
+        $dataUserController= new DataUserController();
+        $levelController= new LevelController();
+
+        $user= new User($userController->get(Tables::$User,$USERID));
+        $dataUser= $dataUserController->getByUser($USERID);
+        $level= $levelController->getByUser($USERID);
+
+        $photoPerfil = $dataUser->getPhoto()!=""?$dataUser->getPhoto():"/front/img/avatar.png";
 
         $html= new Html();
         ?>
@@ -20,7 +31,11 @@ if(isset($_SESSION)){
         <div class="body-admin">
             <header>
                 <div class="perfil">
-                    <div class="perfil-image"></div>
+                    <div class="perfil-image" id="photo-perfil" style="background-image: url('<?=$photoPerfil?>')">
+                        <a href="#" id="update-photo" class="label label-success">Cambiar foto.</a>
+                    </div>
+                    <span id="user-name"><center><?=strtoupper($dataUser->getName()." ".$dataUser->getLastName())?></center></span>
+                    <span id="user-level"><center><?=strtoupper("nivel ".$level->getLevel())?></center></span>
                 </div>
                 <?=$html->nav(array(
                     array('href'=>'/admin/home','label'=>$html->icon("home").' Inicio'),
