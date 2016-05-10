@@ -50,6 +50,7 @@ body{
 #container-publicity{
     width: 95%;
     height: 250px;
+    margin-left: 1%;
 }
 #container-publicity>div{
     border: solid 2px #080808;
@@ -139,8 +140,56 @@ body{
     left: 43%;
     position: relative;
 }
+.level3 img{
+    left: 35% !important;
+}
+.level4 img{
+    left: 23% !important;
+}
 
 
+/* Usuarios*/
+.name-user{
+    position: relative;
+
+    font-size: 17px;
+    color: #fff;
+}
+.name-user-level1{
+    left: -2%;
+    top: -3px;
+}
+.name-user-level2{
+    left: 26%;
+    top: 49px;
+}
+.name-user-level3{
+    left: 3%;
+    top: 47px;
+}
+.name-user-level4{
+    left: 8%;
+    top: 0;
+    font-size: 11px;
+    float: left;
+}
+
+.datos1{
+    position: relative;
+    top: -95px;
+    left: 180px;
+    color: #000;
+}
+.datos2{
+    position: relative;
+    top: -72px;
+    left: 10px;
+    color: #000;
+    font-size: 12px;
+}
+.datos h4{
+    color: #fff;
+}
 
 /*CSS para home*/
 .title-payment-matriz{

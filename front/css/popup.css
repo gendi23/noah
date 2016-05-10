@@ -11,8 +11,8 @@
     margin-top:120px;
     position:relative;
     padding:10px;
-    width:500px;
-    min-height:250px;
+    width:400px;
+    min-height:150px;
     box-shadow: 0 2px 5px #4aae76;
     border: 2px solid #2ebd94;
     background-color: #e0e0e0;
@@ -63,4 +63,19 @@
     font-weight: bold;
     text-decoration: none;
 
+}
+
+#license{
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    padding: 10px;
+    font-size: 110%;
+    display: inline;
+    position: relative;
+    left: -10%;
+    top: -8px;
+    float: none;
 }

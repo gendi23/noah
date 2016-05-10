@@ -185,6 +185,7 @@ $app->post(
     }
 );
 
+
 $app->post(
     "/admin/remember",
     function(){
@@ -205,6 +206,35 @@ $app->post(
         );
 
         echo $json;
+});
+
+$app->post(
+    '/admin/updatePass',
+    function(){
+
+        $userController= new UserController();
+        $user= $userController->getByUser($_POST["user"]);
+
+        $user->setPass($_POST["passNew"]);
+        $json = $userController->getUpdateJson($user);
+
+        echo $json;
+
+});
+$app->post(
+    '/admin/confirmPass',
+    function(){
+
+        $userController= new UserController();
+        $user= $userController->getByUser($_POST["user"]);
+        $response=array();
+        if($_POST["pass"]==$user->getPass()){
+           $response["status"]=1;
+        }else{
+            $response["status"]=1;
+            $response["message"]="La contraseña no es correcta";
+        }
+        echo json_encode($response);
 });
 
 $app->post(

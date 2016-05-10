@@ -49,9 +49,7 @@ class UserController extends Controller {
     public function getReferred($userId){
         $user= new User($this->get(Tables::$User,$userId));
         $arrayUser= $this->getWhere(Tables::$User," patrocinator='".$user->getUser()."'");
-        if(count($arrayUser)==1){
-           array_push($arrayUser,array());
-        }
+
         return $arrayUser;
     }
 
@@ -80,7 +78,7 @@ class UserController extends Controller {
                 foreach($this->getReferred($user1->getId()) as $row2){
                     array_push($levelTemp,$row2);
                 }
-            }elseif(count($row1)==0){}else{
+            }else{
                 array_push($levelTemp,array());
             }
         }

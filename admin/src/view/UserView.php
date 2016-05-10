@@ -80,7 +80,7 @@ class UserView{
 
     }
 
-    public function FormRegisterData($userId,$value=null){
+    public function FormRegisterData($userId,$value=null,$width1=null,$width2=null){
         $userController= new UserController();
         $form=new Form();
         $value = $value!=''&&$value!=null?$userController->get(Tables::$DataUser,$value):'';
@@ -98,69 +98,70 @@ class UserView{
             "name"=>"name",
             "label"=>"Nombre",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["name"]:$value);
         $lastName=$form->input(array(
             "type"=>"text",
             "name"=>"last_name",
             "label"=>"Apellido",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["last_name"]:$value);
         $cedula=$form->input(array(
             "type"=>"text",
             "name"=>"cedula",
             "label"=>"Cedula",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["cedula"]:$value);
         $country=$form->input(array(
             "type"=>"text",
             "name"=>"country",
             "label"=>"Pais",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["country"]:$value);
         $city=$form->input(array(
             "type"=>"text",
             "name"=>"city",
             "label"=>"Ciudad",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["city"]:$value);
         $zone=$form->input(array(
             "type"=>"text",
             "name"=>"zone",
             "label"=>"Zona",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["zone"]:$value);
         $photo=$form->input(array(
             "type"=>"file",
             "name"=>"photo",
             "label"=>"Foto",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),"");
         $bankName=$form->input(array(
             "type"=>"text",
             "name"=>"bank_name",
             "label"=>"Nombre del Banco",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["bank_name"]:$value);
         $accountType=$form->Select(array(
             "name"=>"account_type",
             "label"=>"Tipo de Cuenta",
-                "width1"=>"5",
-                "width2"=>"7",),
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
+            ),
             array(
                 array(
                     "Corriente",
@@ -178,8 +179,8 @@ class UserView{
             "label"=>"Numero de Cuenta",
             "required"=>"",
             "maxlength"=>"20",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>$width1!=null?$width1:"5",
+            "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["account_number"]:$value);
 
         $action=$value!=''?'update':'new';
@@ -209,7 +210,54 @@ class UserView{
         return $form->showForm(array(
             "action"=>'/admin/remember',
             "method"=>"post",
-            "submit"=>"Actualizar"
+            "submit"=>"Actualizar",
+            "btnId"=>"btnRememberPass",
+            "formId"=>"form-remember-pass"
+        ),$body);
+    }
+    public function updatePassForm(){
+        $form = new Form();
+
+        $user=$form->input(array(
+            "type"=>"text",
+            "name"=>"user",
+            "label"=>"Usuario",
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
+        ),"");
+        $pass=$form->input(array(
+            "type"=>"text",
+            "name"=>"pass",
+            "label"=>"Contraseña Provicional",
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
+        ),"");
+        $passNew=$form->input(array(
+            "type"=>"password",
+            "name"=>"passNew",
+            "label"=>"Contraseña Nueva",
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
+        ),"");
+        $passConfirm=$form->input(array(
+            "type"=>"password",
+            "name"=>"passRe",
+            "label"=>"Confirmar contraseña",
+            "required"=>"",
+            "width1"=>"5",
+            "width2"=>"7",
+        ),"");
+
+        $body= $user.$pass.$passNew.$passConfirm;
+        return $form->showForm(array(
+            "action"=>'/admin/updatePass',
+            "method"=>"post",
+            "submit"=>"Actualizar",
+            "btnId"=>"btnUpdatePass",
+            "formId"=>"form-update-pass"
         ),$body);
     }
 }

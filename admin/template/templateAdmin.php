@@ -40,7 +40,7 @@ if(isset($_SESSION)){
                 </div>
                 <?=$html->nav(array(
                     array('href'=>'/admin/home','label'=>$html->icon("home").' Inicio'),
-                    array('href'=>'#','label'=>$html->icon("user").' Perfil'),
+                    array('href'=>'/admin/user','label'=>$html->icon("user").' Perfil'),
                     array('href'=>'/admin/matriz','label'=>$html->icon("cog").' Matriz'),
                     array('href'=>'#','label'=>$html->icon("list-alt").' Contacto'),
                     array('href'=>'#','label'=>$html->icon("question-sign").' Ayuda'),

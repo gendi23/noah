@@ -162,5 +162,106 @@ $(document).ready(function(){
         }
     });
 
+    $('#btnUpdatePass').click(function(e){
+        e.preventDefault();
+
+        pass= $('#pass').val();
+        passNew= $('#passNew').val();
+        passConfirm= $('#passRe').val();
+
+        if(passNew==passConfirm){
+            console.log($('#form-update-pass').serialize());
+            $.ajax({
+                cache: false,
+                dataType: "json",
+                type: 'POST',
+                url: "/admin/updatePass",
+                data: $('#form-update-pass').serialize(),
+                beforeSend: function( ) {
+                    $("#control-error-update").html("");
+                    $("#control-error-update").append('<div class="alert alert-warning">' +
+                    'Por favor espere mientras se cargan los datos...' +
+                    '</div>');
+                },
+                success: function (data) {
+                    if (data.update == 1) {
+                        $("#control-error-update").html("");
+                        $("#control-error-update").append('<div class="alert alert-success">' +
+                        'Su contraseña ha sido cambiada con éxito' +
+                        '</div>');
+                        $('#user').val("");
+                        $('#pass').val("");
+                        $('#passNew').val("");
+                        $('#passRe').val("");
+                    } else {
+                        $("#control-error-update").html("");
+                        $("#control-error-update").append('<div class="alert alert-warning">' +
+                        data.message +
+                        '</div>');
+                        $('#passNew').val("");
+                        $('#passRe').val("");
+                    }
+                },
+                error: function () {
+                    $("#control-error-update").html("");
+                    $("#control-error-update").append('<div class="alert alert-danger">' +
+                    'Error al cargar el módulo.</br>Por favor consultar con el administrador del Sistema' +
+                    '</div>');
+                }
+            });
+        }else {
+            $("#control-error-update").html("");
+            $("#control-error-update").append('<div class="alert alert-warning">' +
+            "Las contraseña no coincide con la confirmación." +
+            '</div>');
+            $('#passNew').val("");
+            $('#passRe').val("");
+        }
+
+    });
+
+
+    $('#btnRememberPass').click(function(e){
+        e.preventDefault();
+
+        user= $('#update').val();
+
+            $.ajax({
+                cache: false,
+                dataType: "json",
+                type: 'POST',
+                url: "/admin/remember",
+                data: $('#form-remember-pass').serialize(),
+                beforeSend: function( ) {
+                    $("#control-error-remember").html("");
+                    $("#control-error-remember").append('<div class="alert alert-warning">' +
+                    'Por favor espere mientras se cargan los datos...' +
+                    '</div>');
+                },
+                success: function (data) {
+                    if (data.update == 1) {
+                        $("#control-error-remember").html("");
+                        $("#control-error-remember").append('<div class="alert alert-success">' +
+                        'Se ha reseteado su contraseña<br/>Revise su correo electrónico para ver su nueva contraseña.' +
+                        '</div>');
+                        $('#user').val("");
+                    } else {
+                        $("#control-error-remember").html("");
+                        $("#control-error-remember").append('<div class="alert alert-warning">' +
+                        data.message +
+                        '</div>');
+                        $('#user').val("");
+                    }
+                },
+                error: function () {
+                    $("#control-error-remember").html("");
+                    $("#control-error-remember").append('<div class="alert alert-danger">' +
+                    'Error al cargar el módulo.</br>Por favor consultar con el administrador del Sistema' +
+                    '</div>');
+                }
+            });
+
+    });
+
     });
 

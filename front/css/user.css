@@ -1,0 +1,13 @@
+#user-perfil{
+    width: 55%;
+    float: left;
+    margin-right: 25px;
+}
+#user-edit{
+    width: 40%;
+    float: left;
+}
+.label-user{
+    font-size: 13px;
+    margin-right: 21px;
+}

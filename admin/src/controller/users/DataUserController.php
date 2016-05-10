@@ -38,6 +38,9 @@ class DataUserController extends Controller{
     }
 
     public function getByUser($userId){
-        return new DataUser($this->selectOne("select * from ".Tables::$DataUser." where user=".$userId));
+        if($this->selectOne("select * from ".Tables::$DataUser." where user=".$userId)["id"]!="")
+            return new DataUser($this->selectOne("select * from ".Tables::$DataUser." where user=".$userId));
+        else
+           return "";
     }
 }

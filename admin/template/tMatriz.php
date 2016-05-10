@@ -20,7 +20,6 @@ function textLevel($level){
     </div>';
     return $html;
 }
-
 ?>
 <link rel="stylesheet" href="/front/css/matriz.css"/>
 <link rel="stylesheet" href="/front/css/popup.css"/>
@@ -39,8 +38,14 @@ function textLevel($level){
 <div class="level-container">
     <?=textLevel(1)?>
     <div class="level-content" id="level1">
+
         <img src="/front/img/avatar-small.png" alt=""/>
-        <?=$dataUser->getName()." ".$dataUser->getLastName()?>
+        <center><span class="name-user  name-user-level1"><?=$dataUser->getName()." ".$dataUser->getLastName()?></span></center>
+        <div class="datos datos1">
+            <h4>Datos personales</h4>
+            <span>Correo: <?=$user->getEmail()?></span><br/>
+            <span>Telefono: <?=$user->getPhone()?></span>
+        </div>
     </div>
 </div>
 <?php
@@ -54,11 +59,16 @@ if(count($pyramid["level2"])>0){
     foreach($pyramid["level2"] as $level1){
         if(count($level1)>0){
             $user1= new User($level1);
+            $dataUser1= $dataUserController->getByUser($user1->getId());
             ?>
             <div class="level-content level2" id="level2-<?=$count?>">
                 <img src="/front/img/avatar-small.png" alt=""/>
-                <p><?=$user1->getUser()?></p>
-
+                <span class="name-user  name-user-level2"><?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?></span>
+                <div class="datos datos2">
+                    <h4>Datos personales</h4>
+                    <span>Correo: <?=$user->getEmail()?></span><br/>
+                    <span>Telefono: <?=$user->getPhone()?></span>
+                </div>
             </div>
         <?php }else{  ?>
                 <div class="level-content level2" id="level2-<?=$count?>">
@@ -82,10 +92,11 @@ if(count($pyramid["level3"])>0){
 
         if(count($level1)>0){
             $user1= new User($level1);
+            $dataUser1= $dataUserController->getByUser($user1->getId());
             ?>
             <div class="level-content level3" id="level2-<?=$count?>">
                 <img src="/front/img/avatar-small.png" alt=""/>
-                <p><?=$user1->getUser()?></p>
+                <span class="name-user  name-user-level3"><?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?></span>
             </div>
         <?php
         }else{
@@ -108,11 +119,12 @@ if(count($pyramid["level4"])>0){
     $count=1;
     foreach($pyramid["level4"] as $level1){
         if(count($level1)>0){
-        $user1= new User($level1);
+            $user1= new User($level1);
+            $dataUser1= $dataUserController->getByUser($user1->getId());
         ?>
         <div class="level-content level4" id="level2-<?=$count?>">
             <img src="/front/img/avatar-small.png" alt=""/>
-            <p><?=$user1->getUser()?></p>
+            <span class="name-user  name-user-level4"><?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?></span>
         </div>
         <?php }else{
             ?>
@@ -128,7 +140,7 @@ if(count($pyramid["level4"])>0){
     <?php
 
 
-function getTitlePopUp($patrocinatorId){
+function getTitlePopUp($patrocinatorId,$num){
 
     $dataUserController= new DataUserController();
 
@@ -136,9 +148,9 @@ function getTitlePopUp($patrocinatorId){
     $patrocinator1= new User($dataUserController->get(Tables::$User,$patrocinatorId));
 
 
-    $titleP1='<center><h3><strong>Datos patrocinante 1</strong></h3></center>
+    $titleP1='<center><h3><strong>Datos patrocinante '.$num.'</strong></h3></center>
     <h4 class="title-payment-matriz">Nombre: '.$dataPatrocinator->getName().' '.$dataPatrocinator->getLastName().'</h4>
-    <h4 class="title-payment-matriz">'.$dataPatrocinator->getBankName().'</h4>
+    <h4 class="title-payment-matriz">Banco: '.$dataPatrocinator->getBankName().'</h4>
     <h4 class="title-payment-matriz">Cuenta: '.$dataPatrocinator->getAccountNumber().'</h4>
     <h4 class="title-payment-matriz">Cedula: '.$dataPatrocinator->getCedula().'</h4>
     <h4 class="title-payment-matriz">Telefono: '.$patrocinator1->getPhone().'</h4>';
@@ -147,18 +159,26 @@ function getTitlePopUp($patrocinatorId){
 }
 
 $patrocinator1= $userController->getPatrocinator($userId);
-/*$patrocinator2= $userController->getPatrocinator($patrocinator1->getId());
+$patrocinator2= $userController->getPatrocinator($patrocinator1->getId());
 $patrocinator3= $userController->getPatrocinator($patrocinator2->getId());
 $patrocinator4= $userController->getPatrocinator($patrocinator3->getId());
-*/
+
    echo Html::Popup(
         'patrocinator1',
-        getTitlePopUp($patrocinator1->getId()),
-        DepositView::depositPaymentForm($userId,1,"waular@luniversal.com"));
-/*
+        getTitlePopUp($patrocinator1->getId(),1),
+        DepositView::depositPaymentForm($userId,1,$patrocinator1->getEmail()));
+
     echo Html::Popup(
         'patrocinator2',
-        getTitlePopUp($patrocinator2->getId()),
-        DepositView::depositPaymentForm($userId,2,"waular@luniversal.com"));
-*/
+        getTitlePopUp($patrocinator2->getId(),2),
+        DepositView::depositPaymentForm($userId,2,$patrocinator2->getEmail()));
+    echo Html::Popup(
+        'patrocinator3',
+        getTitlePopUp($patrocinator3->getId(),3),
+        DepositView::depositPaymentForm($userId,3,$patrocinator3->getEmail()));
+    echo Html::Popup(
+        'patrocinator4',
+        getTitlePopUp($patrocinator4->getId(),4),
+        DepositView::depositPaymentForm($userId,4,$patrocinator4->getEmail()));
+
 ?>

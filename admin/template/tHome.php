@@ -52,12 +52,13 @@ $titlePayment='<center><h3><strong>Datos para el Deposito</strong></h3></center>
                 <h4 class="title-payment-matriz">Banco Bicentenario</h4>
                 <h4 class="title-payment-matriz">Cuenta: 0175 0618 8400 7335 6732</h4>
                 <h4 class="title-payment-matriz">Rif: J-404944222</h4>';
-$titleP1='<center><h3><strong>Datos patrocinante 1</strong></h3></center>
+
+$titleP1=$dataPatrocinator!=""?'<center><h3><strong>Datos patrocinante 1</strong></h3></center>
                 <h4 class="title-payment-matriz">Nombre: '.$dataPatrocinator->getName().' '.$dataPatrocinator->getLastName().'</h4>
                 <h4 class="title-payment-matriz">'.$dataPatrocinator->getBankName().'</h4>
                 <h4 class="title-payment-matriz">Cuenta: '.$dataPatrocinator->getAccountNumber().'</h4>
                 <h4 class="title-payment-matriz">Cedula: '.$dataPatrocinator->getCedula().'</h4>
-                <h4 class="title-payment-matriz">Telefono: '.$patrocinator1->getPhone().'</h4>';
+                <h4 class="title-payment-matriz">Telefono: '.$patrocinator1->getPhone().'</h4>':"";
 ?>
 <?=Html::Popup(
     'payment',

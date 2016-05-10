@@ -59,7 +59,7 @@ if(isset($_GET["active"])){
     </div>
     <?=Html::Popup(
         'reg',
-        '<h4><center> Lee y acepta los terminos de servicios &nbsp;<input type="checkbox" id="license"/></center></h4>',
+        '<h4 style="display:  inline-block;width: 90%;"> Lee y acepta los terminos de servicios del sistema noah</h4> <input type="checkbox" id="license" />',
         '<div id="control-error-reg"></div>'.$userView->FormRegister()
     )?>
 
@@ -71,7 +71,12 @@ if(isset($_GET["active"])){
     <?=Html::Popup(
         'remember',
         '<h3 style="margin-left: 20%">Recordar contraseña</h3>',
-        $userView->rememberPass()
+        '<div id="control-error-remember"></div>'.$userView->rememberPass()
+    )?>
+    <?=Html::Popup(
+        'updatePass',
+        '<h3 style="margin-left: 20%">Actualizar contraseña</h3>',
+        '<div id="control-error-update"></div>'.$userView->updatePassForm()
     )?>
     <?php
     if(isset($_GET["id"])){
@@ -85,15 +90,22 @@ if(isset($_GET["active"])){
     <script src="/front/js/jquery.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="/front/js/bootstrap.file-input.js"></script>
+    <script src="/front/js/jurlp.min.js"></script>
     <script src="/front/js/Util.js"></script>
     <script src="/front/js/popup.js"></script>
     <script src="/front/js/login.js"></script>
      <script>
         $(document).ready(function(){
+            var pathname = $.jurlp(window.location.href);
+
+            if(pathname.query().updatePass!=undefined){
+                $('#popup-updatePass').fadeIn('slow');
+                $('.popup-overlay').fadeIn('slow');
+                $('.popup-overlay').height($(window).height());
+            }
             var active=<?=$active?>;
 
             if(active==1){
-                console.log(active);
                 $('#popup-data').fadeIn('slow');
                 $('.popup-overlay').fadeIn('slow');
                 $('.popup-overlay').height($(window).height());

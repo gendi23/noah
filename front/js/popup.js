@@ -1,11 +1,12 @@
 $(document).ready(function(){
-    for(i=1;i<=5;i++){
+    for(i=1;i<=4;i++){
         showPopUp("patrocinator"+i);
     }
     showPopUp("payment");
     showPopUp("session");
     showPopUp("reg");
     showPopUp("remember");
+    showPopUp("updatePass");
 
     $("#show-remember").click(function(e){
         e.preventDefault();
@@ -40,6 +41,8 @@ $(document).ready(function(){
             $('#close-session').click();
             $('#close-data').click();
             $('#close-payment').click();
+            $('#close-updatePass').click();
+            $('#close-remember').click();
             for(i=1;i<=5;i++){
                 $('#close-patrocinator'+i).click();
             }
