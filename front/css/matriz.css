@@ -43,6 +43,7 @@ body{
     height: 30px;
     width: 250px;
     margin-left: 40px;
+    margin-bottom: 10px;
     border-color: #080808 !important;
 }
 
@@ -133,7 +134,10 @@ body{
     background-color: #fffbb5 !important;
 }
 .level-content img{
-    height: 70%;
+    height: 70px;
+    margin-top: 5px;
+    left: 43%;
+    position: relative;
 }
 
 

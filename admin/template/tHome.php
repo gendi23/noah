@@ -33,7 +33,7 @@ $deposit1= $depositController->getByLevel($USERID,1);
         <p class="text-justify">
             <strong>Tercer paso:</strong> Debes invitar a dos personas a formar parte de tu matriz. A partir de este momento tienes 10 dias para hacerlo, de lo contrario, tu cuenta será bloqueada..
         </p>
-         <button class="button-admin" id="matriz" onclick=" location.href='http://noah.dev/admin/matriz'"><strong>Matriz</strong></button>
+         <button class="button-admin" id="matriz" onclick=" location.href='/admin/matriz'"><strong>Matriz</strong></button>
     </div>
 </div>
 <div  class="box-publicidad"">

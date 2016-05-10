@@ -108,5 +108,11 @@ class UserController extends Controller {
         return new User($this->selectOne("select * from user where user ='$user'"));
     }
 
+    public function getPatrocinator($userId){
+
+        $user = new User($this->get(Tables::$User,$userId));
+
+        return new User($this->selectOne("select * from user where user ='".$user->getPatrocinator()."'"));
+    }
 }
 ?> 

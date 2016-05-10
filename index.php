@@ -54,12 +54,16 @@ $app->get(
     }
 );
 
+$app->get("/test/email",function(){
+    $sendMail= new SendEmail();
+    $sendMail->sendOne("test","prueba de correo","wiljacaular@gmail.com");
+});
+
 $app->get(
     '/validate/:user',
     function ($user) {
         $userController= new UserController();
         echo $userController->validateUser($user);
-
     }
 );
 
@@ -180,6 +184,29 @@ $app->post(
 
     }
 );
+
+$app->post(
+    "/admin/remember",
+    function(){
+
+        $userController= new UserController();
+        $user= $userController->getByUser($_POST["user"]);
+
+        $passProvitional= Util::generateRandomString(8);
+        $user->setPass($passProvitional);
+        $json = $userController->getUpdateJson($user);
+
+        $sendMail= new SendEmail();
+
+        $sendMail->sendOne(
+            "Reseteo de contraseña",
+            "Se ha realizado el cambio de contraseña.<br>La contraseña provicional es : $passProvitional<br>Ingrese al enlace para realizar el cambio de contraseña.<br> <a href='".$_SERVER["HTTP_HOST"]."/?updatePass=1'>Resetear Contraseña.</a>",
+            "wiljacaular@gmail.com"
+        );
+
+        echo $json;
+});
+
 $app->post(
     '/admin/dataUser/insert',
     function(){

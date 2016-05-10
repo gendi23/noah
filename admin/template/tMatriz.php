@@ -7,7 +7,6 @@
  */
 $userId=$USERID;
 
-
 $pyramid= $userController->getPyramid($userId);
 function textLevel($level){
     $html='<div class="vertical level'.$level.'-color">
@@ -57,11 +56,14 @@ if(count($pyramid["level2"])>0){
             $user1= new User($level1);
             ?>
             <div class="level-content level2" id="level2-<?=$count?>">
+                <img src="/front/img/avatar-small.png" alt=""/>
                 <p><?=$user1->getUser()?></p>
-                <p><?=$user1->getEmail()?></p>
+
             </div>
         <?php }else{  ?>
-                <div class="level-content level2" id="level2-<?=$count?>"></div>
+                <div class="level-content level2" id="level2-<?=$count?>">
+                    <img src="/front/img/avatar-small.png" alt=""/>
+                </div>
         <?php
         }
         $count++;
@@ -82,12 +84,14 @@ if(count($pyramid["level3"])>0){
             $user1= new User($level1);
             ?>
             <div class="level-content level3" id="level2-<?=$count?>">
+                <img src="/front/img/avatar-small.png" alt=""/>
                 <p><?=$user1->getUser()?></p>
             </div>
         <?php
         }else{
             ?>
             <div class="level-content level3" id="level2-<?=$count?>">
+                <img src="/front/img/avatar-small.png" alt=""/>
             </div>
         <?php
         }
@@ -107,11 +111,13 @@ if(count($pyramid["level4"])>0){
         $user1= new User($level1);
         ?>
         <div class="level-content level4" id="level2-<?=$count?>">
+            <img src="/front/img/avatar-small.png" alt=""/>
             <p><?=$user1->getUser()?></p>
         </div>
         <?php }else{
             ?>
             <div class="level-content level4" id="level2-<?=$count?>">
+                <img src="/front/img/avatar-small.png" alt=""/>
             </div>
             <?php
         }
@@ -119,42 +125,40 @@ if(count($pyramid["level4"])>0){
     }
 }?>
 </div>
-    <!--
-<?php
-    if(count($pyramid["level5"])>0){
-?>
-<div class="level-container">
-    <?= textLevel(5) ?>
-    <div id="content-level5">
-        <?php
-        $count = 1;
-        foreach ($pyramid["level5"] as $level1) {
-            if(count($level1)>0){
-                $user1 = new User($level1);
-                ?>
-                <div class="level-content level5">
-                    <p><?= $user1->getUser() ?></p>
-                </div>
-                <?php
-            }else{
-                    ?>
-                    <div class="level-content level5">
-                    </div>
-                    <?php
-            }
-            $count++;
-        }
-    }?>
-    </div>
+    <?php
 
-</div>
--->
-<?php
-for($i=1;$i<=4;$i++){
-   echo Html::Popup(
-        'patrocinator'.$i,
-        '',
-        DepositView::depositPaymentForm($userId,$i,"waular@luniversal.com"));
+
+function getTitlePopUp($patrocinatorId){
+
+    $dataUserController= new DataUserController();
+
+    $dataPatrocinator= $dataUserController->getByUser($patrocinatorId);
+    $patrocinator1= new User($dataUserController->get(Tables::$User,$patrocinatorId));
+
+
+    $titleP1='<center><h3><strong>Datos patrocinante 1</strong></h3></center>
+    <h4 class="title-payment-matriz">Nombre: '.$dataPatrocinator->getName().' '.$dataPatrocinator->getLastName().'</h4>
+    <h4 class="title-payment-matriz">'.$dataPatrocinator->getBankName().'</h4>
+    <h4 class="title-payment-matriz">Cuenta: '.$dataPatrocinator->getAccountNumber().'</h4>
+    <h4 class="title-payment-matriz">Cedula: '.$dataPatrocinator->getCedula().'</h4>
+    <h4 class="title-payment-matriz">Telefono: '.$patrocinator1->getPhone().'</h4>';
+
+    return $titleP1;
 }
 
+$patrocinator1= $userController->getPatrocinator($userId);
+/*$patrocinator2= $userController->getPatrocinator($patrocinator1->getId());
+$patrocinator3= $userController->getPatrocinator($patrocinator2->getId());
+$patrocinator4= $userController->getPatrocinator($patrocinator3->getId());
+*/
+   echo Html::Popup(
+        'patrocinator1',
+        getTitlePopUp($patrocinator1->getId()),
+        DepositView::depositPaymentForm($userId,1,"waular@luniversal.com"));
+/*
+    echo Html::Popup(
+        'patrocinator2',
+        getTitlePopUp($patrocinator2->getId()),
+        DepositView::depositPaymentForm($userId,2,"waular@luniversal.com"));
+*/
 ?>

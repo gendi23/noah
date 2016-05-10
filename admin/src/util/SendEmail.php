@@ -51,6 +51,7 @@ class SendEmail {
             $mail->AddAddress($email);
             $mail->Send();
             $mail->ClearAddresses();
+
     }
 }
 

@@ -5,6 +5,19 @@ $(document).ready(function(){
     showPopUp("payment");
     showPopUp("session");
     showPopUp("reg");
+    showPopUp("remember");
+
+    $("#show-remember").click(function(e){
+        e.preventDefault();
+
+        $('#close-session').click();
+
+        $('#popup-remember').fadeIn('slow');
+        $('.popup-overlay').fadeIn('slow');
+        $('.popup-overlay').height($(window).height());
+        return false;
+
+    });
 
     function showPopUp(id){
         $('#open-'+id).click(function(){

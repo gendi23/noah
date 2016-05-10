@@ -21,7 +21,7 @@
             <input type="text" class="form-control" id="codigoCaptcha"  name="captcha" required>
         </div>
     </div>
-    <div class="col-sm-offset-3 col-sm-9"><a href="">¿Olvidaste tu Contrase&ntilde;a?</a></div>
+    <div class="col-sm-offset-3 col-sm-9"><a href="#" id="show-remember">¿Olvidaste tu Contrase&ntilde;a?</a></div>
     <div class="form-group">
         <div class="col-sm-offset-4 col-sm-8">
             <button type="submit" class="btn btn-default buttonForm" id="button-login">Aceptar</button>

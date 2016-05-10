@@ -23,6 +23,7 @@ if(isset($_SESSION)){
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>NOAH Admin</title>
+            <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
             <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="/front/css/style-admin.css"/>
             <link rel="stylesheet" href="/front/css/form.css"/>

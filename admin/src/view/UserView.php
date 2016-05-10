@@ -192,4 +192,24 @@ class UserView{
         ),$body);
 
     }
+
+    public function rememberPass(){
+        $form = new Form();
+
+        $user=$form->input(array(
+            "type"=>"text",
+            "name"=>"user",
+            "label"=>"Usuario",
+            "required"=>"",
+            "width1"=>"4",
+            "width2"=>"7",
+        ),"");
+
+        $body= $user;
+        return $form->showForm(array(
+            "action"=>'/admin/remember',
+            "method"=>"post",
+            "submit"=>"Actualizar"
+        ),$body);
+    }
 }
