@@ -183,10 +183,10 @@ class UserView{
             "width2"=>$width2!=null?$width2:"7",
         ),$value!=""?$value["account_number"]:$value);
 
-        $action=$value!=''?'update':'new';
+        $action=$value!=''?'update':'insert';
         $body= $id.$user.$name.$lastName.$cedula.$country.$city.$zone.$photo.$bankName.$accountType.$accountNumber;
         return $form->showForm(array(
-            "action"=>'/admin/dataUser/insert',
+            "action"=>'/admin/dataUser/'.$action,
             "method"=>"post",
             "submit"=>"Guardar",
             "multipart"=>""

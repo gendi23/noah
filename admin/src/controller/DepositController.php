@@ -35,7 +35,13 @@ class DepositController extends Controller {
     }
 
     public function getByLevel($userId,$level){
-        return new Deposit($this->selectOne("select * from ".Tables::$Deposit." where user=".$userId." and level=".$level));
+        if($this->selectOne("select * from ".Tables::$Deposit." where user=".$userId." and level=".$level)["id"]!=""){
+            return new Deposit($this->selectOne("select * from ".Tables::$Deposit." where user=".$userId." and level=".$level));
+        }
+        else{
+            return "";
+        }
+
     }
 }
 

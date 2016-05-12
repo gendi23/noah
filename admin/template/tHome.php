@@ -3,17 +3,25 @@ $depositController= new DepositController();
 
 $depositMatriz= $depositController->getByLevel($USERID,0);
 $deposit1= $depositController->getByLevel($USERID,1);
+
 ?>
 <link rel="stylesheet" href="/front/css/matriz.css"/>
 <link rel="stylesheet" href="/middelend/css/popup.css"/>
-
+<?php if($dataUser==""){ ?>
+    <div class="alert alert-warning">
+        <p>Estimado usuario <strong><?=$user->getUser()?></strong>, aún no ha conpletado los datos.</p>
+        <p>Para realizarlo por favor ingrese al enlace
+            <a href="/admin/user">Ver Perfil</a> o a la opción <strong>Perfil</strong> del menú.
+            <p>Hasta entonces no podrá entrar a la matriz.</p>
+        </p></div>
+<?php }?>
 <div><h2 class="title-matriz">Matriz Noah</h2></div>
 <div class="" id="tuto-matriz">
     <div class=" notification-pago">
         <p class="text-justify">
             <strong>Primer paso:</strong> Debes pagar 500 Bs. por mantenimiento de l plataforma de la Matriz Noah, a partir de este momento tienes tres dias para hacerlo, de lo contrario, tu cuenta será eliminada. Luego de enviar la notificación de pago, será activada definitivamente tu plataforma.
         </p>
-        <?php if($depositMatriz->getStatus()==""){ ?>
+        <?php if($depositMatriz!=""&&$depositMatriz->getStatus()==""){ ?>
             <button class="button-admin" id="open-payment"><strong>Pagar Plataforma</strong></button>
         <?php } else{?>
             <button class="button-admin" id="open-payment" disabled><strong>Pagar Plataforma</strong></button>
@@ -33,7 +41,9 @@ $deposit1= $depositController->getByLevel($USERID,1);
         <p class="text-justify">
             <strong>Tercer paso:</strong> Debes invitar a dos personas a formar parte de tu matriz. A partir de este momento tienes 10 dias para hacerlo, de lo contrario, tu cuenta será bloqueada..
         </p>
+        <?php if($dataUser!=""){?>
          <button class="button-admin" id="matriz" onclick=" location.href='/admin/matriz'"><strong>Matriz</strong></button>
+        <?php } ?>
     </div>
 </div>
 <div  class="box-publicidad"">

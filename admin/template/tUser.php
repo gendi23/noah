@@ -18,20 +18,41 @@ $userView= new UserView();
         <a href="#" class="list-group-item"><span class="label label-info label-user">Teléfono</span> <?=$user->getPhone()?></a>
         <a href="#" class="list-group-item"><span class="label label-info label-user">Patrocinador</span> <?=$user->getPatrocinator()?></a>
     </div>
+
+    <?php if($dataUser!=""){ ?>
     <center><h4>Datos Personales</h4></center>
     <div class="list-group">
-        <a href="#" class="list-group-item"><span class="label label-primary label-user">Cedula</span> <?=$dataUser->getCedula()?></a>
-        <a href="#" class="list-group-item"><span class="label label-primary label-user">Nombre</span> <?=$dataUser->getName()?></a>
-        <a href="#" class="list-group-item"><span class="label label-primary label-user">Apellido</span> <?=$dataUser->getLastName()?></a>
-        <a href="#" class="list-group-item"><span class="label label-primary label-user">País</span> <?=$dataUser->getCountry()?></a>
-        <a href="#" class="list-group-item"><span class="label label-primary label-user">Ciudad</span> <?=$dataUser->getCity()?></a>
-        <a href="#" class="list-group-item"><span class="label label-primary label-user">Zona</span> <?=$dataUser->getZone()?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-primary label-user">Cedula</span> <?= $dataUser->getCedula() ?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-primary label-user">Nombre</span> <?= $dataUser->getName() ?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-primary label-user">Apellido</span> <?= $dataUser->getLastName() ?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-primary label-user">País</span> <?= $dataUser->getCountry() ?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-primary label-user">Ciudad</span> <?= $dataUser->getCity() ?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-primary label-user">Zona</span> <?= $dataUser->getZone() ?></a>
     </div>
     <center><h4>Datos de la Cuenta</h4></center>
     <div class="list-group">
-        <a href="#" class="list-group-item"><span class="label label-success label-user">Banco</span> <?=$dataUser->getBankName()?></a>
-        <a href="#" class="list-group-item"><span class="label label-success label-user">Tipo</span> <?=$dataUser->getAccountType()?></a>
-        <a href="#" class="list-group-item"><span class="label label-success label-user">Número</span> <?=$dataUser->getAccountNumber()?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-success label-user">Banco</span> <?= $dataUser->getBankName() ?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-success label-user">Tipo</span> <?= $dataUser->getAccountType() ?></a>
+        <a href="#" class="list-group-item"><span
+                class="label label-success label-user">Número</span> <?= $dataUser->getAccountNumber() ?></a>
     </div>
+    <?php } ?>
 </div>
-<div id="user-edit"><?=$userView->FormRegisterData($USERID,$dataUser->getId(),4,7)?></div>
+<div id="user-edit">
+    <center><h3>Complete sus datos</h3></center>
+    <?php
+
+    if($dataUser!="")
+        echo $userView->FormRegisterData($USERID,$dataUser->getId(),4,7);
+    else
+        echo $userView->FormRegisterData($USERID,null,4,7);
+    ?>
+</div>

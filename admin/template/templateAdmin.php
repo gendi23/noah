@@ -12,8 +12,12 @@ if(isset($_SESSION)){
         $user= new User($userController->get(Tables::$User,$USERID));
         $dataUser= $dataUserController->getByUser($USERID);
         $level= $levelController->getByUser($USERID);
-
-        $photoPerfil = $dataUser->getPhoto()!=""?$dataUser->getPhoto():"/front/img/avatar.png";
+        $photoPerfil="/front/img/avatar.png";
+        $nameUser="";
+        if($dataUser!=""){
+            $photoPerfil = $dataUser->getPhoto()!=""?$dataUser->getPhoto():$photoPerfil;
+            $nameUser=$dataUser->getName()." ".$dataUser->getLastName();
+        }
 
         $html= new Html();
         ?>
@@ -35,13 +39,13 @@ if(isset($_SESSION)){
                     <div class="perfil-image" id="photo-perfil" style="background-image: url('<?=$photoPerfil?>')">
                         <a href="#" id="update-photo" class="label label-success">Cambiar foto.</a>
                     </div>
-                    <span id="user-name"><center><?=strtoupper($dataUser->getName()." ".$dataUser->getLastName())?></center></span>
+                    <span id="user-name"><center><?=strtoupper($nameUser)?></center></span>
                     <span id="user-level"><center><?=strtoupper("nivel ".$level->getLevel())?></center></span>
                 </div>
                 <?=$html->nav(array(
                     array('href'=>'/admin/home','label'=>$html->icon("home").' Inicio'),
                     array('href'=>'/admin/user','label'=>$html->icon("user").' Perfil'),
-                    array('href'=>'/admin/matriz','label'=>$html->icon("cog").' Matriz'),
+                    array('href'=>$dataUser!=''?'/admin/matriz':'#','label'=>$html->icon("cog").' Matriz'),
                     array('href'=>'#','label'=>$html->icon("list-alt").' Contacto'),
                     array('href'=>'#','label'=>$html->icon("question-sign").' Ayuda'),
                     array('href'=>'/admin/logout','label'=>$html->icon("off").' Salir'),

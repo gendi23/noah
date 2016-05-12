@@ -241,25 +241,31 @@ $app->post(
     '/admin/dataUser/insert',
     function(){
         $controller= new DataUserController();
+        if($_FILES["photo"]["name"]!=""){
+            //print_r($_FILES);die();
+            $fileNameArray=explode(".",$_FILES["photo"]["name"]);
+            $ext= $fileNameArray[1];
 
-        //print_r($_FILES);die();
-        $fileNameArray=explode(".",$_FILES["photo"]["name"]);
-        $ext= $fileNameArray[1];
+            $file= "photo-".$_POST["user"].".".$ext;
+            $rute= "front/img/user/".$_POST["user"]."/";
 
-        $file= "photo-".$_POST["user"].".".$ext;
-        $rute= "front/img/user/".$_POST["user"]."/";
+            if(!(file_exists ($rute) )){
+                mkdir ($rute,0755, true);
+            }
 
-        if(!(file_exists ($rute) )){
-            mkdir ($rute,0755, true);
-        }
+            if(move_uploaded_file ($_FILES['photo']['tmp_name'], $rute.$file)){
+                $data= $_POST;
+                $data["photo"]= "/".$rute.$file;
 
-        if(move_uploaded_file ($_FILES['photo']['tmp_name'], $rute.$file)){
+                $controller->getInsertJson(new DataUser($data));
+            }
+        }else{
             $data= $_POST;
-            $data["photo"]= "/".$rute.$file;
-
+            $data["photo"]= "";
             $controller->getInsertJson(new DataUser($data));
         }
-        echo "<script>window.location='/';</script>";
+
+        echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
     }
 );
 $app->post(
