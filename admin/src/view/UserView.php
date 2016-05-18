@@ -15,7 +15,8 @@ class UserView{
         $id= $form->Hidden(array(
             "name"=>"id",
             "value"=>$value!=""?$value["id"]:$value
-        ));$status= $form->Hidden(array(
+        ));
+        $status= $form->Hidden(array(
             "name"=>"status",
             "value"=>"0"
         ));
@@ -24,48 +25,48 @@ class UserView{
             "name"=>"user",
             "label"=>"Usuario",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),$value!=""?$value["user"]:$value);
         $pass=$form->input(array(
             "type"=>"password",
             "name"=>"pass",
             "label"=>"Contraseña",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),"");
         $confirm=$form->input(array(
             "type"=>"password",
             "name"=>"confirm",
             "label"=>"Confirma contraseña",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),"");
         $email=$form->input(array(
             "type"=>"email",
             "name"=>"email",
             "label"=>"Correo GMAIL",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),$value!=""?$value["email"]:$value);
         $phone=$form->input(array(
             "type"=>"text",
             "name"=>"phone",
             "label"=>"Telefono",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),$value!=""?$value["phone"]:$value);
         $patrocinator=$form->input(array(
             "type"=>"text",
             "name"=>"patrocinator",
             "label"=>"Patrocinador",
             "required"=>"",
-            "width1"=>"5",
-            "width2"=>"7",
+            "width1"=>"6",
+            "width2"=>"6",
         ),$value!=""?$value["zone"]:$value);
 
 
@@ -189,7 +190,8 @@ class UserView{
             "action"=>'/admin/dataUser/'.$action,
             "method"=>"post",
             "submit"=>"Guardar",
-            "multipart"=>""
+            "multipart"=>"",
+            "formId"=>"form-data"
         ),$body);
 
     }

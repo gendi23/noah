@@ -2,6 +2,7 @@
     width: 1366px !important;
     margin: 0 auto;
 }
+
 header{
     height: 110px;
     background-color: #000;
@@ -58,4 +59,21 @@ footer{
     color: #54bef6;
 
     font-weight: bold;
+}
+
+#icon-user,#icon-patrocinator{
+    position: relative;
+    left: -18px;
+}
+#icon-user{
+    top: 65px;
+    font-size: 20px;
+}
+#icon-patrocinator{
+    top: 230px;
+    font-size: 20px;
+}
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;;
 }

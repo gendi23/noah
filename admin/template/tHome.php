@@ -6,22 +6,14 @@ $deposit1= $depositController->getByLevel($USERID,1);
 
 ?>
 <link rel="stylesheet" href="/front/css/matriz.css"/>
-<link rel="stylesheet" href="/middelend/css/popup.css"/>
-<?php if($dataUser==""){ ?>
-    <div class="alert alert-warning">
-        <p>Estimado usuario <strong><?=$user->getUser()?></strong>, aún no ha conpletado los datos.</p>
-        <p>Para realizarlo por favor ingrese al enlace
-            <a href="/admin/user">Ver Perfil</a> o a la opción <strong>Perfil</strong> del menú.
-            <p>Hasta entonces no podrá entrar a la matriz.</p>
-        </p></div>
-<?php }?>
+<link rel="stylesheet" href="/front/css/popup.css"/>
 <div><h2 class="title-matriz">Matriz Noah</h2></div>
 <div class="" id="tuto-matriz">
     <div class=" notification-pago">
         <p class="text-justify">
             <strong>Primer paso:</strong> Debes pagar 500 Bs. por mantenimiento de l plataforma de la Matriz Noah, a partir de este momento tienes tres dias para hacerlo, de lo contrario, tu cuenta será eliminada. Luego de enviar la notificación de pago, será activada definitivamente tu plataforma.
         </p>
-        <?php if($depositMatriz!=""&&$depositMatriz->getStatus()==""){ ?>
+        <?php if($depositMatriz==""||$depositMatriz->getStatus()==""){ ?>
             <button class="button-admin" id="open-payment"><strong>Pagar Plataforma</strong></button>
         <?php } else{?>
             <button class="button-admin" id="open-payment" disabled><strong>Pagar Plataforma</strong></button>
@@ -31,11 +23,13 @@ $deposit1= $depositController->getByLevel($USERID,1);
         <p class="text-justify">
             <strong>Segundo paso:</strong> Debes comprarle a tu patrocinador el "nivel 1 de publicidad" el cual cuesta 800 Bs. A partir de este momento tienes tres dias para hacerlo, de lo contrario, tu cuenta será eliminada. Luego de enviar la notificación de pago, podrás entrar a tu matriz.
         </p>
-        <?php if($deposit1->getStatus()==""){ ?>
+        <?php if($deposit1==""||$deposit1->getStatus()==""){ ?>
         <button class="button-admin" id="open-patrocinator1" ><strong>Pagar a Patrocinador</strong></button>
-        <?php } else if($depositMatriz->getStatus()==0){?>
+        <?php } else if($depositMatriz!=""&&$depositMatriz->getStatus()==0){?>
         <button class="button-admin" id="open-patrocinator1" disabled><strong>Pagar a Patrocinador</strong></button>
-        <?php } ?>
+        <?php } else{ ?>
+            <button class="button-admin" id="open-patrocinator1" disabled><strong>Pagar a Patrocinador</strong></button>
+        <?php }?>
     </div>
     <div class="notification-pago">
         <p class="text-justify">
@@ -73,12 +67,12 @@ $titleP1=$dataPatrocinator!=""?'<center><h3><strong>Datos patrocinante 1</strong
 <?=Html::Popup(
     'payment',
     $titlePayment,
-    DepositView::depositPaymentForm($USERID,0,"wiljacaular@gmail.com"));
+    DepositView::depositPaymentForm($USERID,0,"wiljacaular@gmail.com"," (500bs)"));
 ?>
 <?=Html::Popup(
     'patrocinator1',
     $titleP1,
-    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail()));
+    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail()," (800bs)"));
 ?>
 <script>
 

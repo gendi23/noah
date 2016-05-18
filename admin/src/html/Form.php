@@ -15,10 +15,10 @@ class Form {
         $width2=isset($values["width2"])?$values["width2"]:9;
         if(isset($values["required"]))$required='required';
 
-        $r=$required!=''?'* ':$required;
+        $r=$required!=''?' ':$required;
         $input= '
         <div class="form-group">
-            <label class="control-label col-sm-'.$width1.'" for="'.$values["name"].'">'.$r.$values["label"].':</label>
+            <label class="control-label col-sm-'.$width1.'" for="'.$values["name"].'">'.$r.$values["label"].'</label>
             <div class="col-sm-'.$width2.'">
                 <input type="'.$values["type"].'" class="form-control" id="'.$values["name"].'" name="'.$values["name"].'" value="'.$value.'" '.$required.'>
             </div>
@@ -28,7 +28,7 @@ class Form {
     public function text($values,$value){
         $required='';
         if(isset($values["required"]))$required='required';
-        $r=$required!=''?'* ':$required;
+        $r=$required!=''?' ':$required;
         $input= '
         <div class="form-group">
             <label class="control-label col-sm-3" for="'.$values["name"].'">'.$r.$values["label"].':</label>
@@ -52,7 +52,7 @@ class Form {
             '.$body.'
             <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
-                <button type="submit" class="btn btn-primary" id="'.$btn.'"><span class="glyphicon glyphicon-ok"></span> '.$values["submit"].'</button>
+                <button type="submit" class="btn btn-primary" id="'.$btn.'">'.$values["submit"].'</button>
             </div>
             </div>
         </form>

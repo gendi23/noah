@@ -9,10 +9,11 @@
 class DepositView
 {
 
-    public static function depositPaymentForm($userId,$levelNumber,$emailParam){
+    public static function depositPaymentForm($userId,$levelNumber,$emailParam,$subTitle=null){
         $form=new Form();
         $controller= new Controller();
-        $title='<center><h3>Notifica tu pago</h3></center>';
+        $subTitle=$subTitle!=null?$subTitle:"";
+        $title='<center><h3 class="title-pay">Notifica tu pago '.$subTitle.'</h3></center><br>';
         $userObject = new User($controller->get(Tables::$User,$userId));
         $id= $form->Hidden(array(
             "name"=>"id",

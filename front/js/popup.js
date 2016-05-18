@@ -43,6 +43,7 @@ $(document).ready(function(){
             $('#close-payment').click();
             $('#close-updatePass').click();
             $('#close-remember').click();
+            $('#close-message').click();
             for(i=1;i<=5;i++){
                 $('#close-patrocinator'+i).click();
             }
@@ -51,6 +52,12 @@ $(document).ready(function(){
 // Cuando le da click a data
     $('#close-data').click(function(){
         $('#popup-data').fadeOut('slow');
+        $('.popup-overlay').fadeOut('slow');
+        return false;
+    });
+// Cuando le da click a data
+    $('#close-message').click(function(){
+        $('#popup-message').fadeOut('slow');
         $('.popup-overlay').fadeOut('slow');
         return false;
     });

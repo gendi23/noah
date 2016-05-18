@@ -144,13 +144,14 @@ class Html{
                     </div>';
         return $div;
     }
-    public static  function Popup ($id, $title, $body){
+    public static  function Popup ($id, $title=null, $body){
+        $title= $title!=null?'<div class="line-title">'.$title.'</div>':'';
         $html='<div id="popup-'.$id.'" class="popup" style="display: none;">
                     <div class="content-popup">
-                        <div class="close-pop"><a href="#" id="close-'.$id.'">x</a></div>
+                        <div class="close-pop"><a href="#" id="close-'.$id.'"><img src="/front/img/pop-exit.png" style="width:36px"/></a></div>
                         <div>
-                            <div class="line-title">'.$title.'</div>
-                            <article>'.$body.'</article>
+                            '.$title.'
+                            <article class="row">'.$body.'</article>
                         </div>
                     </div>
                 </div>';

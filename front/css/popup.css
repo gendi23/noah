@@ -11,7 +11,7 @@
     margin-top:120px;
     position:relative;
     padding:10px;
-    width:400px;
+    width:420px;
     min-height:150px;
     box-shadow: 0 2px 5px #4aae76;
     border: 2px solid #2ebd94;
@@ -43,8 +43,7 @@
 }
 
 .close-pop {
-    border: 2px solid #2ebd94;
-    padding: 5px 12px;
+
     position: absolute;
     right: -14px;
     top: -19px;
@@ -67,10 +66,10 @@
 
 #license{
     /* Double-sized Checkboxes */
-    -ms-transform: scale(1.5); /* IE */
-    -moz-transform: scale(1.5); /* FF */
-    -webkit-transform: scale(1.5); /* Safari and Chrome */
-    -o-transform: scale(1.5); /* Opera */
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
     padding: 10px;
     font-size: 110%;
     display: inline;
@@ -78,4 +77,21 @@
     left: -10%;
     top: -8px;
     float: none;
+}
+
+#message-login{
+    color: blue;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16pt !important;
+    font-weight: bold;
+    padding-top: 5px;
+
+}
+#popup-message{
+    top: 100px;
+}
+.content-popup .row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;;
 }

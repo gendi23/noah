@@ -26,17 +26,15 @@ $(document).ready(function(){
         if(validate==1){
             $('#user').css({"border-color":"red"})
             $('#btn-reg').attr("disabled", "disabled");
-            $("#control-error-reg").html("");
-            $("#control-error-reg").append('<div class="alert alert-danger">' +
-            'El usuario ingresado ya existe, intente con otro por favor.' +
-            '</div>');
+            $("#icon-user span").removeClass('glyphicon-ok');
+            $("#icon-user span").addClass('glyphicon-ban-circle');
+            $("#icon-user span").css('color','#F43636');
             $("#user").val("");
             $("#user").focus();
         }else{
-            $("#control-error-reg").html("");
-            $("#control-error-reg").append('<div class="alert alert-success">' +
-            'El usuario ingresado esta disponible.' +
-            '</div>');
+            $("#icon-user span").removeClass('glyphicon-ban-circle');
+            $("#icon-user span").addClass('glyphicon-ok');
+            $("#icon-user span").css('color','#214DF3');
             $('#btn-reg').removeAttr("disabled");
         }
     });
@@ -61,6 +59,7 @@ $(document).ready(function(){
         });
         if($("#license").is(':checked')){
         if (validate==1) {
+            $("#icon-patrocinator span").removeClass('glyphicon-ban-circle');
             if(pass!=''&&confirm!='') {
                 if (pass == confirm) {
                     $.ajax({
@@ -77,16 +76,12 @@ $(document).ready(function(){
                         },
                         success: function (data) {
                             if (data.update == 1) {
-                                $("#control-error-reg").html("");
-                                $("#control-error-reg").append('<div class="alert alert-success">' +
-                                'Felicitaciones!<br/> Debes ingresar a tu correo electrònico para validar tus datos.' +
-                                '</div>');
-                                $('#form-reg').val();
+                                $('#close-reg').click();
+                                $('#popup-message').fadeIn('slow');
+                                $('.popup-overlay').fadeIn('slow');
+                                $('.popup-overlay').height($(window).height());
                             } else {
-                                $("#control-error-reg").html("");
-                                $("#control-error-reg").append('<div class="alert alert-warning">' +
-                                'Por favor verifica los datos ingresados' +
-                                '</div>');
+
                                 $('#pass').val("");
                                 $('#user').val("");
                             }
@@ -106,19 +101,12 @@ $(document).ready(function(){
                 }
             }
         }else {
-            $("#control-error-reg").html("");
-            $("#control-error-reg").append('<div class="alert alert-danger">' +
-            'El patrocinador ingresado no existe, intente nuevamente' +
-            '</div>');
+
+            $("#icon-patrocinator span").addClass('glyphicon-ban-circle');
+            $("#icon-patrocinator span").css('color','#F43636');
             $('#patrocinator').val("");
             $('#patrocinator').focus();
-        }}else{
-            $("#control-error-reg").html("");
-            $("#control-error-reg").append('<div class="alert alert-warning">' +
-            'Por favor acepte los términos.' +
-            '</div>');
-
-        }
+        }}
 });
 
     $('#button-login').click(function(event){

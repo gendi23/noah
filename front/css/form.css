@@ -27,5 +27,29 @@ body{
     margin-left: 25px;
 }
 label{
-    font-size: 12px;
+    font-size: 11pt;
+
+}
+h3{
+    font-size: 14pt !important;
+}
+.form-horizontal .control-label{
+    text-align: left;
+    margin-bottom: -5px;
+    margin-right: -6px;
+}
+.form-control{
+    height: 28px;
+    padding: 3px 5px;
+}
+.btn{
+    padding: 2px 25px;
+    left: -20px;
+    position: relative;
+}
+#loginForm label,#form-data label{
+    padding-left: 30px;
+}
+#loginForm label{
+    padding-left: 30px;
 }

@@ -59,8 +59,8 @@ if(isset($_GET["active"])){
     </div>
     <?=Html::Popup(
         'reg',
-        '<h4 style="display:  inline-block;width: 90%;"> Lee y acepta los terminos de servicios del sistema noah</h4> <input type="checkbox" id="license" />',
-        '<div id="control-error-reg"></div>'.$userView->FormRegister()
+        '<h4 style="display:  inline-block;width: 85%;"> Lee y acepta los terminos de servicios del sistema noah</h4> <input type="checkbox" id="license" />',
+        '<div class="col-md-11">'.$userView->FormRegister().'</div><div class="col-md-1"><div id="icon-user"><span class="glyphicon"></span></div><div id="icon-patrocinator"><span class="glyphicon"></span></div></div>'
     )?>
 
     <?=Html::Popup(
@@ -71,18 +71,23 @@ if(isset($_GET["active"])){
     <?=Html::Popup(
         'remember',
         '<h3 style="margin-left: 20%">Recordar contraseña</h3>',
-        '<div id="control-error-remember"></div>'.$userView->rememberPass()
+        $userView->rememberPass()
     )?>
     <?=Html::Popup(
         'updatePass',
         '<h3 style="margin-left: 20%">Actualizar contraseña</h3>',
-        '<div id="control-error-update"></div>'.$userView->updatePassForm()
+        $userView->updatePassForm()
+    )?>
+    <?=Html::Popup(
+        'message',
+        null,
+        '<h3 id="message-login">Felicitaciones, debes ingresar a tu correo electrónico GMAIL para completar tus datos.</h3>'
     )?>
     <?php
     if(isset($_GET["id"])){
         echo Html::Popup(
             'data',
-            '<h3>Registrarse</h3>',
+            '<center><h3>Registrarse</h3></center>',
             $userView->FormRegisterData($_GET["id"])
         );
     }
@@ -96,6 +101,7 @@ if(isset($_GET["active"])){
     <script src="/front/js/login.js"></script>
      <script>
         $(document).ready(function(){
+
             var pathname = $.jurlp(window.location.href);
 
             if(pathname.query().updatePass!=undefined){
