@@ -1,4 +1,3 @@
-<div id="control-error"></div>
 <form action="/admin/login" class="form-horizontal" role="form" method="post" id="loginForm" name="form">
     <div class="form-group">
         <label class="control-label col-sm-5" for="user-login">Usuario</label>

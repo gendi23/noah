@@ -40,7 +40,14 @@ function textLevel($level){
     <div class="level-content" id="level1">
 
         <img src="/front/img/avatar-small.png" alt=""/>
-        <center><span class="name-user  name-user-level1"><?=$dataUser->getName()." ".$dataUser->getLastName()?></span></center>
+        <center>
+            <span class="name-user  name-user-level1">
+                <?php if($dataUser!=""){ ?>
+                    <?=$dataUser->getName()." ".$dataUser->getLastName()?>
+                <?php } ?>
+
+            </span>
+        </center>
         <div class="datos datos1">
             <h4>Datos personales</h4>
             <span>Correo: <?=$user->getEmail()?></span><br/>
@@ -63,7 +70,11 @@ if(count($pyramid["level2"])>0){
             ?>
             <div class="level-content level2" id="level2-<?=$count?>">
                 <img src="/front/img/avatar-small.png" alt=""/>
-                <span class="name-user  name-user-level2"><?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?></span>
+                <span class="name-user  name-user-level2">
+                <?php if($dataUser1!=""){ ?>
+                    <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
+                <?php } ?>
+                </span>
                 <div class="datos datos2">
                     <h4>Datos personales</h4>
                     <span>Correo: <?=$user->getEmail()?></span><br/>
@@ -96,7 +107,11 @@ if(count($pyramid["level3"])>0){
             ?>
             <div class="level-content level3" id="level2-<?=$count?>">
                 <img src="/front/img/avatar-small.png" alt=""/>
-                <span class="name-user  name-user-level3"><?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?></span>
+                <span class="name-user  name-user-level3">
+                <?php if($dataUser1!=""){ ?>
+                    <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
+                <?php } ?>
+                </span>
             </div>
         <?php
         }else{
@@ -124,7 +139,11 @@ if(count($pyramid["level4"])>0){
         ?>
         <div class="level-content level4" id="level2-<?=$count?>">
             <img src="/front/img/avatar-small.png" alt=""/>
-            <span class="name-user  name-user-level4"><?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?></span>
+            <span class="name-user  name-user-level4">
+            <?php if($dataUser1!=""){ ?>
+                <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
+            <?php } ?>
+            </span>
         </div>
         <?php }else{
             ?>
@@ -157,7 +176,7 @@ function getTitlePopUp($patrocinatorId,$num){
 
     return $titleP1;
 }
-
+/*
 $patrocinator1= $userController->getPatrocinator($userId);
 $patrocinator2= $userController->getPatrocinator($patrocinator1->getId());
 $patrocinator3= $userController->getPatrocinator($patrocinator2->getId());
@@ -180,5 +199,5 @@ $patrocinator4= $userController->getPatrocinator($patrocinator3->getId());
         'patrocinator4',
         getTitlePopUp($patrocinator4->getId(),4),
         DepositView::depositPaymentForm($userId,4,$patrocinator4->getEmail()));
-
+*/
 ?>
