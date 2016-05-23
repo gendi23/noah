@@ -11,14 +11,17 @@ if(isset($_SESSION)){
 
         $user= new User($userController->get(Tables::$User,$USERID));
         $dataUser= $dataUserController->getByUser($USERID);
-        $level= $levelController->getByUser($USERID);
-        $photoPerfil="/front/img/avatar.png";
-        $nameUser="";
+        $level= $levelController->getByUser($USERID)!=""?$levelController->getByUser($USERID):1;
+        $photoPerfil="";
+        $nameUser="nombre del usuario";
         if($dataUser!=""){
             $photoPerfil = $dataUser->getPhoto()!=""?$dataUser->getPhoto():$photoPerfil;
             $nameUser=$dataUser->getName()." ".$dataUser->getLastName();
         }
 
+        if($dataUser==""){
+            echo "<script>window.location='/admin/logout';</script>";
+        }
         $html= new Html();
         ?>
         <!doctype html>
@@ -37,7 +40,7 @@ if(isset($_SESSION)){
             <header>
                 <div class="perfil">
                     <div class="perfil-image" id="photo-perfil" style="background-image: url('<?=$photoPerfil?>')">
-                        <a href="#" id="update-photo" class="label label-success">Cambiar foto.</a>
+                        <!--<a href="#" id="update-photo" class="label label-success">Cambiar foto.</a>-->
                     </div>
                     <span id="user-name"><center><?=strtoupper($nameUser)?></center></span>
                     <span id="user-level"><center><?=strtoupper("nivel ".$level->getLevel())?></center></span>

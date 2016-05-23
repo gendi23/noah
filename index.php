@@ -40,7 +40,9 @@ $app->get(
         require_once 'view/layout.php';
     }
 );
-
+$app->get('/test',function(){
+    require_once 'admin/template/userDataPop.php';
+});
 $app->get(
     '/admin/logout',
     function () {

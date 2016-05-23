@@ -201,3 +201,15 @@ body{
     color: blue;
     font-weight: bold;
 }
+
+.inactive{
+    border: solid 3px red;
+}
+.inactive h3{
+    color: white;
+    font-size: 20pt !important;
+    text-align: center;
+}
+.inactive a:hover{
+    text-decoration: none;
+}

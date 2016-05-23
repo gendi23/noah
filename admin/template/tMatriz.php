@@ -16,7 +16,7 @@ function textLevel($level){
         <p>E</p>
         <p>L</p>
         <p>&nbsp;</p>
-        <p>'.$level.'</p>
+        <p>'.($level+1).'</p>
     </div>';
     return $html;
 }
@@ -36,7 +36,14 @@ function textLevel($level){
 
 </div>
 <div class="level-container">
-    <?=textLevel(1)?>
+    <div class="vertical level1-color">
+        <p>I</p>
+        <p>N</p>
+        <p>I</p>
+        <p>C</p>
+        <p>I</p>
+        <p>O</p>
+    </div>
     <div class="level-content" id="level1">
 
         <img src="/front/img/avatar-small.png" alt=""/>
@@ -45,7 +52,6 @@ function textLevel($level){
                 <?php if($dataUser!=""){ ?>
                     <?=$dataUser->getName()." ".$dataUser->getLastName()?>
                 <?php } ?>
-
             </span>
         </center>
         <div class="datos datos1">
@@ -55,106 +61,174 @@ function textLevel($level){
         </div>
     </div>
 </div>
-<?php
-if(count($pyramid["level2"])>0){
-?>
+
 <!-- Nivel 2 de la piramide -->
 <div class="level-container">
     <?=textLevel(2)?>
     <?php
     $count=1;
-    foreach($pyramid["level2"] as $level1){
-        if(count($level1)>0){
-            $user1= new User($level1);
-            $dataUser1= $dataUserController->getByUser($user1->getId());
-            ?>
-            <div class="level-content level2" id="level2-<?=$count?>">
-                <img src="/front/img/avatar-small.png" alt=""/>
-                <span class="name-user  name-user-level2">
-                <?php if($dataUser1!=""){ ?>
-                    <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
-                <?php } ?>
-                </span>
-                <div class="datos datos2">
-                    <h4>Datos personales</h4>
-                    <span>Correo: <?=$user->getEmail()?></span><br/>
-                    <span>Telefono: <?=$user->getPhone()?></span>
-                </div>
-            </div>
-        <?php }else{  ?>
-                <div class="level-content level2" id="level2-<?=$count?>">
+    if(count($pyramid["level2"])>0){
+        foreach($pyramid["level2"] as $level1){
+            if(count($level1)>0){
+                $user1= new User($level1);
+                $dataUser1= $dataUserController->getByUser($user1->getId());
+                $statusColor=$user1->getStatus()==0?"inactive":"";
+                ?>
+                <div class="level-content level2 <?=$statusColor?>" id="level2-<?=$count?>">
+                    <?php if($user1->getStatus()!=0){ ?>
                     <img src="/front/img/avatar-small.png" alt=""/>
+                    <span class="name-user  name-user-level2">
+                    <?php if($dataUser1!=""){ ?>
+                        <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
+                    <?php } ?>
+                    </span>
+                    <div class="datos datos2">
+                        <h4>Datos personales</h4>
+                        <span>Correo: <?=$user->getEmail()?></span><br/>
+                        <span>Telefono: <?=$user->getPhone()?></span>
+                    </div>
+                    <?php }else{ ?>
+                        <a href="#"><h3>Nuevo referido, confirma el pago haciendo click aquí</h3></a>
+                    <?php } ?>
                 </div>
+            <?php }else{
+
+                ?>
+                    <div class="level-content level2" id="level2-<?=$count?>">
+                        <img src="/front/img/avatar-small.png" alt=""/>
+                    </div>
+            <?php
+            }
+            $count++;
+        }
+        --$count;
+        if($count==1){
+            ?>
+            <div class="level-content level2" id="level2-2">
+                <img src="/front/img/candado.png" alt=""/>
+            </div>
         <?php
         }
-        $count++;
-    }
+    }else{
+       $count=0;
+        for($i=1;$i<=2;$i++){
+
+            ?>
+            <div class="level-content level2" id="level2-<?=$i?>">
+                <img src="/front/img/candado.png" alt=""/>
+            </div>
+        <?php
+        }
     }?>
 </div>
 <?php
-if(count($pyramid["level3"])>0){
+
 ?>
 <!-- Nivel 3 de la piramide -->
 <div class="level-container">
     <?=textLevel(3)?>
     <?php
     $count=1;
-    foreach($pyramid["level3"] as $level1){
+    if(count($pyramid["level3"])>0){
+        foreach($pyramid["level3"] as $level1){
 
-        if(count($level1)>0){
-            $user1= new User($level1);
-            $dataUser1= $dataUserController->getByUser($user1->getId());
+            if(count($level1)>0){
+                $user1= new User($level1);
+                $dataUser1= $dataUserController->getByUser($user1->getId());
+                $statusColor=$user1->getStatus()==0?"inactive":"";
+                ?>
+                <div class="level-content level3 <?=$statusColor?>" id="level2-<?=$count?>">
+                    <img src="/front/img/avatar-small.png" alt=""/>
+                    <span class="name-user  name-user-level3">
+                    <?php if($dataUser1!=""){ ?>
+                        <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
+                    <?php } ?>
+                    </span>
+                </div>
+            <?php
+            }else{
+                ?>
+                <div class="level-content level3" id="level2-<?=$count?>">
+                    <img src="/front/img/avatar-small.png" alt=""/>
+                </div>
+            <?php
+            }
+            $count++;
+        }
+        --$count;
+
+        if($count<4){
+            for($i=1;$i<=4-$count;$i++){
             ?>
-            <div class="level-content level3" id="level2-<?=$count?>">
-                <img src="/front/img/avatar-small.png" alt=""/>
-                <span class="name-user  name-user-level3">
-                <?php if($dataUser1!=""){ ?>
-                    <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
-                <?php } ?>
-                </span>
-            </div>
-        <?php
-        }else{
+                <div class="level-content level3" id="level2-<?=$count+$i?>">
+                    <img src="/front/img/candado.png" alt=""/>
+                </div>
+            <?php
+            }
+        }
+    }else{
+        $count=0;
+        for($i=1;$i<=4;$i++){
             ?>
-            <div class="level-content level3" id="level2-<?=$count?>">
-                <img src="/front/img/avatar-small.png" alt=""/>
+            <div class="level-content level3" id="level2-<?=$i?>">
+                <img src="/front/img/candado.png" alt=""/>
             </div>
         <?php
         }
-        $count++;
-    }
     }?>
 </div>
 <?php
-if(count($pyramid["level4"])>0){
+
 ?>
 <div class="level-container">
     <?=textLevel(4)?>
     <?php
     $count=1;
-    foreach($pyramid["level4"] as $level1){
-        if(count($level1)>0){
-            $user1= new User($level1);
-            $dataUser1= $dataUserController->getByUser($user1->getId());
-        ?>
-        <div class="level-content level4" id="level2-<?=$count?>">
-            <img src="/front/img/avatar-small.png" alt=""/>
-            <span class="name-user  name-user-level4">
-            <?php if($dataUser1!=""){ ?>
-                <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
-            <?php } ?>
-            </span>
-        </div>
-        <?php }else{
+    if(count($pyramid["level4"])>0){
+        foreach($pyramid["level4"] as $level1){
+            if(count($level1)>0){
+                $user1= new User($level1);
+                $dataUser1= $dataUserController->getByUser($user1->getId());
+                $statusColor=$user1->getStatus()==0?"inactive":"";
             ?>
-            <div class="level-content level4" id="level2-<?=$count?>">
+            <div class="level-content level4 <?=$statusColor?>" id="level2-<?=$count?>">
                 <img src="/front/img/avatar-small.png" alt=""/>
+                <span class="name-user  name-user-level4">
+                <?php if($dataUser1!=""){ ?>
+                    <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
+                <?php } ?>
+                </span>
             </div>
-            <?php
+            <?php }else{
+                ?>
+                <div class="level-content level4" id="level2-<?=$count?>">
+                    <img src="/front/img/avatar-small.png" alt=""/>
+                </div>
+                <?php
+            }
+            $count++;
         }
-        $count++;
-    }
-}?>
+        --$count;
+
+        if($count<8){
+            for($i=1;$i<=8-$count;$i++){
+                ?>
+                <div class="level-content level4" id="level2-<?=$count+$i?>">
+                    <img src="/front/img/candado.png" alt=""/>
+                </div>
+            <?php
+            }
+        }
+    }else{
+            $count=0;
+            for($i=1;$i<=8;$i++){
+                ?>
+                <div class="level-content level4" id="level2-<?=$i?>">
+                    <img src="/front/img/candado.png" alt=""/>
+                </div>
+            <?php
+            }
+        }?>
 </div>
     <?php
 
