@@ -11,3 +11,12 @@
     font-size: 13px;
     margin-right: 21px;
 }
+#formUser label{
+	text-align: left;
+}
+#formUserDiv{
+	width: 50%;
+}
+#formUserDiv2{
+    margin-top: 40px;
+}

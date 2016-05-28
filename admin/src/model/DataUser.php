@@ -228,4 +228,8 @@ class DataUser{
     {
         $this->zone = $zone;
     }
+
+    public function getFullName(){
+        return $this->getName()." ".$this->getLastName();
+    }
 }

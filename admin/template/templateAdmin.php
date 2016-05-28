@@ -22,6 +22,7 @@ if(isset($_SESSION)){
         if($dataUser==""){
             echo "<script>window.location='/admin/logout';</script>";
         }
+
         $html= new Html();
         ?>
         <!doctype html>

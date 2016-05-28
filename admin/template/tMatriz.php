@@ -23,6 +23,7 @@ function textLevel($level){
 ?>
 <link rel="stylesheet" href="/front/css/matriz.css"/>
 <link rel="stylesheet" href="/front/css/popup.css"/>
+    <link rel="stylesheet" href="/front/css/dataPop.css"/>
 <div id="container-publicity">
     <div  style="color: #0016b0"><h3><center>Noticias Noah</center></h3></div>
     <div  style="color: #0016b0"><h3><center>Patrocinador</center></h3>
@@ -230,26 +231,27 @@ function textLevel($level){
             }
         }?>
 </div>
-    <?php
+    <button id="open-a">abrir</button>
+<?php
+
+    function getTitlePopUp($patrocinatorId,$num){
+
+        $dataUserController= new DataUserController();
+
+        $dataPatrocinator= $dataUserController->getByUser($patrocinatorId);
+        $patrocinator1= new User($dataUserController->get(Tables::$User,$patrocinatorId));
 
 
-function getTitlePopUp($patrocinatorId,$num){
+        $titleP1='<center><h3><strong>Datos patrocinante '.$num.'</strong></h3></center>
+        <h4 class="title-payment-matriz">Nombre: '.$dataPatrocinator->getName().' '.$dataPatrocinator->getLastName().'</h4>
+        <h4 class="title-payment-matriz">Banco: '.$dataPatrocinator->getBankName().'</h4>
+        <h4 class="title-payment-matriz">Cuenta: '.$dataPatrocinator->getAccountNumber().'</h4>
+        <h4 class="title-payment-matriz">Cedula: '.$dataPatrocinator->getCedula().'</h4>
+        <h4 class="title-payment-matriz">Telefono: '.$patrocinator1->getPhone().'</h4>';
 
-    $dataUserController= new DataUserController();
-
-    $dataPatrocinator= $dataUserController->getByUser($patrocinatorId);
-    $patrocinator1= new User($dataUserController->get(Tables::$User,$patrocinatorId));
-
-
-    $titleP1='<center><h3><strong>Datos patrocinante '.$num.'</strong></h3></center>
-    <h4 class="title-payment-matriz">Nombre: '.$dataPatrocinator->getName().' '.$dataPatrocinator->getLastName().'</h4>
-    <h4 class="title-payment-matriz">Banco: '.$dataPatrocinator->getBankName().'</h4>
-    <h4 class="title-payment-matriz">Cuenta: '.$dataPatrocinator->getAccountNumber().'</h4>
-    <h4 class="title-payment-matriz">Cedula: '.$dataPatrocinator->getCedula().'</h4>
-    <h4 class="title-payment-matriz">Telefono: '.$patrocinator1->getPhone().'</h4>';
-
-    return $titleP1;
-}
+        return $titleP1;
+    }
+echo $dataUserController->getPopDataUser($user,$dataUser,'ACEPTAR');
 /*
 $patrocinator1= $userController->getPatrocinator($userId);
 $patrocinator2= $userController->getPatrocinator($patrocinator1->getId());

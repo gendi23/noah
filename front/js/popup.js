@@ -7,6 +7,7 @@ $(document).ready(function(){
     showPopUp("reg");
     showPopUp("remember");
     showPopUp("updatePass");
+    showPopUp("a");
 
     $("#show-remember").click(function(e){
         e.preventDefault();

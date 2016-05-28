@@ -7,6 +7,65 @@ body{
     border: solid 2px;
     /*width: 70%;*/
 }
+
+.Dos{
+
+    margin-top: -412px;
+    position: relative;
+    left: 557px;
+
+}
+
+.form-control{
+    width: 200px;
+}
+
+.control-label{
+    width: 200px;
+}
+
+.banco{
+     float: none;
+    top: -42px;
+}
+
+.notification-pago4{
+
+    padding: 20px;
+    border: solid 2px;
+    width: 200%;
+}
+
+.notification-pago1{
+
+    padding: 20px;
+    width: 200%;
+    height: 250px;
+    border: solid 2px;
+    /*width: 70%;*/
+}
+
+.notification-pago2{
+
+    padding: 20px;
+    width: 200%;
+    height: 200px;
+    border: solid 2px;
+    /*width: 70%;*/
+}
+
+.notification-pago3{
+
+    padding: 12px;
+    width: 200%;
+    height: 150%;
+    border: solid 2px;
+    /*width: 70%;*/
+}
+#button-guardar{
+    margin-left: 60%;
+    margin-top: -4%;
+}
 .title-matriz{
     margin-left: 1%;
     font-size: 20px;
@@ -195,21 +254,4 @@ body{
 .title-payment-matriz{
     color: #000;
     font-weight: bold;
-}
-
-.title-pay{
-    color: blue;
-    font-weight: bold;
-}
-
-.inactive{
-    border: solid 3px red;
-}
-.inactive h3{
-    color: white;
-    font-size: 20pt !important;
-    text-align: center;
-}
-.inactive a:hover{
-    text-decoration: none;
 }
