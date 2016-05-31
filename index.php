@@ -70,6 +70,16 @@ $app->get(
 );
 
 $app->get(
+    '/validate/patrocinator/:user',
+    function ($user) {
+        $userController= new UserController();
+        $array= get_object_vars(json_decode($userController->validateUser($user)));
+
+
+    }
+);
+
+$app->get(
     '/:model',
     function ($model) {
         $body="t".ucwords($model).".php";

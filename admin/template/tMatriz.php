@@ -46,8 +46,7 @@ function textLevel($level){
         <p>O</p>
     </div>
     <div class="level-content" id="level1">
-
-        <img src="/front/img/avatar-small.png" alt=""/>
+        <img src="/front/img/avatar-small.png"/>
         <center>
             <span class="name-user  name-user-level1">
                 <?php if($dataUser!=""){ ?>
@@ -60,6 +59,7 @@ function textLevel($level){
             <span>Correo: <?=$user->getEmail()?></span><br/>
             <span>Telefono: <?=$user->getPhone()?></span>
         </div>
+
     </div>
 </div>
 
@@ -77,7 +77,7 @@ function textLevel($level){
                 ?>
                 <div class="level-content level2 <?=$statusColor?>" id="level2-<?=$count?>">
                     <?php if($user1->getStatus()!=0){ ?>
-                    <img src="/front/img/avatar-small.png" alt=""/>
+                    <img src="/front/img/avatar-small.png" alt="" id="<?=$user1->getUser()?>" class="open-data-pop"/>
                     <span class="name-user  name-user-level2">
                     <?php if($dataUser1!=""){ ?>
                         <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
@@ -88,12 +88,17 @@ function textLevel($level){
                         <span>Correo: <?=$user->getEmail()?></span><br/>
                         <span>Telefono: <?=$user->getPhone()?></span>
                     </div>
+                        <?=$dataUserController->getPopDataUser($user1,$dataUser1,'Contactar');?>
                     <?php }else{ ?>
-                        <a href="#"><h3>Nuevo referido, confirma el pago haciendo click aquí</h3></a>
+                        <a href="" id="<?=$user1->getUser()?>" class="open-data-pop">
+                            <h3>Nuevo referido, confirma el pago haciendo click aquí</h3>
+                        </a>
+                        <?php if($dataUser1!=''){
+                           echo $dataUserController->getPopDataUser($user1,$dataUser1,'Aceptar');
+                        } ?>
                     <?php } ?>
                 </div>
             <?php }else{
-
                 ?>
                     <div class="level-content level2" id="level2-<?=$count?>">
                         <img src="/front/img/avatar-small.png" alt=""/>
@@ -139,12 +144,13 @@ function textLevel($level){
                 $statusColor=$user1->getStatus()==0?"inactive":"";
                 ?>
                 <div class="level-content level3 <?=$statusColor?>" id="level2-<?=$count?>">
-                    <img src="/front/img/avatar-small.png" alt=""/>
+                    <img src="/front/img/avatar-small.png" alt="" id="<?=$user1->getUser()?>" class="open-data-pop"/>
                     <span class="name-user  name-user-level3">
                     <?php if($dataUser1!=""){ ?>
                         <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
                     <?php } ?>
                     </span>
+                    <?=$dataUserController->getPopDataUser($user1,$dataUser1,'Contactar');?>
                 </div>
             <?php
             }else{
@@ -193,12 +199,13 @@ function textLevel($level){
                 $statusColor=$user1->getStatus()==0?"inactive":"";
             ?>
             <div class="level-content level4 <?=$statusColor?>" id="level2-<?=$count?>">
-                <img src="/front/img/avatar-small.png" alt=""/>
+                <img src="/front/img/avatar-small.png" alt="" id="<?=$user1->getUser()?>" class="open-data-pop"/>
                 <span class="name-user  name-user-level4">
                 <?php if($dataUser1!=""){ ?>
                     <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
                 <?php } ?>
                 </span>
+                <?=$dataUserController->getPopDataUser($user1,$dataUser1,'Contactar');?>
             </div>
             <?php }else{
                 ?>
@@ -231,9 +238,7 @@ function textLevel($level){
             }
         }?>
 </div>
-    <button id="open-a">abrir</button>
 <?php
-
     function getTitlePopUp($patrocinatorId,$num){
 
         $dataUserController= new DataUserController();
@@ -251,7 +256,7 @@ function textLevel($level){
 
         return $titleP1;
     }
-echo $dataUserController->getPopDataUser($user,$dataUser,'ACEPTAR');
+echo $dataUserController->getPopDataUser($user,$dataUser,'a','Aceptar');
 /*
 $patrocinator1= $userController->getPatrocinator($userId);
 $patrocinator2= $userController->getPatrocinator($patrocinator1->getId());
@@ -277,3 +282,19 @@ $patrocinator4= $userController->getPatrocinator($patrocinator3->getId());
         DepositView::depositPaymentForm($userId,4,$patrocinator4->getEmail()));
 */
 ?>
+<script src="/front/js/jquery.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.open-data-pop').click(function(e){
+            e.preventDefault();
+            id = $(this).attr('id');
+            console.log($(id+'-pop'));
+
+            $('#'+id+'-pop').css('display','block');
+        });
+        $('.close-pop-data').click(function(){
+            $('.popData').css('display','none');
+
+        });
+    });
+</script>

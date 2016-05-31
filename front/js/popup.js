@@ -48,6 +48,7 @@ $(document).ready(function(){
             for(i=1;i<=5;i++){
                 $('#close-patrocinator'+i).click();
             }
+            $('.close-pop-data').click();
         }   // esc
     });
 // Cuando le da click a data

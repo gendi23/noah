@@ -45,11 +45,15 @@ class DataUserController extends Controller{
     }
 
     public function getPopDataUser(User $user, DataUser $dataUser, $boton=null){
+
         $title= strtoupper($boton)=='ACEPTAR'?'<h3>Datos del dep&oacute;sito </h3>':'';
         $style= strtoupper($boton)=='ACEPTAR'?'':'style="top:35px;"';
         $styleSpan= strtoupper($boton)=='ACEPTAR'?'style="top:4px;"':'';
-        $styleSpan2= strtoupper($boton)=='ACEPTAR'?'style="top: -143%;left: -17%;"':'';
-        $html ='<div class="body-user">
+        $icon=strtoupper($boton)=='CONTACTAR'?Html::icon("envelope"):'';
+
+        $html ='<div class="popData" id="'.$user->getUser().'-pop"><div id="background-body"></div>
+                <div class="body-user">
+                    '.Html::icon("remove",'close-pop-data').'
                     <div class="col-md-6">
                         <img src="/front/img/avatar-small.png" alt=""/>
                         <div class="vertical-line"></div>
@@ -67,12 +71,12 @@ class DataUserController extends Controller{
                         </div>
                         <div>
                             <div class="datos-boton-pop" '.$styleSpan.'>
-                                '.Html::icon("envelope").'
-                                <span >'.$boton.'</span>
+                                '.$icon.'
+                                <span id="text-'.strtolower($boton).'">'.$boton.'</span>
                             </div>
                         </div>
                     </div>
-                </div>';
+                </div></div>';
         return $html;
     }
 }

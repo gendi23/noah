@@ -65,8 +65,8 @@ class Html{
         return $html;
     }
 
-    public static function icon($icon){
-        return '<span class="glyphicon glyphicon-'.$icon.'"></span>';
+    public static function icon($icon,$aditional=null,$id=null){
+        return '<span class="glyphicon glyphicon-'.$icon.' '.$aditional.'" id="'.$id.'"></span>';
     }
 
     public function btnModal($height,$color,$id,$label){
