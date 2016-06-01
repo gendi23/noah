@@ -15,8 +15,42 @@
 	text-align: left;
 }
 #formUserDiv{
-	width: 50%;
+	width: 80%;
 }
 #formUserDiv2{
     margin-top: 40px;
+}
+
+/***********/
+.custom-input-file {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: #23ffca 2px solid !important;
+    border-radius: 4px;
+    padding: 1px 13px;
+    width: 100px;
+    font-size: 14px;
+    left: 240px;
+    top: -109px;
+}
+
+.custom-input-file .input-file {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 10000px solid transparent;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+.custom-input-file .archivo {
+    background-color: #000;
+    color: #fff;
+    font-size: 7pt;
+    overflow: hidden;
+}
+.custom-input-file:hover .archivo {
+    background-color: #fff;
+    color: #000;
 }

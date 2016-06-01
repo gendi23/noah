@@ -30,16 +30,15 @@ body{
 }
 
 .notification-pago4{
-
     padding: 20px;
     border: solid 2px;
-    width: 200%;
+    width: 80%;
 }
 
 .notification-pago1{
 
     padding: 20px;
-    width: 200%;
+    width: 100%;
     height: 250px;
     border: solid 2px;
     /*width: 70%;*/
@@ -48,7 +47,7 @@ body{
 .notification-pago2{
 
     padding: 20px;
-    width: 200%;
+    width: 100%;
     height: 200px;
     border: solid 2px;
     /*width: 70%;*/
@@ -57,14 +56,17 @@ body{
 .notification-pago3{
 
     padding: 12px;
-    width: 200%;
-    height: 150%;
+    width: 80%;
+    height: 250px;
     border: solid 2px;
     /*width: 70%;*/
 }
 #button-guardar{
-    margin-left: 60%;
-    margin-top: -4%;
+    margin-left: 10%;
+}
+#button-guardar2{
+    margin-left: 73%;
+    top: 70px;
 }
 .title-matriz{
     margin-left: 1%;
@@ -90,7 +92,6 @@ body{
 
 
 #tuto-matriz{
-
     width: 70%;
     float: left;
 }
@@ -254,4 +255,21 @@ body{
 .title-payment-matriz{
     color: #000;
     font-weight: bold;
+}
+#foto{
+    width: 100px;
+    height: 100px;
+    border: solid #23ffca;
+    border-radius: 8px;
+    float: left;
+    position: relative;
+    left: -65px;
+    margin-bottom: 10px;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+}
+.button-foto{
+    position: relative;
+    left: 240px;
+    top: -109px;
 }

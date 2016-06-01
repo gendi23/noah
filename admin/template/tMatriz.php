@@ -150,7 +150,9 @@ function textLevel($level){
                         <?=$dataUser1!=""?$dataUser1->getName()." ".$dataUser1->getLastName():$user1->getUser()?>
                     <?php } ?>
                     </span>
-                    <?=$dataUserController->getPopDataUser($user1,$dataUser1,'Contactar');?>
+                    <?php if($dataUser1!=''){
+                        echo $dataUserController->getPopDataUser($user1,$dataUser1,'Contactar');
+                    } ?>
                 </div>
             <?php
             }else{
