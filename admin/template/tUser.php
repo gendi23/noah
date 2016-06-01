@@ -8,7 +8,8 @@ $dataUserController= new DataUserController();
 
     <div id="formUserDiv">
         <div class= "notification-pago2">
-            <form action="/admin/login" class="form-horizontal" role="form" method="post" id="formUser" name="form">
+            <form action="/admin/change/user" class="form-horizontal" role="form" method="post" id="formUser" name="form" enctype="multipart/form-data">
+                <input type="hidden" name="userId" value="<?=$USERID?>"/>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="control-label col-sm-6" for="pass">Contraseña:</label>
@@ -33,7 +34,7 @@ $dataUserController= new DataUserController();
                     <div class="box-foto">
                         <label class=" foto-perfil control-label col-sm-6" for="">Foto de Perfil</label>
                         <div id="foto" style="background-image: url('/front/img/avatar.png');"></div>
-                        <div class="custom-input-file"><input type="file" class="input-file" />
+                        <div class="custom-input-file"><input type="file" class="input-file" name="photo"/>
                             Subir Foto
                         </div>
                         <!--<button type="submit" class="button-foto btn btn-default buttonForm" id="button-foto" required>Subir Foto</button>-->

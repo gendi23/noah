@@ -40,9 +40,22 @@ $app->get(
         require_once 'view/layout.php';
     }
 );
-$app->get('/test',function(){
-    require_once 'admin/template/userDataPop.php';
+
+$app->post('/admin/change/user',function(){
+
+    $userController= new UserController();
+    $user= new User($userController->get(Tables::$User,$_POST["userId"]));
+
+    $user->setPass($_POST["pass"]);
+    $user->setEmail($_POST["email"]);
+
+    $userController->getUpdateJson($user);
+
+    print_r($user);
+    echo "<br>";
+    //print_r($_FILES);
 });
+
 $app->get(
     '/admin/logout',
     function () {
