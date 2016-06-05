@@ -4,6 +4,7 @@ if(isset($_GET["token"])){
     $token=$_GET["token"];
     $userController = new UserController();
     $userController->setStatus($token);
+
 }
 ?>
 <div >

@@ -40,6 +40,17 @@ $deposit1= $depositController->getByLevel($USERID,1);
         <?php } ?>
     </div>
 </div>
+<div class="box-aviso">
+    <div id="publicidad1"></div>
+    <p class="text-justify">
+    <h4>Aviso:Ademas de comprar y vender niveles de publicidad en la matriz
+        debes ver los anuncios que compras en cada nivel.</h4>
+    </p>
+    <button class="button-nivelt1" id="matriz" onclick=""><h3>Eres nivel 1:Debes ver 30 anuncios en 10 dias</h3></button>
+    <button class="button-nivelt2" id="matriz" onclick=""><h3>Eres nivel 2:Debes ver 40 anuncios en 15 dias</h3></button>
+    <button class="button-nivelt3" id="matriz" onclick=""><h3>Eres nivel 3:Debes ver 50 anuncios en 15 dias</h3></button>
+    <button class="button-nivelt4" id="matriz" onclick=""><h3>Eres nivel 4:Debes ver 60 anuncios en 15 dias</h3></button>
+</div>
 <div  class="box-publicidad"">
     <div id="publicidad1"></div>
     <div id="publicidad2"></div>
@@ -64,15 +75,16 @@ $titleP1=$dataPatrocinator!=""?'<center><h3><strong>Datos patrocinante 1</strong
                 <h4 class="title-payment-matriz">Cedula: '.$dataPatrocinator->getCedula().'</h4>
                 <h4 class="title-payment-matriz">Telefono: '.$patrocinator1->getPhone().'</h4>':"";
 ?>
+
 <?=Html::Popup(
     'payment',
     $titlePayment,
-    DepositView::depositPaymentForm($USERID,0,"wiljacaular@gmail.com"," (500bs)"));
+    DepositView::depositPaymentForm($USERID,0,"wiljacaular@gmail.com",null," (500bs)"));
 ?>
 <?=Html::Popup(
     'patrocinator1',
     $titleP1,
-    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail()," (800bs)"));
+    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail(),null," (800bs)"));
 ?>
 <script>
 

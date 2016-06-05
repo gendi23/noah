@@ -7,6 +7,44 @@ body{
     border: solid 2px;
     /*width: 70%;*/
 }
+.button-nivelt1{
+    width: 300px;
+    margin-left: 20px;
+    background-color: #A9F5BC !important;
+}
+h4{
+    color: blue;
+}
+h3{
+    font-size: 19px;
+    font-weight: bold;
+}
+.button-nivelt2{
+    width: 300px;
+    margin-left: 60px;
+    background-color: #D8CEF6 !important;
+}
+.button-nivelt3{
+    width: 300px;
+    margin-left: 23px;
+    margin-top: 30px;
+    background-color: #F6CECE !important;
+}
+
+.button-nivelt4{
+    width: 300px;
+    margin-left: 60px;
+    margin-top: 30px;background-color: #F3F781 !important;
+}
+
+.box-aviso{
+    height: 249px;
+    width: 80%;
+    border: solid 2px #080808;
+    margin: 0px !important;
+    position: relative;
+    float: left;
+}
 .title-matriz{
     margin-left: 1%;
     font-size: 20px;
@@ -19,12 +57,12 @@ body{
 }
 .box-publicidad{
     margin:0 !important;
-    width: 29%;
-    left: 70%;
+    width: 20%;
+    left: 80%;
     position: relative;
  }
 .box-publicidad div{
-    height: 211px;
+    height: 335px;
     border: solid 2px #868484;
     margin:0 !important;
 }
@@ -32,7 +70,7 @@ body{
 
 #tuto-matriz{
 
-    width: 70%;
+    width: 80%;
     float: left;
 }
 
@@ -178,9 +216,9 @@ body{
 .datos1{
     position: relative;
     top: -95px;
-    left: 180px;
+    left: 140px;
     color: #000;
-    width: 230px;
+    width: 290px;
 }
 .datos2{
     position: relative;

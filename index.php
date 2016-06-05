@@ -45,15 +45,52 @@ $app->post('/admin/change/user',function(){
 
     $userController= new UserController();
     $user= new User($userController->get(Tables::$User,$_POST["userId"]));
+    $dataUserController= new DataUserController();
+    $dataUser= $dataUserController->getByUser($_POST["userId"]);
 
-    $user->setPass($_POST["pass"]);
-    $user->setEmail($_POST["email"]);
+    if($_POST["pass"]==$_POST["pass-confir"]){
 
-    $userController->getUpdateJson($user);
+        $user->setPass($_POST["pass"]);
+        $user->setEmail($_POST["email"]);
 
-    print_r($user);
-    echo "<br>";
-    //print_r($_FILES);
+        $userController->getUpdateJson($user);
+
+    }
+
+    if($_FILES["photo"]["size"]!=0){
+
+        $fileNameArray=explode(".",$_FILES["photo"]["name"]);
+        $ext= $fileNameArray[1];
+
+        $file= "photo-".$user->getId().".".$ext;
+        $rute= "front/img/user/".$user->getId()."/";
+
+        if(!(file_exists ($rute) )){
+            mkdir ($rute);
+        }
+
+        if(move_uploaded_file ($_FILES['photo']['tmp_name'], $rute.$file)){
+
+            $dataUser->setPhoto("/".$rute.$file);
+            $dataUserController->getUpdateJson($dataUser);
+
+        }
+    }
+
+    echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
+
+});
+
+$app->post('/admin/change/dataUser',function(){
+    $dataUserController= new DataUserController();
+    $dataUser = $dataUserController->getByUser($_POST["user"]);
+    $arrayData= $_POST;
+    $arrayData["id"]= $dataUser->getId();
+    $arrayData["photo"]= $dataUser->getPhoto();
+
+    $dataUserController->getUpdateJson(new DataUser($arrayData));
+
+    echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
 });
 
 $app->get(
@@ -161,6 +198,7 @@ $app->post(
     '/user/register',
     function () {
         $userController= new UserController();
+        $levelController= new LevelController();
 
         $userArray= $_POST;
         $userArray["token"]= md5($userArray['user']);
@@ -170,6 +208,10 @@ $app->post(
         echo $userController->getInsertJson($user);
 
         $user->setId($userController->lastInsert(Tables::$User)["id"]);
+
+        $levelArray= array("id"=>"","user"=>$user->getId(),"level"=>"1","status"=>"0");
+        $levelController->getInsertJson(new Level($levelArray));
+
         ob_start();
         require_once "view/bodyEmail.php";
         $html = ob_get_clean();

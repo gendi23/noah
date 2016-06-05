@@ -20,6 +20,17 @@
 #formUserDiv2{
     margin-top: 40px;
 }
+.box-publicidad1{
+    position: absolute;
+    top: 52px;
+    left: 80%;
+    width: 20%;
+    height: 616px;
+}
+.box-publicidad1>div{
+    border: solid 1px;
+    height: 50%;
+}
 
 /***********/
 .custom-input-file {

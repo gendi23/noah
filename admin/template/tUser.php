@@ -10,7 +10,7 @@ $dataUserController= new DataUserController();
         <div class= "notification-pago2">
             <form action="/admin/change/user" class="form-horizontal" role="form" method="post" id="formUser" name="form" enctype="multipart/form-data">
                 <input type="hidden" name="userId" value="<?=$USERID?>"/>
-                <div class="col-md-6">
+                <div class="col-md-6" id="left">
                     <div class="form-group">
                         <label class="control-label col-sm-6" for="pass">Contraseña:</label>
                         <div class="col-sm-6">
@@ -30,10 +30,10 @@ $dataUserController= new DataUserController();
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6"  id="left">
                     <div class="box-foto">
                         <label class=" foto-perfil control-label col-sm-6" for="">Foto de Perfil</label>
-                        <div id="foto" style="background-image: url('/front/img/avatar.png');"></div>
+                        <div id="foto" style="background-image: url('<?=$dataUser->getPhoto()?>');"></div>
                         <div class="custom-input-file"><input type="file" class="input-file" name="photo"/>
                             Subir Foto
                         </div>
@@ -52,7 +52,8 @@ $dataUserController= new DataUserController();
        <center><p><h4> Publicidad</h4></p></center>
     </div>
    <div class= "notification-pago3">
-       <form action="/admin/login" class="form-horizontal" role="form" method="post" id="formUser" name="form">
+       <form action="/admin/change/dataUser" class="form-horizontal" role="form" method="post" id="formUser" name="form">
+           <input type="hidden" name="user" value="<?=$USERID?>"/>
             <div class="col-md-6">
                     <div class="form-group">
                         <label class="control-label col-sm-6" for="name">Nombre:</label>
@@ -61,9 +62,9 @@ $dataUserController= new DataUserController();
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-6" for="lastname">Apellido</label>
+                        <label class="control-label col-sm-6" for="last_name">Apellido</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="lastname" placeholder="" name="lastname" required value="<?=$dataUser->getLastName()?>">
+                            <input type="text" class="form-control" id="last_name" placeholder="" name="last_name" required value="<?=$dataUser->getLastName()?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -81,7 +82,7 @@ $dataUserController= new DataUserController();
                     <div class="form-group">
                         <label class="control-label col-sm-6" for="city">Cuidad</label>
                         <div class="col-sm-6">
-                            <input type="text" class="form-control" id="city" placeholder="" name="city," required value="<?=$dataUser->getCity()?>">
+                            <input type="text" class="form-control" id="city" placeholder="" name="city" required value="<?=$dataUser->getCity()?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -121,9 +122,8 @@ $dataUserController= new DataUserController();
    <div class="notification-pago4">
        <center><p><h4>Noticias Noah</h4></p></center>
    </div>
+    <div  class="box-publicidad1">
+        <div id="publicidad1"></div>
+        <div id="publicidad2"></div>
+    </div>
 
-<!--
-<div  class="box-publicidad1">
-    <div id="publicidad1"><center>Publicidad</center></div>
-    <div id="publicidad2"><center>Publicidad</center></div>
-</div>-->

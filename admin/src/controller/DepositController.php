@@ -12,6 +12,7 @@ class DepositController extends Controller {
 
         return array(
             "user"=>$model->getUser(),
+            "to_user"=>$model->getToUser(),
             "level"=>$model->getLevel(),
             "status"=>$model->getStatus(),
             "amount"=>$model->getAmount(),

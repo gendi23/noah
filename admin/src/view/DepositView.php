@@ -2,14 +2,15 @@
 
 /**
  * Created by PhpStorm.
- * User: GDiaz
+ * User: GDiaz.
+ * Edit: WAular
  * Date: 21/04/2016
  * Time: 15:06
  */
 class DepositView
 {
 
-    public static function depositPaymentForm($userId,$levelNumber,$emailParam,$subTitle=null){
+    public static function depositPaymentForm($userId,$levelNumber,$emailParam,$to,$subTitle=null){
         $form=new Form();
         $controller= new Controller();
         $subTitle=$subTitle!=null?$subTitle:"";
@@ -22,6 +23,10 @@ class DepositView
         $user= $form->Hidden(array(
             "name"=>"user",
             "value"=>$userId
+        ));
+        $toUser= $form->Hidden(array(
+            "name"=>"to_user",
+            "value"=>$to
         ));
         $email= $form->Hidden(array(
             "name"=>"email",
@@ -70,7 +75,7 @@ class DepositView
         ),"");
 
         $action='new';
-        $body= $title.$id.$user.$status.$level.$dateDeposit.$amount.$referenceNumber.$photo.$email;
+        $body= $title.$id.$user.$toUser.$status.$level.$dateDeposit.$amount.$referenceNumber.$photo.$email;
 
         return $form->showForm(array(
             "action"=>'/admin/deposit/'.$action,
@@ -78,5 +83,28 @@ class DepositView
             "submit"=>"Enviar",
             "multipart"=>""
         ),$body);
+    }
+
+
+    public function showTable(User $user){
+
+        $html= new Html();
+        $controller= new Controller();
+        $head=array(
+            "Usuario",
+            "2",
+            "3",
+        );
+        $body=array();
+        foreach($controller->getWhere(Tables::$Deposit,'user='.$user->getId()) as $row){
+
+            $t=array(
+               "a",
+               "b",
+               "c",
+            );
+            array_push($body,$t);
+        }
+        return $html->showTable($head,$body);
     }
 }

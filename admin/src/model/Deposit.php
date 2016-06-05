@@ -10,6 +10,7 @@ class Deposit {
 
     private $id;
     private $user;
+    private $toUser;
     private $level;
     private $status;
     private $amount;
@@ -21,6 +22,7 @@ class Deposit {
     {
         $this->setId($rs["id"]);
         $this->setUser($rs["user"]);
+        $this->setToUser($rs["to_user"]);
         $this->setLevel($rs["level"]);
         $this->setStatus($rs["status"]);
         $this->setAmount($rs["amount"]);
@@ -28,6 +30,7 @@ class Deposit {
         $this->setPhoto($rs["photo"]);
         $this->setReferenceNumber($rs["referencer_number"]);
     }
+
 
     /**
      * @return mixed
@@ -156,6 +159,23 @@ class Deposit {
     {
         $this->user = $user;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getToUser()
+    {
+        return $this->toUser;
+    }
+
+    /**
+     * @param mixed $toUser
+     */
+    public function setToUser($toUser)
+    {
+        $this->toUser = $toUser;
+    }
+
 
 
 }
