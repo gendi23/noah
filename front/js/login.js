@@ -51,12 +51,13 @@ $(document).ready(function(){
             cache: false,
             dataType: "json",
             type: 'GET',
-            url: "/validate/"+user,
+            url: "/validate/patrocinator/"+user,
             async:false,
             success: function (data) {
                 validate= data.status;
             }
         });
+
         if($("#license").is(':checked')){
         if (validate==1) {
             $("#icon-patrocinator span").removeClass('glyphicon-ban-circle');
