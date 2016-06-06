@@ -51,7 +51,7 @@ $(document).ready(function(){
             cache: false,
             dataType: "json",
             type: 'GET',
-            url: "/validate/"+user,
+            url: "/validate/patrocinator/"+user,
             async:false,
             success: function (data) {
                 validate= data.status;

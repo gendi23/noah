@@ -125,7 +125,14 @@ $app->get(
         $userController= new UserController();
         $array= get_object_vars(json_decode($userController->validateUser($user)));
 
+        $userModel= $userController->getByUser($user);
 
+        if($array['status']!=0){
+            if(count($userController->getReferred($userModel->getId()))>=2 ){
+                $array['status']=0;
+            }
+        }
+        echo json_encode($array);
     }
 );
 
