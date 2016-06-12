@@ -10,7 +10,7 @@
 class DepositView
 {
 
-    public static function depositPaymentForm($userId,$levelNumber,$emailParam,$to,$subTitle=null){
+    public static function depositPaymentForm($userId,$levelNumber,$emailParam,$subTitle=null){
         $form=new Form();
         $controller= new Controller();
         $subTitle=$subTitle!=null?$subTitle:"";
@@ -23,10 +23,6 @@ class DepositView
         $user= $form->Hidden(array(
             "name"=>"user",
             "value"=>$userId
-        ));
-        $toUser= $form->Hidden(array(
-            "name"=>"to_user",
-            "value"=>$to
         ));
         $email= $form->Hidden(array(
             "name"=>"email",
@@ -75,7 +71,7 @@ class DepositView
         ),"");
 
         $action='new';
-        $body= $title.$id.$user.$toUser.$status.$level.$dateDeposit.$amount.$referenceNumber.$photo.$email;
+        $body= $title.$id.$user.$status.$level.$dateDeposit.$amount.$referenceNumber.$photo.$email;
 
         return $form->showForm(array(
             "action"=>'/admin/deposit/'.$action,

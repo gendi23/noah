@@ -41,6 +41,13 @@ $app->get(
     }
 );
 
+$app->get(
+    '/publicity/:id',
+    function ($id) {
+        require_once 'view/publicity.php';
+    }
+);
+
 $app->post('/admin/change/user',function(){
 
     $userController= new UserController();

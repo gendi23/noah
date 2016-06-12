@@ -93,7 +93,7 @@ class Form {
 
     /**
      *
-     * @param $label
+     * @param $config (name, label, width1, width2)
      * @param $array (Donde la $key debe ser el value y $value sera el label del option )
      * @return string
      */
@@ -104,7 +104,7 @@ class Form {
         $width2=isset($config["width2"])?$config["width2"]:9;
         $select='
         <div class="form-group">
-                <label class="control-label col-sm-'.$width1.'" for="tipo">'.$config["label"].':</label>
+                <label class="control-label col-sm-'.$width1.'" for="'.$config["name"].'">'.$config["label"].':</label>
                 <div class="col-sm-'.$width2.'">
                         <select name="'.$config["name"].'" id="'.$config["name"].'" class="form-control" >
                         <option selected>Seleccione...</option>';

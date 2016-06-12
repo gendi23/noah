@@ -259,7 +259,7 @@ function textLevel($level){
         return $titleP1;
     }
 echo $dataUserController->getPopDataUser($user,$dataUser,'a','Aceptar');
-/*
+
 $patrocinator1= $userController->getPatrocinator($userId);
 $patrocinator2= $userController->getPatrocinator($patrocinator1->getId());
 $patrocinator3= $userController->getPatrocinator($patrocinator2->getId());
@@ -282,7 +282,7 @@ $patrocinator4= $userController->getPatrocinator($patrocinator3->getId());
         'patrocinator4',
         getTitlePopUp($patrocinator4->getId(),4),
         DepositView::depositPaymentForm($userId,4,$patrocinator4->getEmail()));
-*/
+
 ?>
 <script src="/front/js/jquery.js"></script>
 <script>

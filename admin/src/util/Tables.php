@@ -15,6 +15,8 @@ class Tables {
     public static $UserRole = 'user_role';
     public static $Level = 'level';
     public static $Deposit = 'deposit';
+    public static $Publicity = 'publicity';
+    public static $PublicityUser = 'publicity_user';
 
 }
 ?> 
