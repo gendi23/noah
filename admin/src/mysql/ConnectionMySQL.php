@@ -8,15 +8,15 @@
 
 class ConnectionMySQL {
     /*
-                private $host="localhost";
-                private $database="nnoahcom_noahadmin";
-                private $user="nnoahcom_admin";
-                private $pass="Adm1n2016";
-        */
-                private $host="localhost";
-                private $database="noah";
-                private $user="root";
-                private $pass="";
+                   private $host="localhost";
+                   private $database="nnoahcom_noahadmin";
+                   private $user="nnoahcom_admin";
+                   private $pass="Adm1n2";
+          /**/
+                   private $host="localhost";
+                   private $database="noah";
+                   private $user="root";
+                   private $pass="root";
 
     private function connection(){
         $pdo="";
@@ -37,17 +37,17 @@ class ConnectionMySQL {
         return $pdo;
     }
 
-    public function Select($obj,$id){
+    public function Select($obj,$id,$field=null){
 
         $sql= new Query();
-        $st= $this::connection()->query($sql->SelectById($obj,$id));
+        $st= $this::connection()->query($sql->SelectById($obj,$id,$field));
         $rs= $st->fetch();
         return $rs;
     }
 
-    public function SelectAll($table){
+    public function SelectAll($table,$field=null){
         $sql= new Query();
-        return $this::connection()->query($sql->Select($table));
+        return $this::connection()->query($sql->Select($table,$field));
     }
 
     public function SelectWhere($table,$condition){

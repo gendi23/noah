@@ -8,9 +8,9 @@
 
 class Controller {
 
-    public function getAll($table){
+    public function getAll($table,$field=null){
         $conn= new ConnectionMySQL();
-        $rs = $conn->SelectAll($table)->fetchAll();
+        $rs = $conn->SelectAll($table,$field)->fetchAll();
         return $rs;
     }
 
@@ -20,9 +20,9 @@ class Controller {
         return $rs;
     }
 
-    public function get($table,$id){
+    public function get($table,$id,$field=null){
         $conn= new ConnectionMySQL();
-        $rs = $conn->Select($table,$id);
+        $rs = $conn->Select($table,$id,$field);
         return $rs;
     }
 

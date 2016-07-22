@@ -1,6 +1,6 @@
 <?php
+date_default_timezone_set('America/Caracas');
 $USERID="";
-
 if(isset($_SESSION)){
     if(isset($_SESSION["userId"]) && $_SESSION["userId"]!=""){
         $USERID= $_SESSION["userId"];
@@ -8,6 +8,7 @@ if(isset($_SESSION)){
         $userController= new UserController();
         $dataUserController= new DataUserController();
         $levelController= new LevelController();
+        $publicityUserController= new PublicityUserController();
 
         $user= new User($userController->get(Tables::$User,$USERID));
         $dataUser= $dataUserController->getByUser($USERID);
@@ -20,6 +21,15 @@ if(isset($_SESSION)){
         }
 
         if($dataUser==""){
+            $bodyEmail= 'Estimad@ '.$user->getUser().',
+            est&aacute; intentando ingresar a la administraci&oacute;n Matriz Noah sin completar los datos del registro.
+            <br/><br/>Por favor complete sus datos a traves de este enlace.<br/><br/>
+            <a href="'.$_SERVER["HTTP_HOST"].'/?active=1&token='.$user->getToken().'&id='.$user->getId().'">
+            Activa tu cuenta aqu&iacute;.</a>';
+
+            $sendEmail= new SendEmail();
+            $sendEmail->sendOne("Activa tu cuenta",$bodyEmail,$user->getEmail());
+
             echo "<script>window.location='/admin/logout';</script>";
         }
 
@@ -46,14 +56,17 @@ if(isset($_SESSION)){
                     <span id="user-name"><center><?=strtoupper($nameUser)?></center></span>
                     <span id="user-level"><center><?=strtoupper("nivel ".$level->getLevel())?></center></span>
                 </div>
+                <?php $matrizHref=''; $matrizValue=''; if($publicityUserController->countPublicity($USERID,$level->getLevel())[0]>=20){
+                    $matrizHref='/admin/matriz';$matrizValue=$html->icon("cog").' Matriz';
+                } ?>
                 <?=$html->nav(array(
                     array('href'=>'/admin/home','label'=>$html->icon("home").' Inicio'),
                     array('href'=>'/admin/user','label'=>$html->icon("user").' Perfil'),
-                    array('href'=>'/admin/matriz','label'=>$html->icon("cog").' Matriz'),
+                    array('href'=>$matrizHref,'label'=>$matrizValue),
                     array('href'=>'#','label'=>$html->icon("list-alt").' Contacto'),
-                    array('href'=>'#','label'=>$html->icon("question-sign").' Ayuda'),
                     array('href'=>'/admin/logout','label'=>$html->icon("off").' Salir'),
                 ))?>
+
                 <img src="/front/img/inferior.jpg" alt="FullScream NOAH"/>
             </header>
             <section class="body-template">

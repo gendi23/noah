@@ -35,7 +35,7 @@ if(isset($_GET["active"])){
                             <li><a href="#" id="open-reg">Registrarse</a></li>
                             <li><a href="#" id="open-session">Usuario</a></li>
                             <li><a href="#">Video Tutorial</a></li>
-                            <li><a href="#">Guia Tutorial</a></li>
+                            <li><a href="/front/tutorial_matriz_Noah.pdf">Guia Tutorial</a></li>
                         </ul>
                     </li>
                     <li class="parent"><a href="#">Sistema NOAH</a></li>

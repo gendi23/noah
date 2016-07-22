@@ -1,0 +1,18 @@
+
+#icon-user,#icon-patrocinator{
+    position: relative;
+    left: -18px;
+}
+#icon-user{
+    top: 65px;
+    font-size: 20px;
+}
+#icon-patrocinator{
+    top: 230px;
+    font-size: 20px;
+}
+
+.container{
+    padding-left: 0;
+    padding-right: 0;
+}

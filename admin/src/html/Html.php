@@ -22,8 +22,9 @@ class Html{
         return '<button onclick="Delete(\''.$action.'\')" class="btn btn-xs btn-danger delete-from" id="'.$action.'"> '.$this->icon("remove").'</button>';
     }
 
-    public function btnLink($height,$color,$label,$action){
-        return '<a href="'.$action.'" class="btn btn-'.$height.' btn-'.$color.'">'.$label.'</a>';
+    public function btnLink($height,$color,$label,$action, $id=null){
+        $idTag = $id!=null?" id=".$id:"";
+        return '<a href="'.$action.'" class="btn btn-'.$height.' btn-'.$color.'" '.$idTag.'>'.$label.'</a>';
     }
 
     public function showTable($heads,$bodys){
@@ -158,7 +159,7 @@ class Html{
         return $html;
     }
 
-    public static function getHtml($include){
+    public static function getHtml($include,$var=null){
         ob_start();
         require_once $include;
         $html = ob_get_clean();

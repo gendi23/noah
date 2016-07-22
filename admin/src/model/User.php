@@ -15,6 +15,7 @@ class User {
     private $phone;
     private $patrocinator;
     private $status;
+    private $role;
 
     function __construct($rs)
     {
@@ -26,8 +27,27 @@ class User {
         $this->setPhone($rs["phone"]);
         $this->setPatrocinator($rs["patrocinator"]);
         $this->setStatus($rs["status"]);
+        $this->setRole($rs["role"]);
 
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    /**
+     * @param mixed $role
+     */
+    public function setRole($role)
+    {
+        $this->role = $role;
+    }
+
+
 
     /**
      * @return mixed

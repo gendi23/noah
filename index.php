@@ -33,11 +33,12 @@ $app = new \Slim\Slim();
  * is an anonymous function.
  */
 
+
 // Peticiones GET
 $app->get(
     '/',
     function () {
-        require_once 'view/layout.php';
+        require_once 'page/index.php';
     }
 );
 
@@ -93,9 +94,7 @@ $app->post('/admin/change/dataUser',function(){
     echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
 });
 
-$app->get(
-    '/admin/logout',
-    function () {
+$app->get('/admin/logout',function () {
         if(isset($_SESSION['user'])){
             unset($_SESSION["user"]);
             unset($_SESSION["userId"]);
@@ -111,24 +110,30 @@ $app->get("/test/email",function(){
     $sendMail->sendOne("test","prueba de correo","wiljacaular@gmail.com");
 });
 
-$app->get(
-    '/validate/:user',
-    function ($user) {
+$app->get('/validate/:user',function ($user) {
         $userController= new UserController();
         echo $userController->validateUser($user);
     }
 );
 
-$app->get(
-    '/validate/patrocinator/:user',
-    function ($user) {
+$app->get('/validate/patrocinator/:user',function ($user) {
         $userController= new UserController();
         $array= get_object_vars(json_decode($userController->validateUser($user)));
 
-        $userModel = $userController->getByUser($user);
+        $userModel= $userController->getByUser($user);
 
-        if(count($userController->getReferred($userModel->getId())) >= 2){
-            $array["status"]=0;
+        $dataUserController= new DataUserController();
+
+        $dataUser = $dataUserController->getByUser($userModel->getId());
+
+        if($dataUser==""){
+            $array['status']=0;
+        }
+
+        if($array['status']!=0){
+            if(count($userController->getReferred($userModel->getId()))>=2 ){
+                $array['status']=0;
+            }
         }
         echo json_encode($array);
     }
@@ -148,13 +153,6 @@ $app->get(
     function ($model) {
         $body='t'.ucwords($model).'.php';
         require_once 'admin/template/templateAdmin.php';
-    }
-);
-$app->get(
-    '/admin2/:model',
-    function ($model) {
-        $body='t'.ucwords($model).'.php';
-        require_once 'admin/template2/template2.php';
     }
 );
 
@@ -199,6 +197,8 @@ $app->get(
 /**
  * Realiza un insert de la base de datos pasandole el modelo al que se quiere insertar y valores por POST
  */
+
+
 $app->post(
     '/user/register',
     function () {
@@ -274,7 +274,7 @@ $app->post(
         $sendMail->sendOne(
             "Reseteo de contraseña",
             "Se ha realizado el cambio de contraseña.<br>La contraseña provicional es : $passProvitional<br>Ingrese al enlace para realizar el cambio de contraseña.<br> <a href='".$_SERVER["HTTP_HOST"]."/?updatePass=1'>Resetear Contraseña.</a>",
-            "wiljacaular@gmail.com"
+            $user->getEmail()
         );
 
         echo $json;
@@ -337,7 +337,7 @@ $app->post(
             $controller->getInsertJson(new DataUser($data));
         }
 
-        echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
+        echo "<script>window.location='/';</script>";
     }
 );
 $app->post(
@@ -380,7 +380,6 @@ $app->post(
 $app->post(
     '/admin/login',
     function () {
-        //print_r($_POST);die();
         $user = $_POST["user"];
         $pass = $_POST["pass-login"];
         $userController = new UserController();
@@ -390,10 +389,22 @@ $app->post(
         $_SESSION['user']=$user;
         $_SESSION['token']=$userModel->getToken();
 
-        echo "<script>window.location='/admin/home';</script>";
 
+         echo $userModel->getRole();
+
+        if($userModel->getRole()=='admin'){
+
+            echo "<script>window.location='/panel/matriz';</script>";
+        }else{
+            echo "<script>window.location='/admin/home';</script>";
+        }
     }
 );
+
+
+require_once 'rules/PanelRules.php';
+require_once 'rules/PublicityRule.php';
+require_once 'rules/mdlf.php';
 
 /***********************************************************************************************/
 

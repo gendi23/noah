@@ -18,6 +18,7 @@ class UserController extends Controller {
             "phone"=>"'".$model->getPhone()."'",
             "patrocinator"=>"'".$model->getPatrocinator()."'",
             "status"=>"0",
+            "role"=>"'".$model->getRole()."'",
         );
     }
 
@@ -48,7 +49,7 @@ class UserController extends Controller {
 
     public function getReferred($userId){
         $user= new User($this->get(Tables::$User,$userId));
-        $arrayUser= $this->getWhere(Tables::$User," patrocinator='".$user->getUser()."'");
+        $arrayUser= $this->getWhere(Tables::$User," patrocinator='".$user->getUser()."' order by id asc");
 
         return $arrayUser;
     }
@@ -112,5 +113,7 @@ class UserController extends Controller {
 
         return new User($this->selectOne("select * from user where user ='".$user->getPatrocinator()."'"));
     }
+
+
 }
 ?> 

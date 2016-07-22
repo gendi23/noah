@@ -35,6 +35,7 @@
     left: -41%;
     color: #fff;
     float: left;
+    top: -15px;
 }
 .datos-pop span{
     font-size: 13pt;
@@ -51,7 +52,7 @@
 }
 .datos-boton-pop{
     width: 71px;
-    height: 53px;
+    height: 40px;
     background-color: #87DE87;
     position: relative;
     left: 65%;
@@ -61,23 +62,29 @@
 .datos-boton-pop span{
     color: #fff;
 }
+.datos-pop li a{
+    color: #fff;
+}
 .datos-boton-pop span:first-child{
     position: relative;
-    top: -169%;
+    top: -205%;
     left: 35%;
     font-size: 13pt;
 }
-.datos-boton-pop span#text-aceptar{
+.datos-boton-pop a#text-aceptar{
     position: relative;
-    top: -159%;
+    top: -272%;
     left: 14%;
-    font-size: 14px;
+    font-size: 15px;
+    color: #fff;
 }
-.datos-boton-pop span#text-contactar{
+.datos-boton-pop a#text-contactar{
     position: relative;
-    top: -141%;
+    top: -178%;
     left: -14%;
-    font-size: 10px;
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
 }
 #background-body{
     width: 100%;
@@ -100,4 +107,22 @@
 }
 .open-data-pop{
     cursor: pointer;
+}
+#text-negar{
+    position: relative;
+    top: -70px;
+    left: 15px;
+    color: #fff;
+    font-size: 15px;
+}
+#text-negar:hover{
+    text-decoration: none;
+}
+.datos-boton-negar{
+     background-color: #a94442;
+     width: 71px;
+     height: 40px;
+     top: 9px;
+     position: relative;
+     left: 142px;
 }

@@ -13,6 +13,7 @@ class Form {
         $required='';
         $width1=isset($values["width1"])?$values["width1"]:3;
         $width2=isset($values["width2"])?$values["width2"]:9;
+        $maxlength= isset($values["maxlength"])?'maxlength="'.$values["maxlength"].'"':"";
         if(isset($values["required"]))$required='required';
 
         $r=$required!=''?' ':$required;
@@ -20,7 +21,7 @@ class Form {
         <div class="form-group">
             <label class="control-label col-sm-'.$width1.'" for="'.$values["name"].'">'.$r.$values["label"].'</label>
             <div class="col-sm-'.$width2.'">
-                <input type="'.$values["type"].'" class="form-control" id="'.$values["name"].'" name="'.$values["name"].'" value="'.$value.'" '.$required.'>
+                <input type="'.$values["type"].'" class="form-control" id="'.$values["name"].'" name="'.$values["name"].'" '.$maxlength.' value="'.$value.'" '.$required.'>
             </div>
         </div>';
         return $input;
@@ -43,16 +44,18 @@ class Form {
         $btn='';
         $formId='';
         $multi='';
+        $disabled="";
         if(isset($values["btnId"]))$btn=$values["btnId"];
         if(isset($values["formId"]))$formId=' id="'.$values["formId"].'" ';
         if(isset($values["multipart"]))$multi='enctype="multipart/form-data"';
+        if(isset($values["disabled"]))$disabled='disabled';
 
         $form='
-        <form action="'.$values["action"].'" class="form-horizontal" role="form" '.$formId.' method="'.$values["method"].'" '.$multi.'>
+        <form action="'.$values["action"].'" class="form-horizontal noah-form" role="form" '.$formId.' method="'.$values["method"].'" '.$multi.'>
             '.$body.'
             <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
-                <button type="submit" class="btn btn-primary" id="'.$btn.'">'.$values["submit"].'</button>
+                <button type="submit" class="btn btn-primary" id="'.$btn.'" '.$disabled.'>'.$values["submit"].'</button>
             </div>
             </div>
         </form>
@@ -93,7 +96,7 @@ class Form {
 
     /**
      *
-     * @param $label
+     * @param $config (name, label, width1, width2)
      * @param $array (Donde la $key debe ser el value y $value sera el label del option )
      * @return string
      */
@@ -104,7 +107,7 @@ class Form {
         $width2=isset($config["width2"])?$config["width2"]:9;
         $select='
         <div class="form-group">
-                <label class="control-label col-sm-'.$width1.'" for="tipo">'.$config["label"].':</label>
+                <label class="control-label col-sm-'.$width1.'" for="'.$config["name"].'">'.$config["label"].':</label>
                 <div class="col-sm-'.$width2.'">
                         <select name="'.$config["name"].'" id="'.$config["name"].'" class="form-control" >
                         <option selected>Seleccione...</option>';

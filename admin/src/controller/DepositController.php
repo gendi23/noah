@@ -12,7 +12,6 @@ class DepositController extends Controller {
 
         return array(
             "user"=>$model->getUser(),
-            "to_user"=>$model->getToUser(),
             "level"=>$model->getLevel(),
             "status"=>$model->getStatus(),
             "amount"=>$model->getAmount(),
@@ -42,7 +41,14 @@ class DepositController extends Controller {
         else{
             return "";
         }
+    }
 
+    public function isActiveByLevel($userId,$level){
+        if($this->getByLevel($userId,$level)!=""){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
 

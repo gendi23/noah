@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">-->
+        <script type="text/javascript" src="inc/TimeCircles.js"></script>
+        <link rel="stylesheet" href="inc/TimeCircles.css" />
+    </head>
+    <body>
+        <div class="container">
+
+            <h2>Counting down 15 minutes (900 seconds)</h2>
+            <div id="CountDownTimer" data-timer="15" style="width: 60px; height: 60px;"></div>
+
+
+        </div>
+        <script>
+
+            var selector= $("#CountDownTimer");
+            selector.data("timer",'15');
+            selector.TimeCircles(
+                    {
+                        time:
+                        {
+                            Days: { show: false },
+                            Hours: { show: false },
+                            Minutes: {show:false},
+                            Seconds: {
+                                text: "",
+                                color: "#32ae8b",
+                                show: true
+                            }
+                        },
+                        total_duration: "Auto"
+                    })
+                    .addListener(
+                    function(unit,value,total) {
+                        if (total == 10) {
+                            selector.data('timer',10);
+                            selector.TimeCircles({ time: { Days: { show:false }, Hours: { show:false }, Minutes: { color: '#900' }, Seconds: { color: '#900' } } })
+                        } else if (total == -1) {
+                            selector.TimeCircles().stop();
+                            window.close();
+                        }
+                    });
+
+        </script>       
+    </body>
+</html>

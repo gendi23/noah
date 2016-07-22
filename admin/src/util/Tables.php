@@ -11,10 +11,11 @@ class Tables {
     // Tablas para el manejo de usuarios
     public static $User = 'user';
     public static $DataUser = 'data_user';
-    public static $Role = 'role';
-    public static $UserRole = 'user_role';
+    public static $UserRole = 'role_user';
     public static $Level = 'level';
     public static $Deposit = 'deposit';
+    public static $Publicity = 'publicity';
+    public static $PublicityUser = 'publicity_user';
 
 }
 ?> 

@@ -8,7 +8,7 @@ $dataUserController= new DataUserController();
 
     <div id="formUserDiv">
         <div class= "notification-pago2">
-            <form action="/admin/change/user" class="form-horizontal" role="form" method="post" id="formUser" name="form" enctype="multipart/form-data">
+            <form action="/admin/change/user" class="form-horizontal noah-form" role="form" method="post" id="formUser" name="form" enctype="multipart/form-data">
                 <input type="hidden" name="userId" value="<?=$USERID?>"/>
                 <div class="col-md-6" id="left">
                     <div class="form-group">
@@ -52,7 +52,7 @@ $dataUserController= new DataUserController();
        <center><p><h4> Publicidad</h4></p></center>
     </div>
    <div class= "notification-pago3">
-       <form action="/admin/change/dataUser" class="form-horizontal" role="form" method="post" id="formUser" name="form">
+       <form action="/admin/change/dataUser" class="form-horizontal noah-form" role="form" method="post" id="formUser" name="form">
            <input type="hidden" name="user" value="<?=$USERID?>"/>
             <div class="col-md-6">
                     <div class="form-group">

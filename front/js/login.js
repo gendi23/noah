@@ -70,10 +70,7 @@ $(document).ready(function(){
                         url: "/user/register",
                         data: $('#form-reg').serialize(),
                         beforeSend: function( ) {
-                            $("#control-error-reg").html("");
-                            $("#control-error-reg").append('<div class="alert alert-warning">' +
-                            'Por favor espere mientras se cargan los datos...' +
-                            '</div>');
+                            console.log("Espere, esta cargando");
                         },
                         success: function (data) {
                             if (data.update == 1) {

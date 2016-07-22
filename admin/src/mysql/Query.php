@@ -14,11 +14,22 @@ class Query {
      * @return string
      * Retorna un query a base de un id.
      */
-    public function SelectById($table, $id){
+    public function SelectById($table, $id,$filter=null){
         $sql= "";
         if(!(trim($table)=="")){
             if(!(trim($id)=="")){
-                $sql = "select * from $table where id = $id";
+                $filterString="*";
+                if($filter!=null){
+                    $filterString="";
+                   foreach($filter as $f){
+                       if($filterString==""){
+                           $filterString.=$f;
+                       }else{
+                           $filterString.=",".$f;
+                       }
+                   }
+                }
+                $sql = "select $filterString from $table where id = $id";
             }
         }
         return $sql;
@@ -29,10 +40,21 @@ class Query {
      * @return string
      * Retorna un query generico
      */
-    public function Select($table){
+    public function Select($table, $filter=null){
         $sql= "";
         if(!(trim($table)=="")){
-                $sql = "select * from $table";
+            $filterString="*";
+            if($filter!=null){
+                $filterString="";
+                foreach($filter as $f){
+                    if($filterString==""){
+                        $filterString.=$f;
+                    }else{
+                        $filterString.=",".$f;
+                    }
+                }
+            }
+            $sql = "select $filterString from $table";
         }
         return $sql;
     }
