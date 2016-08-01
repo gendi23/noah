@@ -1,12 +1,11 @@
 <?php
+
 $depositController= new DepositController();
 
 $depositMatriz= $depositController->getByLevel($USERID,0);
 $deposit1= $depositController->getByLevel($USERID,1);
 
 $publicityController= new PublicityController();
-
-
 
 ?>
 <link rel="stylesheet" href="/front/css/matriz.css"/>
@@ -177,13 +176,14 @@ $titleP1=$dataPatrocinator!=""?'<center><h3><strong>Datos patrocinante 1</strong
 <?=Html::Popup(
     'payment',
     $titlePayment,
-    DepositView::depositPaymentForm($USERID,0,"wiljacaular@gmail.com"," (1000bs)"));
+    DepositView::depositPaymentForm($USERID,0,"noahcorporativa@gmail.com"," (1000bs)"));
 ?>
 <?=Html::Popup(
     'patrocinator1',
     $titleP1,
-    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail()," (800bs)",$patrocinator1->getId()));
+    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail()," (1500bs)",$patrocinator1->getId()));
 ?>
 <script>
+
 
 </script>

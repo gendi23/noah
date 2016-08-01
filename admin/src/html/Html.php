@@ -8,12 +8,16 @@ class Html{
 
     public function nav($items){
 
-       $value='<nav class="nav-style">
+        $value='<nav class="nav-style">
                 <ul>';
-            foreach($items as $item){
+        foreach($items as $item){
+            if(isset($item['disabled'])&&!$item['disabled']){
+                $value.='<li><span class="menu-disabled">'.$item['label'].'</span></li>';
+            }else{
                 $value.='<li><a href="'.$item['href'].'">'.$item['label'].'</a></li>';
             }
-       $value.='</ul>
+        }
+        $value.='</ul>
                 </nav>';
         return $value;
     }

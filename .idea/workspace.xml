@@ -2,137 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="576a3b14-cecd-48a6-a0ad-9b0b4b8c23b3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/bullet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/logo_avatar.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/next_photo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/img/noah-black.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/pause.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/play.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/prev_photo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/img/thumbnail_foto1pagina WEB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/img/thumbnail_foto2pagina WEB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/img/thumbnail_foto3pagina WEB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/img/thumbnail_logo pagina WEB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/triangle.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/tutorial_matriz_Noah.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-convex.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-convex.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-convex.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-dodgy.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-dodgy.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-dodgy.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-mfglabs.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-mfglabs.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-mfglabs.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/HELP-US-OUT.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/MIT.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rules/PageRules.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rules/PanelRules.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rules/PublicityRule.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/README.bower.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/inc/TimeCircles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/inc/TimeCircles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_animated.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_bordered-pulled.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_core.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_fixed-width.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_icons.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_larger.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_list.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_mixins.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_path.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_rotated-flipped.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_screen-reader.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_stacked.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/_variables.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/alianza.corporativa.noha.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/css/alianza.corporativa.noha.theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/animated.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/panelAdmin/bodyPopDeposit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/bordered-pulled.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/contact_me.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/core.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/fixed-width.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/css/font-awesome.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/font-awesome.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/scss/font-awesome.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/css/icon.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/icons.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/front/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/jqBootstrapValidation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/jquery-1.10.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/jquery.easing.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/larger.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/list.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/mixins.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/path.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/inc/readme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/readme.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/rotated-flipped.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/screen-reader.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/script.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/stacked.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/style.mod.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/panelAdmin/tDeposit.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/panelAdmin/tHome.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/panelAdmin/tMatriz.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/panelAdmin/tPublicity.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/panelAdmin/tSearchUser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/panelAdmin/template.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pluginsJs/time-circle/timecircles.jquery.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/font-awesome-4.6.3/less/variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/wowslider.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/wowslider.mod.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-convex.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-dodgy.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/page/js/engine1/ws-ctrl-mfglabs.svg" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\noah\admin\src\controller\users\RoleController.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\noah\admin\src\model\Role.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/mysql/ConnectionMySQL.php" afterPath="$PROJECT_DIR$/admin/src/mysql/ConnectionMySQL.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/controller/Controller/Controller.php" afterPath="$PROJECT_DIR$/admin/src/controller/Controller/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/controller/users/DataUserController.php" afterPath="$PROJECT_DIR$/admin/src/controller/users/DataUserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/model/Deposit.php" afterPath="$PROJECT_DIR$/admin/src/model/Deposit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/admin/template/tPublicity.php" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\noah\admin\template\tIndex.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/controller/DepositController.php" afterPath="$PROJECT_DIR$/admin/src/controller/DepositController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/view/DepositView.php" afterPath="$PROJECT_DIR$/admin/src/view/DepositView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/html/Form.php" afterPath="$PROJECT_DIR$/admin/src/html/Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/html/Html.php" afterPath="$PROJECT_DIR$/admin/src/html/Html.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/mysql/Query.php" afterPath="$PROJECT_DIR$/admin/src/mysql/Query.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/util/Tables.php" afterPath="$PROJECT_DIR$/admin/src/util/Tables.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/model/User.php" afterPath="$PROJECT_DIR$/admin/src/model/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/controller/users/UserController.php" afterPath="$PROJECT_DIR$/admin/src/controller/users/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/src/view/UserView.php" afterPath="$PROJECT_DIR$/admin/src/view/UserView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/css/dataPop.css" afterPath="$PROJECT_DIR$/front/css/dataPop.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/css/form.css" afterPath="$PROJECT_DIR$/front/css/form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/layout.php" afterPath="$PROJECT_DIR$/view/layout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/js/login.js" afterPath="$PROJECT_DIR$/front/js/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/front/css/matriz.css" afterPath="$PROJECT_DIR$/front/css/matriz.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/noah.iml" afterPath="$PROJECT_DIR$/.idea/noah.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/require.php" afterPath="$PROJECT_DIR$/admin/require.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/template/sessionForm.php" afterPath="$PROJECT_DIR$/admin/template/sessionForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/publicity.php" afterPath="$PROJECT_DIR$/view/publicity.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/template/tHome.php" afterPath="$PROJECT_DIR$/admin/template/tHome.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/template/tMatriz.php" afterPath="$PROJECT_DIR$/admin/template/tMatriz.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/template/tUser.php" afterPath="$PROJECT_DIR$/admin/template/tUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/template/templateAdmin.php" afterPath="$PROJECT_DIR$/admin/template/templateAdmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="noah.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -170,24 +46,6 @@
         <option name="myItemId" value="noah" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="user" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - noah@localhost [2]" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="noah" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
     </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
@@ -196,46 +54,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="tHome.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/template/tHome.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-38.73077" vertical-offset="999" max-vertical-offset="3298">
-              <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
-              <folding>
-                <marker date="1469190421664" expanded="true" signature="5849:6536" placeholder="..." />
-                <marker date="1469190421664" expanded="true" signature="5922:6168" placeholder="..." />
-                <marker date="1469190421664" expanded="true" signature="6194:6525" placeholder="..." />
-                <marker date="1469190421664" expanded="true" signature="8588:8599" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tSearchUser.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/panelAdmin/tSearchUser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154" vertical-offset="969" max-vertical-offset="2516">
-              <caret line="66" column="88" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tMatriz.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/template/tMatriz.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="510" max-vertical-offset="9928">
-              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+            <state vertical-scroll-proportion="-15.038462" vertical-offset="459" max-vertical-offset="10013">
+              <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dataPop.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/front/css/dataPop.css">
+      <file leaf-file-name="noah.deposit" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..deposit">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="publicity.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/publicity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.734252" vertical-offset="1752" max-vertical-offset="2261">
-              <caret line="125" column="24" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.47692308" vertical-offset="653" max-vertical-offset="2006">
+              <caret line="53" column="60" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="noah.user" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -244,81 +103,25 @@
       <file leaf-file-name="DepositController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/src/controller/DepositController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.269231" vertical-offset="412" max-vertical-offset="935">
-              <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+            <state vertical-scroll-proportion="-11.692307" vertical-offset="393" max-vertical-offset="952">
+              <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
               <folding>
-                <marker date="1467898044000" expanded="true" signature="1092:1160" placeholder="select * fro..Tables_Deposit..." />
-                <marker date="1467898044000" expanded="true" signature="1231:1299" placeholder="select * fro..Tables_Deposit..." />
+                <marker date="1469706860700" expanded="true" signature="1092:1160" placeholder="select * fro..Tables_Deposit..." />
+                <marker date="1469706860700" expanded="true" signature="1231:1299" placeholder="select * fro..Tables_Deposit..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="noah.user" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..user">
+      <file leaf-file-name="noah.publicity_user" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..publicity_user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state />
+          </provider>
           <provider editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="noah.level" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..level">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DepositView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/view/DepositView.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-62.76923" vertical-offset="0" max-vertical-offset="3536">
-              <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
-              <folding>
-                <element signature="n#getStatus#0;n#DepositView#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.962963" vertical-offset="5067" max-vertical-offset="5865">
-              <caret line="396" column="12" selection-start-line="396" selection-start-column="12" selection-end-line="396" selection-end-column="12" />
-              <folding>
-                <element signature="e#1078#2107#1#PHP" expanded="false" />
-                <element signature="e#2147#2534#1#PHP" expanded="false" />
-                <element signature="e#2564#2837#1#PHP" expanded="false" />
-                <element signature="e#3018#3140#1#PHP" expanded="false" />
-                <element signature="e#3186#3803#1#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/src/controller/users/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="2023">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-              <folding>
-                <marker date="1467980642000" expanded="true" signature="956:1031" placeholder="select * fro..Tables_User..." />
-                <marker date="1467980642000" expanded="true" signature="2574:2614" placeholder="select * fro..user..." />
-                <marker date="1467980642000" expanded="true" signature="3111:3149" placeholder="select * fro..user..." />
-                <marker date="1467980642000" expanded="true" signature="3312:3373" placeholder="select * fro..user..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -347,7 +150,6 @@
         <option value="$PROJECT_DIR$/admin/src/view/DepositView.php" />
         <option value="$PROJECT_DIR$/admin/src/controller/Controller/Controller.php" />
         <option value="$PROJECT_DIR$/admin/src/mysql/Query.php" />
-        <option value="$PROJECT_DIR$/view/publicity.php" />
         <option value="$PROJECT_DIR$/front/index.html" />
         <option value="$PROJECT_DIR$/view/layout.php" />
         <option value="$PROJECT_DIR$/page/index.html" />
@@ -381,10 +183,11 @@
         <option value="db-console:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/" />
         <option value="$PROJECT_DIR$/admin/src/view/UserView.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/admin/template/tMatriz.php" />
         <option value="$PROJECT_DIR$/admin/panelAdmin/tSearchUser.php" />
-        <option value="$PROJECT_DIR$/admin/template/tHome.php" />
         <option value="$PROJECT_DIR$/front/css/dataPop.css" />
+        <option value="$PROJECT_DIR$/admin/template/tHome.php" />
+        <option value="$PROJECT_DIR$/admin/template/tMatriz.php" />
+        <option value="$PROJECT_DIR$/view/publicity.php" />
       </list>
     </option>
   </component>
@@ -449,57 +252,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="noah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="noah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="front" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="noah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="noah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="noah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="noah" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="panelAdmin" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -537,20 +290,17 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -559,6 +309,9 @@
       <tasks />
       <pass-parent-env-vars>false</pass-parent-env-vars>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -602,31 +355,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.58943784" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17397882" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17397882" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19591528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22844176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45826235" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21635434" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -652,7 +405,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/admin/template/tMatriz.php</url>
-          <line>328</line>
+          <line>333</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -661,34 +414,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/publicity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.269231" vertical-offset="678" max-vertical-offset="1853">
-          <caret line="51" column="53" selection-start-line="51" selection-start-column="53" selection-end-line="51" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/bodyEmail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16346154" vertical-offset="0" max-vertical-offset="520">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="132" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rules/PageRules.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.095684804" vertical-offset="0" max-vertical-offset="533">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/page/js/engine1/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.4725275" vertical-offset="4080" max-vertical-offset="7327">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/page/css/alianza.corporativa.noha.theme.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46271512" vertical-offset="10672" max-vertical-offset="11645">
@@ -824,13 +549,13 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..role_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/controller/Controller/Controller.php">
@@ -838,13 +563,6 @@
         <state vertical-scroll-proportion="0.4828496" vertical-offset="310" max-vertical-offset="1122">
           <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/panelAdmin/tPublicity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -908,30 +626,19 @@
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..data_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..publicity_user">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/src/controller/users/DataUserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3501006" vertical-offset="608" max-vertical-offset="1683">
           <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -939,32 +646,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.6596154" vertical-offset="1169" max-vertical-offset="1768">
           <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="31" selection-end-column="21" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..deposit">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.962963" vertical-offset="5067" max-vertical-offset="5865">
-          <caret line="396" column="12" selection-start-line="396" selection-start-column="12" selection-end-line="396" selection-end-column="12" />
-          <folding>
-            <element signature="e#1078#2107#1#PHP" expanded="false" />
-            <element signature="e#2147#2534#1#PHP" expanded="false" />
-            <element signature="e#2564#2837#1#PHP" expanded="false" />
-            <element signature="e#3018#3140#1#PHP" expanded="false" />
-            <element signature="e#3186#3803#1#PHP" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="-5.962963" vertical-offset="6495" max-vertical-offset="7276">
+          <caret line="408" column="12" selection-start-line="408" selection-start-column="12" selection-end-line="408" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -972,7 +660,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41463414" vertical-offset="170" max-vertical-offset="3128">
           <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,12 +667,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308" vertical-offset="0" max-vertical-offset="2023">
           <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding>
-            <marker date="1467980642000" expanded="true" signature="956:1031" placeholder="select * fro..Tables_User..." />
-            <marker date="1467980642000" expanded="true" signature="2574:2614" placeholder="select * fro..user..." />
-            <marker date="1467980642000" expanded="true" signature="3111:3149" placeholder="select * fro..user..." />
-            <marker date="1467980642000" expanded="true" signature="3312:3373" placeholder="select * fro..user..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,21 +683,6 @@
             <element signature="n#textLevel#0;n#UserView#0;n#!!top" expanded="false" />
             <element signature="n#level2View#0;n#UserView#0;n#!!top" expanded="false" />
             <element signature="n#level3View#0;n#UserView#0;n#!!top" expanded="false" />
-            <marker date="1468591560450" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1468591560450" expanded="true" signature="-1:-1" placeholder="select * fro..deposit..." />
-            <marker date="1468591560450" expanded="true" signature="-1:-1" placeholder="select * fro..deposit..." />
-            <marker date="1468591560450" expanded="true" signature="-1:-1" placeholder="select * fro..deposit..." />
-            <marker date="1468591560450" expanded="true" signature="-1:-1" placeholder="select * fro..deposit..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/view/DepositView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-62.76923" vertical-offset="0" max-vertical-offset="3536">
-          <caret line="110" column="20" selection-start-line="110" selection-start-column="20" selection-end-line="110" selection-end-column="20" />
-          <folding>
-            <element signature="n#getStatus#0;n#DepositView#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1024,68 +691,167 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.8846154" vertical-offset="969" max-vertical-offset="2516">
           <caret line="66" column="88" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/src/controller/DepositController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.269231" vertical-offset="412" max-vertical-offset="935">
-          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-          <folding>
-            <marker date="1467898044000" expanded="true" signature="1092:1160" placeholder="select * fro..Tables_Deposit..." />
-            <marker date="1467898044000" expanded="true" signature="1231:1299" placeholder="select * fro..Tables_Deposit..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..user">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..level">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/template/tHome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-38.73077" vertical-offset="999" max-vertical-offset="3298">
-          <caret line="118" column="64" selection-start-line="118" selection-start-column="64" selection-end-line="118" selection-end-column="64" />
-          <folding>
-            <marker date="1469190421664" expanded="true" signature="5849:6536" placeholder="..." />
-            <marker date="1469190421664" expanded="true" signature="5922:6168" placeholder="..." />
-            <marker date="1469190421664" expanded="true" signature="6194:6525" placeholder="..." />
-            <marker date="1469190421664" expanded="true" signature="8588:8599" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/template/tMatriz.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="510" max-vertical-offset="9928">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/front/css/dataPop.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.734252" vertical-offset="1752" max-vertical-offset="2261">
-          <caret line="125" column="24" selection-start-line="125" selection-start-column="24" selection-end-line="125" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1752" max-vertical-offset="2261">
+          <caret line="127" column="1" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/html/Html.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38653848" vertical-offset="173" max-vertical-offset="2975">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1466652970000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/archivos/index_1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4576923" vertical-offset="2907" max-vertical-offset="7157">
+          <caret line="185" column="0" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/archivos/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0596154" vertical-offset="1785" max-vertical-offset="6800">
+          <caret line="168" column="14" selection-start-line="168" selection-start-column="14" selection-end-line="168" selection-end-column="14" />
+          <folding>
+            <marker date="1469468756000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1469468756000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1469468756000" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1469468756000" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/view/DepositView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.4333959" vertical-offset="3241" max-vertical-offset="3774">
+          <caret line="83" column="112" selection-start-line="83" selection-start-column="112" selection-end-line="83" selection-end-column="112" />
+          <folding>
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1469706910471" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/template/tHome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58653843" vertical-offset="2738" max-vertical-offset="3298">
+          <caret line="179" column="88" selection-start-line="179" selection-start-column="88" selection-end-line="179" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..publicity_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/template/tMatriz.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462" vertical-offset="459" max-vertical-offset="10013">
+          <caret line="50" column="12" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/src/controller/DepositController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.692307" vertical-offset="393" max-vertical-offset="952">
+          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+          <folding>
+            <marker date="1469706860700" expanded="true" signature="1092:1160" placeholder="select * fro..Tables_Deposit..." />
+            <marker date="1469706860700" expanded="true" signature="1231:1299" placeholder="select * fro..Tables_Deposit..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/panelAdmin/tPublicity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="533">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/b6fe6aa0/a3355a79-0e5a-4cba-a91b-b8d8165a1c8e/noah..deposit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/publicity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47692308" vertical-offset="653" max-vertical-offset="2006">
+          <caret line="53" column="60" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
           <folding />
         </state>
       </provider>

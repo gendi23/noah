@@ -41,6 +41,12 @@ $app->get(
         require_once 'page/index.php';
     }
 );
+$app->get(
+    '/check-session',
+    function () {
+        echo 'Ok';
+    }
+);
 
 $app->post('/admin/change/user',function(){
 

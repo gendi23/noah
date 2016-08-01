@@ -69,6 +69,13 @@ header nav li a>span{
     margin-right: 15px;
     color: #2ebd94;
 }
-
+.menu-disabled{
+    color: #747474;
+    font-size: 15px;
+}
+.menu-disabled>span {
+    margin-right: 15px;
+    color: #2ebd94;
+}
 
 /* Fin del area del menu*/

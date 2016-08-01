@@ -46,15 +46,24 @@ $publicity= new Publicity($publicityController->get(Tables::$Publicity,$id));
     </style>
 
 </head>
-<body">
+<body>
     <div id="contador">
         <div id="CountDownTimer" data-timer="25" ></div>
         <a href="/admin/home" class="btn btn-xs btn-warning" id="close"><span class="glyphicon glyphicon-remove"></span> Cerrar</a>
     </div>
-    <iframe src="<?= $publicity->getUrl() ?>" frameborder="0">link</iframe>
+    <iframe src="<?=$publicity->getUrl()?>" frameborder="0"  id="iframeTimer">link</iframe>
     <script src="/front/js/jquery.js"></script>
     <script type="text/javascript" src="/pluginsJs/time-circle/inc/TimeCircles.js"></script>
     <script>
+        $("#iframeTimer").height($(window).height())
+        function iframeLoaded() {
+            var iFrameID = document.getElementById('iframeTimer');
+            if(iFrameID) {
+                // here you can make the height, I delete it first, then I make it again
+                iFrameID.height = "";
+                iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+            }
+        }
         $(document).ready(function(){
             var selector= $("#CountDownTimer");
             selector.data("timer",'25');

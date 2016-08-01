@@ -44,7 +44,9 @@ if(isset($_SESSION)){
             <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
             <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="/front/css/style-admin.css"/>
+            <link rel="stylesheet" href="/front/css/timeout-dialog.css" type="text/css" media="screen, projection" />
             <link rel="stylesheet" href="/front/css/form.css"/>
+
         </head>
         <body>
         <div class="body-admin">
@@ -56,13 +58,15 @@ if(isset($_SESSION)){
                     <span id="user-name"><center><?=strtoupper($nameUser)?></center></span>
                     <span id="user-level"><center><?=strtoupper("nivel ".$level->getLevel())?></center></span>
                 </div>
-                <?php $matrizHref=''; $matrizValue=''; if($publicityUserController->countPublicity($USERID,$level->getLevel())[0]>=20){
-                    $matrizHref='/admin/matriz';$matrizValue=$html->icon("cog").' Matriz';
+                <?php
+                $des=false;
+                if($publicityUserController->countPublicity($USERID,$level->getLevel())[0]>=20){
+                    $des=true;
                 } ?>
                 <?=$html->nav(array(
                     array('href'=>'/admin/home','label'=>$html->icon("home").' Inicio'),
                     array('href'=>'/admin/user','label'=>$html->icon("user").' Perfil'),
-                    array('href'=>$matrizHref,'label'=>$matrizValue),
+                    array('href'=>'/admin/matriz','label'=>$html->icon("cog").' Matriz',"disabled"=>$des),
                     array('href'=>'#','label'=>$html->icon("list-alt").' Contacto'),
                     array('href'=>'/admin/logout','label'=>$html->icon("off").' Salir'),
                 ))?>
@@ -78,11 +82,32 @@ if(isset($_SESSION)){
             </section>
         </div>
         <script src="/front/js/jquery.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"></script>
         <script src="/bootstrap/js/bootstrap.min.js"></script>
         <script src="/front/js/bootstrap.file-input.js"></script>
         <script src="/front/js/Util.js"></script>
         <script src="/front/js/popup.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
+        <script src="/front/js/timeout-dialog.js"></script>
         <script>
+            $(function () {
+                setInterval(function(){
+                    $.timeoutDialog(
+                    {
+                        timeout: 1,
+                        countdown: 15,
+                        logout_redirect_url: '/admin/logout',
+                        restart_on_yes: false,
+                        title: 'Sesión expirada.',
+                        message: 'Su sesión expirará en {0} seg.',
+                        question: '¿desea continuar con logueado?',
+                        keep_alive_button_text:'Si, deseo continuar.',
+                        sign_out_button_text:'No, deseo salir.',
+                        keep_alive_url:''
+                    });
+                }, 5*60*1000);
+            });
+
         </script>
         </body>
         </html>

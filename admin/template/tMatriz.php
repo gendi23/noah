@@ -35,16 +35,21 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <?php for($i=4;$i>=2;$i--){
             $j=$i-1;
             if($depositController->isActiveByLevel($USERID,$j)){
-                if(!$depositController->isActiveByLevel($USERID,$i)){ ?>
-                    <button class="button-patrocinador level<?=$i?>-color" id="open-patrocinator<?=$i?>"><strong>Pagar Patrocinador <?=$i?></strong></button>
-                <?php }else{
-                    if($depositController->getByLevel($USERID,$i)->getStatus()==0){ ?>
-                        <button class="button-patrocinador level<?=$i?>-color disabled-noah" id="open-patrocinator<?=$i?>" disabled><strong>Pagado</strong></button>
-                    <?php }else{ ?>
-                        <button class="button-patrocinador level<?=$i?>-color" id="open-patrocinator<?=$i?>" disabled><strong>Pagado &nbsp;&nbsp;&nbsp;</strong><?=Html::icon("ok")?></button>
-                    <?php }} ?>
-            <?php }else{ ?>
-            <button class="button-patrocinador level<?=$i?>-color disabled-noah" id="open-patrocinator<?=$i?>" disabled><strong>Pagar Patrocinador <?=$i?></strong></button>
+                if($depositController->getByLevel($USERID,$j)->getStatus()==1){
+                    if(!$depositController->isActiveByLevel($USERID,$i)){ ?>
+                        <button class="button-patrocinador level<?=$i?>-color" id="open-patrocinator<?=$i?>"><strong>Pagar Patrocinador <?=$i?></strong></button>
+                    <?php }else{
+                        if($depositController->getByLevel($USERID,$i)->getStatus()==0){ ?>
+                            <button class="button-patrocinador level<?=$i?>-color disabled-noah" id="open-patrocinator<?=$i?>" disabled><strong>Pagado</strong></button>
+                        <?php }else{ ?>
+                            <button class="button-patrocinador level<?=$i?>-color" id="open-patrocinator<?=$i?>" disabled><strong>Pagado &nbsp;&nbsp;&nbsp;</strong><?=Html::icon("ok")?></button>
+                        <?php }}
+                }else { ?>
+                    <button class="button-patrocinador level<?=$i?>-color disabled-noah" id="open-patrocinator<?=$i?>" disabled><strong>Pagar Patrocinador <?=$i?></strong></button>
+                <?php }
+
+             }else { ?>
+                <button class="button-patrocinador level<?=$i?>-color disabled-noah" id="open-patrocinator<?=$i?>" disabled><strong>Pagar Patrocinador <?=$i?></strong></button>
             <?php }
             $j=0;
         }?>

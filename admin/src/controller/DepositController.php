@@ -41,6 +41,7 @@ class DepositController extends Controller {
         else{
             return "";
         }
+
     }
 
     public function isActiveByLevel($userId,$level){
