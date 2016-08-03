@@ -41,6 +41,17 @@ $app->get(
         require_once 'page/index.php';
     }
 );
+$app->post(
+    '/contactme',
+    function () {
+        $sendMail= new SendEmail();
+        print_r($_POST);
+        $body="Mensaje nuevo de ".$_POST["name"]."<br>Correo: ".$_POST["email"]."<br>Telefono: ".$_POST["phone"]."<br><br>"."Mensaje: ".$_POST["message"];
+        $sendMail->sendOne("Correo de contacto",$body,"noahcorporativa@gmail.com");
+       // $sendMail->sendOne("Correo de contacto",$body,"wiljacaular@gmail.com");
+    }
+);
+
 $app->get(
     '/check-session',
     function () {

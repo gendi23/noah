@@ -272,17 +272,17 @@ if(isset($_GET["active"])){
         <div class="">
             <ul class="list-inline social-buttons">
                 <li>
-                    <a href="#">
+                    <a href="https://www.facebook.com/corporacionnoah" target="_blank">
                         <i class="fa fa-facebook"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://twitter.com/NoahCorporacion  " target="_blank">
                         <i class="fa fa-twitter"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="https://www.youtube.com/channel/UCaupAZRUM2rR0sFnZV24hPA" target="_blank">
                         <i class="fa fa-youtube"></i>
                     </a>
                 </li>
