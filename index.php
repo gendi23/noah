@@ -301,9 +301,17 @@ $app->post(
             $deposit["photo"]= "/".$rute.$file;
 
             $depositController->getInsertJson(new Deposit($deposit));
+
+            $last= new Deposit($depositController->lastInsert(Tables::$Deposit));
+            $userDeposit= new User($depositController->get(Tables::$User,$last->getUser()));
+            $dataUserDeposit = new DataUser($depositController->selectOne("select * from ".Tables::$DataUser." where user=".$userDeposit->getId()));
+
+            $message= "Estimado Usuario,\n".$dataUserDeposit->getFullName()." ha realizado un deposito en su cuenta.";
+
+
             $sendMail= new SendEmail();
 
-            $sendMail->sendOne("Deposito Realizado","Estimado Usuario, se ha detectado un deposito en su cuenta.",$deposit["email"],$rute.$file);
+            $sendMail->sendOne("Deposito Realizado",$message,$deposit["email"],$rute.$file);
         }
 
         echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";

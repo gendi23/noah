@@ -1,0 +1,93 @@
+CREATE TABLE data_user
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user INT NOT NULL,
+    name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    cedula VARCHAR(20) NOT NULL,
+    country VARCHAR(30),
+    city VARCHAR(30) NOT NULL,
+    zone VARCHAR(30) NOT NULL,
+    photo VARCHAR(200),
+    bank_name VARCHAR(200) NOT NULL,
+    account_type VARCHAR(50) NOT NULL,
+    account_number VARCHAR(200) NOT NULL
+);
+CREATE TABLE deposit
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user INT NOT NULL,
+    level INT,
+    status INT DEFAULT 0 NOT NULL,
+    amount INT NOT NULL,
+    date_deposit DATE NOT NULL,
+    photo VARCHAR(100),
+    referencer_number VARCHAR(100) NOT NULL
+);
+CREATE TABLE level
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user INT NOT NULL,
+    level INT NOT NULL,
+    status INT DEFAULT 0 NOT NULL
+);
+CREATE TABLE message
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    message LONGTEXT NOT NULL,
+    color VARCHAR(100) DEFAULT '#000',
+    type VARCHAR(100),
+    size INT DEFAULT 14,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+CREATE TABLE publicity
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    name VARCHAR(200) NOT NULL,
+    url LONGTEXT NOT NULL,
+    level INT NOT NULL
+);
+CREATE TABLE publicity_user
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user INT NOT NULL,
+    publicity INT NOT NULL,
+    status INT NOT NULL,
+    level INT DEFAULT 1 NOT NULL,
+    date DATE
+);
+CREATE TABLE role_user
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    role VARCHAR(100) NOT NULL,
+    user INT NOT NULL
+);
+CREATE TABLE user
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user VARCHAR(30) NOT NULL,
+    pass VARCHAR(20) NOT NULL,
+    token VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    phone VARCHAR(30),
+    patrocinator VARCHAR(30) NOT NULL,
+    status INT,
+    role VARCHAR(100) NOT NULL,
+    date TIME
+);
+CREATE TABLE user_matriz
+(
+    id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    user INT NOT NULL,
+    count INT DEFAULT 0 NOT NULL,
+    create_date DATETIME,
+    update_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+ALTER TABLE data_user ADD FOREIGN KEY (user) REFERENCES user (id);
+ALTER TABLE deposit ADD FOREIGN KEY (user) REFERENCES user (id);
+ALTER TABLE level ADD FOREIGN KEY (user) REFERENCES user (id);
+ALTER TABLE publicity_user ADD FOREIGN KEY (user) REFERENCES user (id);
+ALTER TABLE publicity_user ADD FOREIGN KEY (publicity) REFERENCES publicity (id);
+ALTER TABLE role_user ADD FOREIGN KEY (user) REFERENCES user (id);
+CREATE UNIQUE INDEX user ON user (user);
+ALTER TABLE user_matriz ADD FOREIGN KEY (user) REFERENCES user (id);
