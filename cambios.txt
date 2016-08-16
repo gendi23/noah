@@ -1,0 +1,45 @@
+template(matriz):
+	tUser
+	tHome
+	tMatriz
+	
+index
+require
+
+PanelAdmin
+	tMatriz
+	template
+	tMensajeria
+	
+Controller
+	DepositView
+	MessageView
+	
+Front>css
+	form.css
+	matriz.css
+	
+Rules
+	PanelRules
+	
+******************************************************************************
+	
+	Agregar nuevas tablas
+	CREATE TABLE message(
+  id int PRIMARY KEY AUTO_INCREMENT NOT NULL ,
+  message text NOT NULL ,
+  color VARCHAR(100) DEFAULT '#000',
+  type VARCHAR(100),
+  size int DEFAULT 14,
+  date TIMESTAMP DEFAULT current_timestamp()
+);
+
+CREATE TABLE user_matriz
+(
+  id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user int NOT NULL,
+  count int DEFAULT 0 NOT NULL,
+  create_date DATETIME,
+  update_date TIMESTAMP DEFAULT current_timestamp,
+  FOREIGN KEY (user) REFERENCES user(id)
+);

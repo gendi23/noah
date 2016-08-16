@@ -54,6 +54,7 @@ class Query {
                     }
                 }
             }
+
             $sql = "select $filterString from $table";
         }
         return $sql;

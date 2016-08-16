@@ -7,12 +7,12 @@
  */
 
 class ConnectionMySQL {
-    /*
+/*
                    private $host="localhost";
-                   private $database="nnoahcom_noahadmin";
+                   private $database="nnoahcom_noahadmin2";
                    private $user="nnoahcom_admin";
-                   private $pass="Adm1n2";
-          /**/
+                   private $pass="ac1714ami.";
+ */
                    private $host="localhost";
                    private $database="noah";
                    private $user="root";
@@ -45,9 +45,10 @@ class ConnectionMySQL {
         return $rs;
     }
 
-    public function SelectAll($table,$field=null){
+    public function SelectAll($table,$field=null,$order=null){
         $sql= new Query();
-        return $this::connection()->query($sql->Select($table,$field));
+        if($order==null)$order=" order by id desc";
+        return $this::connection()->query($sql->Select($table,$field).$order);
     }
 
     public function SelectWhere($table,$condition){

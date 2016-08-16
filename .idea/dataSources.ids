@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
   <data-source name="MySQL - noah@localhost [2]" uuid="a3355a79-0e5a-4cba-a91b-b8d8165a1c8e">
-    <database-info product="MySQL" version="5.0.51b-community-nt" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+    <database-info product="MySQL" version="5.6.24" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -43,6 +43,15 @@
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="level_ibfk_1" columns="user" ref-table="user" ref-schema="" ref-catalog="noah" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
+    <table name="message" schema="" catalog="noah" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="message" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="color" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12" def="JyMwMDAn"/>
+      <column name="type" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="size" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MTQ="/>
+      <column name="date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="publicity" schema="" catalog="noah" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" precision="200" scale="0" nullable="false" jdbcType="12"/>
@@ -61,6 +70,14 @@
       <primary-key name="PRIMARY" columns="id"/>
       <foreign-key name="publicity_user_ibfk_1" columns="user" ref-table="user" ref-schema="" ref-catalog="noah" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
       <foreign-key name="publicity_user_ibfk_2" columns="publicity" ref-table="publicity" ref-schema="" ref-catalog="noah" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="role" schema="" catalog="noah" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="role" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="level" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="unique_role" unique="true" columns="role"/>
     </table>
     <table name="role_user" schema="" catalog="noah" type="TABLE">
       <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -85,7 +102,17 @@
       <exported-key name="level_ibfk_1" table="level" schema="" catalog="noah" columns="user"/>
       <exported-key name="publicity_user_ibfk_1" table="publicity_user" schema="" catalog="noah" columns="user"/>
       <exported-key name="role_user_ibfk_1" table="role_user" schema="" catalog="noah" columns="user"/>
+      <exported-key name="user_matriz_ibfk_1" table="user_matriz" schema="" catalog="noah" columns="user"/>
       <index name="user" unique="true" columns="user"/>
+    </table>
+    <table name="user_matriz" schema="" catalog="noah" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="count" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4" def="MQ=="/>
+      <column name="create_date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="update_date" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="user_matriz_ibfk_1" columns="user" ref-table="user" ref-schema="" ref-catalog="noah" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
     </table>
   </data-source>
 </component>

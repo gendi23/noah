@@ -29,6 +29,12 @@ $dataUserController= new DataUserController();
                             <input type="email" class="form-control" id="email" placeholder="" name="email" required value="<?=$user->getEmail()?>">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-6" for="phone">Telefono</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="phone" placeholder="" name="phone" required value="<?=$user->getPhone()?>">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6"  id="left">
                     <div class="box-foto">

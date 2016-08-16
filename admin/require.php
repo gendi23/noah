@@ -20,12 +20,14 @@ $require= array(
     'src/model/Deposit.php',
     'src/model/Publicity.php',
     'src/model/PublicityUser.php',
+    'src/model/Message.php',
 
     /**
      * Controladores de vista
      */
     'src/view/UserView.php',
     'src/view/DepositView.php',
+    'src/view/MessageView.php',
 
 
     /**

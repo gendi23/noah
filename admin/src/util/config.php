@@ -14,7 +14,12 @@ class Config{
     public static $port='25';
     public static $fromAddress='matriz@corporacionnoah.com.ve';
     public static $fromName='Matriz Noah';
-    /*
+
+    /*public static $hostSMTPMadrill='smtp.mandrillapp.com';
+    public static $userSMTPMadrill='wiljacaular@gmail.com';
+    public static $passSMTPMadrill='HkQN97rglCj5QyVNTg1k9w';
+    public static $portMandrill= '587';
+
     public static $hostSMTP='smtp.mandrillapp.com';
     public static $userSMTP='wiljacaular@gmail.com';
     public static $passSMTP='HkQN97rglCj5QyVNTg1k9w';

@@ -17,30 +17,31 @@ $publicity= new Publicity($publicityController->get(Tables::$Publicity,$id));
     <link rel="stylesheet" href="/pluginsJs/time-circle/inc/TimeCircles.css" />
     <style>
         iframe{
-            width: 102%;
+            width: 100%;
             height: 600px;
             margin-left: -8px;
             margin-top: 0px;
         }
 
         .time_circles > div > span{
-            color: #000;
+            color: #ff0101;
+            font-size: 22px !important;
         }
         #CountDownTimer{
             width: 60px;
             height: 60px;
         }
-        #contador{
-            position: absolute;
-            left: 1179px;
+        #contador {
+            position: fixed;
+            left: 85%;
             top: 48px;
         }
-        #contador>a{
+        #contador>a {
             color: #fff;
             font-family: 'Dosis', 'Tahoma', sans-serif;
             position: relative;
-            top: -40px;
-            left: 80px;
+            top: -29px;
+            left: 87px;
             display: none;
         }
     </style>

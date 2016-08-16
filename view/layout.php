@@ -2,6 +2,10 @@
 $userView= new UserView();
 $active=0;
 if(isset($_GET["active"])){
+    $id= $_GET["id"];
+    $userController= new UserController();
+    print_r($userController->get(Tables::$User,$id));
+
     $active=1;
 }
 ?>

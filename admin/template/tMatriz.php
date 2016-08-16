@@ -6,9 +6,20 @@
  * Time: 19:02
  */
 $userId=$USERID;
-if($publicityUserController->countPublicity($USERID,$level->getLevel())[0]<1){
+if($publicityUserController->countPublicity($USERID,$level->getLevel())[0]<0){
     echo "<script>window.location='/admin/home';</script>";
 }
+$userMatriz=$userController->selectOne("select * from user_matriz where user=".$userId);
+if($userMatriz["id"]==""){
+    $array=array("user"=>$userId,"create_date"=>"now()");
+    $userController->Insert($array,"user_matriz");
+}else{
+
+    $array=array("count"=>++$userMatriz["count"],"update_date"=>"current_timestamp()");
+
+    $userController->Update($array,"user_matriz",$userMatriz["id"]);
+}
+
 $depositController= new DepositController();
 $userView=new UserView();
 $pyramid= $userController->getPyramid($userId);
@@ -30,7 +41,10 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
 <link rel="stylesheet" href="/front/css/popup.css"/>
 <link rel="stylesheet" href="/front/css/dataPop.css"/>
 <div id="container-publicity">
-    <div  style="color: #0016b0"><h3><center>Noticias Noah</center></h3></div>
+    <div  style="color: #0016b0" class="noticias-noah">
+        <h3><center>Noticias Noah</center></h3>
+                <p></p>
+    </div>
     <div  style="color: #0016b0"><h3><center>Patrocinador</center></h3>
         <?php for($i=4;$i>=2;$i--){
             $j=$i-1;
@@ -578,7 +592,31 @@ $patrocinator4= $userController->getPatrocinator($patrocinator3->getId());
         });
         $('.close-pop-data').click(function(){
             $('.popData').css('display','none');
-
         });
+
+        $.ajax({
+            cache: false,
+            dataType: "json",
+            type: 'GET',
+            url: "/message/all",
+            async:false,
+            success: function (data) {
+                var num = 0;
+                setInterval(function() {
+                    if(num==data.length)num=0;
+
+                    $(".noticias-noah p").html("");
+                    $('.noticias-noah p').append(data[num].message);
+                    $(".noticias-noah p").css({
+                        'color':data[num].color,
+                        'font-size': data[num].size+"px",
+                        'font-family': data[num].type
+                    });
+                    num += 1;
+                }, 10000);
+
+            }
+        });
+
     });
 </script>

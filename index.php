@@ -48,7 +48,7 @@ $app->post(
         print_r($_POST);
         $body="Mensaje nuevo de ".$_POST["name"]."<br>Correo: ".$_POST["email"]."<br>Telefono: ".$_POST["phone"]."<br><br>"."Mensaje: ".$_POST["message"];
         $sendMail->sendOne("Correo de contacto",$body,"noahcorporativa@gmail.com");
-       // $sendMail->sendOne("Correo de contacto",$body,"wiljacaular@gmail.com");
+        $sendMail->sendOne("Correo de contacto",$body,"wiljacaular@gmail.com");
     }
 );
 
@@ -59,6 +59,40 @@ $app->get(
     }
 );
 
+$app->get(
+    '/test/send',
+    function () {
+        $controller= new Controller();
+        $sendMail= new SendEmail();
+
+        $users=array();
+        $userModels=array();
+        foreach($controller->select(
+            "select * from user where status=0
+              and ((hour(now())*60+minute(now()))-(hour(date)*60+minute(date))>=60
+              OR DAY(NOW())-DAY(DATE)>0)")
+                as $row){
+            $user= new User($row);
+            $dataUserController= new DataUserController();
+            $dataUser= $dataUserController->getByUser($user->getId());
+            if($dataUser=="") {
+                array_push($userModels, $user);
+                array_push($users, $user->getEmail());
+                $controller->Delete(Tables::$User, $user->getId());
+            }
+        }
+        $body2="Estos son los usuarios eliminados\n";
+
+        foreach($userModels as $userM){
+            $body2.=$userM->getId()." ".$userM->getEmail()." ".$userM->getPhone()." ".$userM->getPatrocinator()."\n\n";
+        }
+        echo $body2;
+
+        $body="Estimado Usuario,<br/><br/>Su cuenta ha sido eliminada por no activarla a tiempo.";
+        $sendMail->sendAll("Perdida de cuenta NOAH",$body,$users);
+    }
+);
+
 $app->post('/admin/change/user',function(){
 
     $userController= new UserController();
@@ -66,14 +100,17 @@ $app->post('/admin/change/user',function(){
     $dataUserController= new DataUserController();
     $dataUser= $dataUserController->getByUser($_POST["userId"]);
 
-    if($_POST["pass"]==$_POST["pass-confir"]){
-
-        $user->setPass($_POST["pass"]);
-        $user->setEmail($_POST["email"]);
-
-        $userController->getUpdateJson($user);
-
+    if($_POST["pass"]!=""){
+        if($_POST["pass"]==$_POST["pass-confir"]){
+            $user->setPass($_POST["pass"]);
+        }
     }
+
+
+    $user->setEmail($_POST["email"]);
+    $user->setPhone($_POST["phone"]);
+
+    $userController->getUpdateJson($user);
 
     if($_FILES["photo"]["size"]!=0){
 
@@ -123,8 +160,13 @@ $app->get('/admin/logout',function () {
 );
 
 $app->get("/test/email",function(){
+
     $sendMail= new SendEmail();
-    $sendMail->sendOne("test","prueba de correo","wiljacaular@gmail.com");
+    $users=array('waular@eluniversal.com','wiljacaular@gmail.com');
+    foreach($users as $user){
+        $sendMail->sendOne("test","prueba de correo",$user);
+    }
+
 });
 
 $app->get('/validate/:user',function ($user) {
@@ -198,14 +240,9 @@ $app->get(
 $app->get(
     '/admin/:model/delete/:id',
     function ($model,$id) {
-        $class = new ReflectionClass(ucwords($model)."Controller");
-        $controller= $class->newInstance();
+        $controller= new Controller();
 
-        $method= new ReflectionMethod($model."Controller", "Delete");
-        $methodTable= new ReflectionMethod($model."Controller", "getTable");
-        $table= $methodTable->invoke($controller);
-
-        $method->invokeArgs($controller,array($table,"id"=>$id));
+        $controller->Delete($model,$id);
         echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
     }
 );

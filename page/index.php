@@ -2,7 +2,16 @@
 $userView= new UserView();
 $active=0;
 if(isset($_GET["active"])){
-    $active=1;
+    $id= $_GET["id"];
+    $userController= new UserController();
+    $user= new User($userController->get(Tables::$User,$id));
+    if($user->getId()!=''&&$user->getId()!=null){
+        echo "<script>console.log('User: ".$user->getId()."');</script>";
+        $active=1;
+    }else{
+        echo "<script>console.log('User no: ".$user->getId()."');</script>";
+    }
+
 }
 ?>
 <!DOCTYPE html>
@@ -317,7 +326,7 @@ if(isset($_GET["active"])){
 <?=Html::Popup(
     'message',
     null,
-    '<h3 id="message-login">Felicitaciones, debes ingresar a tu correo electrónico GMAIL para completar tus datos.</h3>'
+    '<h3 id="message-login">Felicitaciones, debes ingresar a tu correo electrónico GMAIL para completar tus datos. Para completar el registro tienes una hora, de no hacerlo deberás crear tu usuario de nuevo.</h3>'
 )?>
 <?php
 if(isset($_GET["id"])){

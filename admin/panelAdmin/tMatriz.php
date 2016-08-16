@@ -11,7 +11,7 @@ foreach($array as $row){
     $deposit= new Deposit($row);
     $userD= new User($controller->get(Tables::$User,$deposit->getUser()));
     $body2=$depositView->bodyPop2($userD,$deposit);
-    echo $html->Popup("deposit-".$deposit->getId(),"<center><h3>Notificacion de pago: ".$userD->getUser()."</h3></center>",$body2);
+    echo $html->Popup("deposit-".$deposit->getId(),"<center><h3>Pago de Usuario: ".$userD->getUser()."</h3></center>",$body2);
 
 }
 

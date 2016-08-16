@@ -7,6 +7,11 @@ $deposit1= $depositController->getByLevel($USERID,1);
 
 $publicityController= new PublicityController();
 
+$userMatriz=$userController->selectOne("select * from user_matriz where user=".$USERID);
+
+if($userMatriz["id"]==""){
+}
+
 ?>
 <link rel="stylesheet" href="/front/css/matriz.css"/>
 <link rel="stylesheet" href="/front/css/popup.css"/>
@@ -65,13 +70,15 @@ $publicityController= new PublicityController();
                 <button class="button-admin disabled-noah" id="open-patrocinator1" disabled><strong>Pagar a Patrocinador</strong></button>
             <?php } ?>
         </div>
-    <?php } ?>
+    <?php }
+    $activeMatriz=0;
+    if($userMatriz["id"]==""){
+    ?>
    <div class="notification-pago">
         <p class="text-justify">
-            <strong>Tercer paso:</strong> Debes invitar a dos personas a formar parte de tu matriz. A partir de este momento tienes 10 dias para hacerlo, de lo contrario, tu cuenta será bloqueada..
+            <strong>Tercer paso:</strong> Debes invitar a dos personas a formar parte de tu matriz. A partir de este momento tienes 10 dias para hacerlo, de lo contrario, tu cuenta será bloqueada.
         </p>
         <?php
-        $activeMatriz=0;
         if($depositController->isActiveByLevel($USERID,1)&&$depositController->getByLevel($USERID,1)->getStatus()==1){
             $activeMatriz=1;
             if($publicityUserController->countPublicity($USERID,$level->getLevel())[0]>=20){
@@ -84,6 +91,7 @@ $publicityController= new PublicityController();
             <button class="button-admin disabled-noah" id="matriz" onclick=" location.href='/admin/matriz'" disabled><strong>Matriz</strong></button>
        <?php } ?>
     </div>
+    <?php }else{ $activeMatriz=1;} ?>
     <div class="box-aviso">
         <?php $view=''; if($publicityUserController->countPublicity($USERID,$level->getLevel())[0]<20)$view='style="color:red;"';?>
         <h4 <?=$view?>>
@@ -144,7 +152,7 @@ $publicityController= new PublicityController();
     </div>
     <?php }?>
 </div>
-<div  class="box-publicidad"">
+<div  class="box-publicidad">
     <div id="publicidad1"></div>
     <div id="publicidad2"></div>
 </div>
@@ -181,7 +189,7 @@ $titleP1=$dataPatrocinator!=""?'<center><h3><strong>Datos patrocinante 1</strong
 <?=Html::Popup(
     'patrocinator1',
     $titleP1,
-    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail()," (1500bs)",$patrocinator1->getId()));
+    DepositView::depositPaymentForm($USERID,1,$patrocinator1->getEmail()," (800bs)",$patrocinator1->getId()));
 ?>
 <script>
 

@@ -83,10 +83,10 @@
     color: blue;
     padding-left: 20px;
     padding-right: 20px;
-    font-size: 16pt !important;
+    font-size: 14pt !important;
     font-weight: bold;
     padding-top: 5px;
-
+    text-transform: none;
 }
 #popup-message{
     top: 100px;

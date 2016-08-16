@@ -32,14 +32,15 @@ if(isset($_SESSION["userId"]) && $_SESSION["userId"]!=""){
         }
         header>h4{
             position: relative;
-            left: 40%;
+            padding-left: 40%;
             top: -90px;
             margin-bottom: -27px;
+            width: 60%;
         }
         header p{
             position: relative;
             top: -50px;
-            left: 35%;
+            left: 30%;
             font-size: 17pt;
             margin-bottom: -30px;
         }
@@ -66,7 +67,8 @@ if(isset($_SESSION["userId"]) && $_SESSION["userId"]!=""){
             <div>
                 <p><a href="/panel/matriz">Matriz</a> -
                     <a href="/panel/searchUser">Buscador de usuarios</a> -
-                    <a href="#">Anuncios</a></p>
+                    <a href="#">Anuncios - </a>
+                    <a href="/panel/mensajeria">Mensajería</a></p>
             </div>
         </header>
         <section>

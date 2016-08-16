@@ -20,6 +20,7 @@ body{
 #codigoCaptcha{
     color:#0016b0;
     font-weight: bold;
+    font-size: 19px;
 }
 .margin-none{
     margin: 0 !important;

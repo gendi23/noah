@@ -108,8 +108,10 @@ class DepositView
 
         $html= new Html();
         $controller= new Controller();
+        $userController= new UserController();
         $head=array(
             "USUARIO",
+            "PATROCINADOR",
             "FECHA",
             "STATUS",
             "VER"
@@ -118,8 +120,10 @@ class DepositView
         foreach($controller->getWhere(Tables::$Deposit,'level = 0 ORDER BY status DESC') as $row){
             $deposit= new Deposit($row);
             $userD= new User($controller->get(Tables::$User,$deposit->getUser()));
+
             $t=array(
                $userD->getUser(),
+               $userD->getPatrocinator(),
                $deposit->getDateDeposit(),
                $this->getStatus($deposit->getStatus()),
                 $html->btnLink("xs","warning",$html->icon("eye-open")." Ver","#","open-deposit-".$deposit->getId()),
@@ -175,7 +179,7 @@ class DepositView
 </style>
 <form action="#" class="form-horizontal" role="form" method="post" id="loginForm" name="form">
     <div class="form-group">
-        <label class="control-label col-sm-6" for="user-login">Usuario</label>
+        <label class="control-label col-sm-6" for="user-login">Nombre</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="user-login" name="user" value="'.$var["user"].'"disabled>
         </div>

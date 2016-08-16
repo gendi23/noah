@@ -47,7 +47,16 @@ $app->get(
     }
 );
 
+$app->get('/message/all',function(){
+    $controller= new Controller();
+    $array= array();
+    foreach($controller->getAll("message") as $row){
+        unset($row[0],$row[1],$row[2],$row[3],$row[4],$row[5]);
 
+        array_push($array,$row);
+    }
+    echo json_encode($array);
+});
 $app->post(
     '/panel/user/update',
     function(){
@@ -98,6 +107,35 @@ $app->get('/panel/set/:depositId/:status',function($depositId,$status){
 
     echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
 });
+$app->post('/panel/message/insert',function(){
+    $controller= new Controller();
+    for($i=1;$i<=1;$i++){
+        if($_POST["message".$i]!=""){
+            $message= array(
+                "message"=>"'".$_POST["message".$i]."'",
+                "color"=>"'".$_POST["color".$i]."'",
+                "type"=>"'".$_POST["type".$i]."'",
+                "size"=>$_POST["size".$i],
+            );
+            $controller->Insert($message,"message");
+        }
 
+    }
+    echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
+});
+
+$app->post('/panel/message/:id',function($id){
+    $controller= new Controller();
+    $message= new Message($controller->get("message",$id));
+
+    $message->setMessage($_POST["message"]);
+    $message->setColor($_POST["color"]);
+    $message->setSize($_POST["size"]);
+    $message->setType($_POST["type"]);
+
+    $controller->Update($message->set(),"message",$id);
+
+    echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
+});
 
 ?>
