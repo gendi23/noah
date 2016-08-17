@@ -21,6 +21,7 @@ $require= array(
     'src/model/Publicity.php',
     'src/model/PublicityUser.php',
     'src/model/Message.php',
+    'src/model/VUserNoah.php',
 
     /**
      * Controladores de vista
@@ -28,6 +29,7 @@ $require= array(
     'src/view/UserView.php',
     'src/view/DepositView.php',
     'src/view/MessageView.php',
+    'src/view/UserNoahView.php',
 
 
     /**

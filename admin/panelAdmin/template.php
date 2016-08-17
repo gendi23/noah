@@ -65,10 +65,13 @@ if(isset($_SESSION["userId"]) && $_SESSION["userId"]!=""){
             <img src="/front/img/noah-black.png" alt=""/>
             <h4>PANEL DE CONTROL MATRIZ</h4>
             <div>
-                <p><a href="/panel/matriz">Matriz</a> -
+                <p>
+                    <a href="/panel/matriz">Matriz</a> -
                     <a href="/panel/searchUser">Buscador de usuarios</a> -
                     <a href="#">Anuncios - </a>
-                    <a href="/panel/mensajeria">Mensajería</a></p>
+                    <a href="/panel/mensajeria">Mensajería - </a>
+                    <a href="/panel/cuentas-noah">Cuentas NOAH</a>
+                </p>
             </div>
         </header>
         <section>

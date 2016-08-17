@@ -16,7 +16,7 @@ class ConnectionMySQL {
                    private $host="localhost";
                    private $database="noah";
                    private $user="root";
-                   private $pass="root";
+                   private $pass="Wilderyut03++";
 
     private function connection(){
         $pdo="";
