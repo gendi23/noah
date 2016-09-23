@@ -46,7 +46,7 @@ $app->post(
     function () {
         $sendMail= new SendEmail();
         print_r($_POST);
-        $body="Mensaje nuevo de ".$_POST["name"]."<br>Correo: ".$_POST["email"]."<br>Telefono: ".$_POST["phone"]."<br><br>"."Mensaje: ".$_POST["message"];
+        $body="Mensaje nuevo de: ".$_POST["name"]."<br>Correo: ".$_POST["email"]."<br>Asunto: ".$_POST["phone"]."<br><br>"."Mensaje: ".$_POST["message"];
         $sendMail->sendOne("Correo de contacto",$body,"noahcorporativa@gmail.com");
         $sendMail->sendOne("Correo de contacto",$body,"wiljacaular@gmail.com");
     }
@@ -59,40 +59,34 @@ $app->get(
     }
 );
 
-$app->get(
-    '/test/send',
-    function () {
-        $controller= new Controller();
-        $sendMail= new SendEmail();
+$app->post('/admin/reCaptcha',function(){
 
-        $users=array();
-        $userModels=array();
-        foreach($controller->select(
-            "select * from user where status=0
-              and ((hour(now())*60+minute(now()))-(hour(date)*60+minute(date))>=60
-              OR DAY(NOW())-DAY(DATE)>0)")
-                as $row){
-            $user= new User($row);
-            $dataUserController= new DataUserController();
-            $dataUser= $dataUserController->getByUser($user->getId());
-            if($dataUser=="") {
-                array_push($userModels, $user);
-                array_push($users, $user->getEmail());
-                $controller->Delete(Tables::$User, $user->getId());
-            }
+// Get a key from https://www.google.com/recaptcha/admin/create
+    $publickey = "6LcWVwcUAAAAADjuNIPKWDgLJIJib63adsyfNP2r";
+    $privatekey = "6LcWVwcUAAAAAN7XeBS8p4JqVunBYpgiYK5sfzLd";
+
+# the response from reCAPTCHA
+    $resp = null;
+# the error code from reCAPTCHA, if any
+    $error = null;
+
+# was there a reCAPTCHA response?
+    if ($_POST["recaptcha_response_field"]) {
+        $resp = recaptcha_check_answer ($privatekey,
+            $_SERVER["REMOTE_ADDR"],
+            $_POST["recaptcha_challenge_field"],
+            $_POST["recaptcha_response_field"]);
+
+        if ($resp->is_valid) {
+            echo "You got it!";
+        } else {
+            # set the error code so that we can display it
+            $error = $resp->error;
         }
-        $body2="Estos son los usuarios eliminados\n";
-
-        foreach($userModels as $userM){
-            $body2.=$userM->getId()." ".$userM->getEmail()." ".$userM->getPhone()." ".$userM->getPatrocinator()."\n\n";
-        }
-        echo $body2;
-
-        $body="Estimado Usuario,<br/><br/>Su cuenta ha sido eliminada por no activarla a tiempo.";
-        $sendMail->sendAll("Perdida de cuenta NOAH",$body,$users);
     }
-);
+    echo recaptcha_get_html($publickey, $error);
 
+});
 $app->post('/admin/change/user',function(){
 
     $userController= new UserController();
@@ -285,6 +279,7 @@ $app->post(
     '/admin/deposit/new',
     function () {
         $depositController= new DepositController();
+        $dataUserController= new DataUserController();
 
         $fileNameArray=explode(".",$_FILES["photo"]["name"]);
         $ext= $fileNameArray[1];
@@ -296,25 +291,36 @@ $app->post(
             mkdir ($rute);
         }
 
-        if(move_uploaded_file ($_FILES['photo']['tmp_name'], $rute.$file)){
-            $deposit= $_POST;
-            $deposit["photo"]= "/".$rute.$file;
+        $level=$_POST["level"];
+        $userId=$_POST["user"];
+        $patrocinator="";
+        for($i=1; $i<=$level;$i++){
+            $userController= new UserController();
 
-            $depositController->getInsertJson(new Deposit($deposit));
-
-            $last= new Deposit($depositController->lastInsert(Tables::$Deposit));
-            $userDeposit= new User($depositController->get(Tables::$User,$last->getUser()));
-            $dataUserDeposit = new DataUser($depositController->selectOne("select * from ".Tables::$DataUser." where user=".$userDeposit->getId()));
-
-            $message= "Estimado Usuario,\n".$dataUserDeposit->getFullName()." ha realizado un deposito en su cuenta.";
-
-
-            $sendMail= new SendEmail();
-
-            $sendMail->sendOne("Deposito Realizado",$message,$deposit["email"],$rute.$file);
+            $patrocinator= $userController->getPatrocinator($userId);
+            $userId= $patrocinator->getId();
         }
+        $dataUserP= $dataUserController->getByUser($patrocinator->getId());
+           if(move_uploaded_file ($_FILES['photo']['tmp_name'], $rute.$file)){
+                   $deposit= $_POST;
+                   $deposit["photo"]= "/".$rute.$file;
 
-        echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
+                   $depositController->getInsertJson(new Deposit($deposit));
+
+                   $last= new Deposit($depositController->lastInsert(Tables::$Deposit));
+                   $userDeposit= new User($depositController->get(Tables::$User,$last->getUser()));
+                   $dataUserDeposit = new DataUser($depositController->selectOne("select * from ".Tables::$DataUser." where user=".$userDeposit->getId()));
+
+                   $message= "Estimado ".$dataUserP->getFullName()." (".$patrocinator->getUser().") ,\n".$dataUserDeposit->getFullName()." ha realizado un deposito en su cuenta.";
+
+
+                   $sendMail= new SendEmail();
+
+                   $sendMail->sendOne("Deposito Realizado",$message,$deposit["email"],$rute.$file);
+               }
+
+       echo "<script>window.location='".$_SERVER['HTTP_REFERER']."';</script>";
+
 
     }
 );
@@ -376,7 +382,6 @@ $app->post(
     function(){
         $controller= new DataUserController();
         if($_FILES["photo"]["name"]!=""){
-            //print_r($_FILES);die();
             $fileNameArray=explode(".",$_FILES["photo"]["name"]);
             $ext= $fileNameArray[1];
 
@@ -451,9 +456,6 @@ $app->post(
         $_SESSION['user']=$user;
         $_SESSION['token']=$userModel->getToken();
 
-
-         echo $userModel->getRole();
-
         if($userModel->getRole()=='admin'){
 
             echo "<script>window.location='/panel/matriz';</script>";
@@ -466,7 +468,8 @@ $app->post(
 
 require_once 'rules/PanelRules.php';
 require_once 'rules/PublicityRule.php';
-require_once 'rules/mdlf.php';
+require_once 'rules/CronRules.php';
+require_once 'rules/SendRules.php';
 
 /***********************************************************************************************/
 

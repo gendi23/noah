@@ -12,6 +12,15 @@ $messageView = new MessageView();
     .tab-content{
         padding-top: 10px;
     }
+    #DataTables_Table_0 thead tr td:nth-child(1){
+        width: 40px !important;
+    }
+    #DataTables_Table_0 thead tr td:nth-child(4),#DataTables_Table_0 thead tr td:nth-child(7){
+        width: 90px !important;
+    }
+    #DataTables_Table_0 thead tr td:nth-child(5){
+        width: 100px !important;
+    }
 </style>
 
         <form action="/panel/message/insert" class="form-horizontal form-mensaje" role="form" method="post" id="loginForm" name="form">

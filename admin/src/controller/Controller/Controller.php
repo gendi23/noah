@@ -20,6 +20,12 @@ class Controller {
         return $rs;
     }
 
+    public function getWhereOne($table,$condition){
+        $conn= new ConnectionMySQL();
+        $rs = $conn->SelectWhere($table,$condition)->fetch();
+        return $rs;
+    }
+
     public function get($table,$id,$field=null){
         $conn= new ConnectionMySQL();
         $rs = $conn->Select($table,$id,$field);
@@ -60,6 +66,15 @@ class Controller {
         $sql='select max(id) as id from '.$table;
         $st= $conn->selectBySQLOne($sql);
         return $this->get($table,$st[0]);
+    }
+
+    public function count($table,$condition=null){
+        $conn= new ConnectionMySQL();
+        $query= "select count(id) count from ".$table;
+        if($condition!=null){
+            $query.=" where ".$condition;
+        }
+        return $this->selectOne($query)["count"];
     }
 }
 

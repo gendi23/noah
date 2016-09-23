@@ -282,6 +282,7 @@ class UserView{
         $candado= '<img src="/front/img/candado.png" alt=""/>';
 
         $html="";
+        if($userArray!=null){
             $user1 = new User($userArray);
             $dataUser1 = $dataUserController->getByUser($user1->getId());
             $statusColor = $user1->getStatus() == 0 ? "inactive" : "";
@@ -309,6 +310,9 @@ class UserView{
                     $html= $candado;
                 }
             }
+        }else{
+            $html= $candado;
+        }
         return $html;
     }
     public function level3View($userArray){
@@ -317,29 +321,33 @@ class UserView{
         $candado= '<img src="/front/img/candado.png" alt=""/>';
 
         $html="";
-        $user1 = new User($userArray);
-        $dataUser1 = $dataUserController->getByUser($user1->getId());
-        $statusColor = $user1->getStatus() == 0 ? "inactive" : "";
-        $selectDeposit = $dataUserController->selectOne("select * from deposit where user=".$user1->getId()." and level=2");
-        $deposit = "";
-        if ($selectDeposit[0] != "") $deposit = new Deposit($selectDeposit);
+        if($userArray!=null){
+            $user1 = new User($userArray);
+            $dataUser1 = $dataUserController->getByUser($user1->getId());
+            $statusColor = $user1->getStatus() == 0 ? "inactive" : "";
+            $selectDeposit = $dataUserController->selectOne("select * from deposit where user=".$user1->getId()." and level=2");
+            $deposit = "";
+            if ($selectDeposit[0] != "") $deposit = new Deposit($selectDeposit);
 
-        if($deposit!=""&&$deposit->getStatus()==1){
-            $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop"/>
-                <span class="name-user  name-user-level3 ">
-                    '.$dataUser1->getFullName().'
-                </span>
-                '.$dataUserController->getPopDataUser($user1,$dataUser1,null,3);
-        }else{
-            if($depositController->getByLevel($user1->getId(),2)){
+            if($deposit!=""&&$deposit->getStatus()==1){
                 $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop"/>
-                        <span class="name-user  name-user-level3 parent-red">
+                    <span class="name-user  name-user-level3 ">
                         '.$dataUser1->getFullName().'
-                        </span>'.
-                    $dataUserController->getPopDataUser($user1,$dataUser1,'Aceptar',3);
+                    </span>
+                    '.$dataUserController->getPopDataUser($user1,$dataUser1,null,3);
             }else{
-                $html= $candado;
+                if($depositController->getByLevel($user1->getId(),2)){
+                    $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop"/>
+                            <span class="name-user  name-user-level3 parent-red">
+                            '.$dataUser1->getFullName().'
+                            </span>'.
+                        $dataUserController->getPopDataUser($user1,$dataUser1,'Aceptar',3);
+                }else{
+                    $html= $candado;
+                }
             }
+        }else{
+            $html= $candado;
         }
         return $html;
     }
@@ -349,23 +357,27 @@ class UserView{
         $candado= '<img src="/front/img/candado.png" alt=""/>';
 
         $html="";
-        $user1 = new User($userArray);
-        $dataUser1 = $dataUserController->getByUser($user1->getId());
-        $statusColor = $user1->getStatus() == 0 ? "inactive" : "";
-        $selectDeposit = $dataUserController->selectOne("select * from deposit where user=".$user1->getId()." and level=3");
-        $deposit = "";
-        if ($selectDeposit[0] != "") $deposit = new Deposit($selectDeposit);
+        if($userArray!=null){
+            $user1 = new User($userArray);
+            $dataUser1 = $dataUserController->getByUser($user1->getId());
+            $statusColor = $user1->getStatus() == 0 ? "inactive" : "";
+            $selectDeposit = $dataUserController->selectOne("select * from deposit where user=".$user1->getId()." and level=3");
+            $deposit = "";
+            if ($selectDeposit[0] != "") $deposit = new Deposit($selectDeposit);
 
-        if($deposit!=""&&$deposit->getStatus()==1){
-            $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop"/>
-                '.$dataUserController->getPopDataUser($user1,$dataUser1,null,4);
-        }else{
-            if($depositController->getByLevel($user1->getId(),3)){
-                $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop parent-red"/>
-                    '.$dataUserController->getPopDataUser($user1,$dataUser1,'Aceptar',4);
+            if($deposit!=""&&$deposit->getStatus()==1){
+                $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop"/>
+                    '.$dataUserController->getPopDataUser($user1,$dataUser1,null,4);
             }else{
-                $html= $candado;
+                if($depositController->getByLevel($user1->getId(),3)){
+                    $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop parent-red"/>
+                        '.$dataUserController->getPopDataUser($user1,$dataUser1,'Aceptar',4);
+                }else{
+                    $html= $candado;
+                }
             }
+        }else{
+            $html= $candado;
         }
         return $html;
     }
@@ -375,24 +387,29 @@ class UserView{
         $candado= '<img src="/front/img/candado.png" alt=""/>';
 
         $html="";
-        $user1 = new User($userArray);
-        $dataUser1 = $dataUserController->getByUser($user1->getId());
-        $statusColor = $user1->getStatus() == 0 ? "inactive" : "";
-        $selectDeposit = $dataUserController->selectOne("select * from deposit where user=".$user1->getId()." and level=4");
-        $deposit = "";
-        if ($selectDeposit[0] != "") $deposit = new Deposit($selectDeposit);
+        if($userArray!=null){
+            $user1 = new User($userArray);
+            $dataUser1 = $dataUserController->getByUser($user1->getId());
+            $statusColor = $user1->getStatus() == 0 ? "inactive" : "";
+            $selectDeposit = $dataUserController->selectOne("select * from deposit where user=".$user1->getId()." and level=4");
+            $deposit = "";
+            if ($selectDeposit[0] != "") $deposit = new Deposit($selectDeposit);
 
-        if($deposit!=""&&$deposit->getStatus()==1){
-            $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop small"/>
+            if($deposit!=""&&$deposit->getStatus()==1){
+                $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop small"/>
                 '.$dataUserController->getPopDataUser($user1,$dataUser1,null,5);
-        }else{
-            if($depositController->getByLevel($user1->getId(),4)){
-                $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop small  parent-red"/>
-                    '.$dataUserController->getPopDataUser($user1,$dataUser1,'Aceptar',5);
             }else{
-                $html= $candado;
+                if($depositController->getByLevel($user1->getId(),4)){
+                    $html='<img src="/front/img/avatar-small.png" alt="" id="'.$user1->getUser().'" class="open-data-pop small  parent-red"/>
+                    '.$dataUserController->getPopDataUser($user1,$dataUser1,'Aceptar',5);
+                }else{
+                    $html= $candado;
+                }
             }
+        }else{
+            $html= $candado;
         }
+
         return $html;
     }
 }

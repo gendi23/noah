@@ -4,6 +4,16 @@
     .content-popup{
         width: 555px;
     }
+    body section{
+        width: 90% !important;
+        left: 5% !important;;
+    }
+    #DataTables_Table_1 thead tr td:nth-child(2),#DataTables_Table_1 thead tr td:nth-child(6){
+        width: 130px !important;
+    }
+    #DataTables_Table_1 thead tr td:nth-child(4),#DataTables_Table_1 thead tr td:nth-child(7),#DataTables_Table_1 thead tr td:nth-child(8){
+        width: 110px !important;
+    }
 </style>
 <?php
 /**
@@ -22,6 +32,7 @@ $userNoahView = new UserNoahView();
             "Nombre",
             "Apellido",
             "Email",
+            "Telefono",
             "Patrocinador",
             "Referidos",
             "Depositos",
@@ -29,13 +40,17 @@ $userNoahView = new UserNoahView();
         );
         $body=array();
         foreach($controller->getAll("v_user_noah") as $row){
+
             $userNoah = new VUserNoah($row);
+            $userLog= $controller->getWhereOne("user_log","user_id=".$userNoah->getId());
+
             $t=array(
                 $userNoah->getUser(),
                 $userNoah->getPass(),
-                $userNoah->getName(),
-                $userNoah->getLastName(),
-                $userNoah->getEmail(),
+                $userLog["name"],
+                $userLog["last_name"],
+                $userLog["email"],
+                $userLog["user_phone"],
                 $userNoah->getPatrocinator(),
                 $userNoah->getReferes(),
                 $userNoah->getDeposit(),

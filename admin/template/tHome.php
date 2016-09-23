@@ -136,7 +136,10 @@ if($userMatriz["id"]==""){
                 </button>
         <?php } ?>
     </div>
-    <?php if($activeMatriz==1){?>
+    <?php if($activeMatriz==1){
+        if($level->getLevel()<=4){
+        ?>
+
     <div class="box-aviso">
         <div id="header-p" class="level<?=$level->getLevel()?>-color-2">
            <h3 id="hh1">Anuncios de nivel <?=$level->getLevel()?></h3>
@@ -150,7 +153,8 @@ if($userMatriz["id"]==""){
             <?php }?>
         </div>
     </div>
-    <?php }?>
+    <?php }
+    }?>
 </div>
 <div  class="box-publicidad">
     <div id="publicidad1"></div>

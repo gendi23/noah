@@ -107,7 +107,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <?=textLevel(2)?>
         <div class="level-content level2 inactive" id="level2-1">
             <?php
-            if(isset($userController->getReferred($userId)[0])) {
+            if(isset($userController->getReferred($userId)[0])&&$userController->getReferred($userId)[0]!=null) {
                 $piramideArray["a"]=$userController->getReferred($userId)[0];
                 echo $userView->level2View($userController->getReferred($userId)[0]);
             }else{
@@ -118,7 +118,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level2 " id="level2-2">
             <?php
 
-            if(isset($userController->getReferred($USERID)[1])){
+            if(isset($userController->getReferred($USERID)[1])&&$userController->getReferred($USERID)[1]!=null){
                 $piramideArray["b"]=$userController->getReferred($userId)[1];
                 echo $userView->level2View($userController->getReferred($userId)[1]);
             }else{
@@ -136,7 +136,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level3 " id="level2-1">
             <?php
             if(isset($piramideArray["a"])){
-                if(isset($userController->getReferred($piramideArray["a"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["a"]["id"])[0])&&$userController->getReferred($piramideArray["a"]["id"])[0]!=null) {
                     $piramideArray["aa"]=$userController->getReferred($piramideArray["a"]["id"])[0];
                     echo $userView->level3View($userController->getReferred($piramideArray["a"]["id"])[0]);
                 }else{
@@ -151,7 +151,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level3 " id="level2-2">
             <?php
             if(isset($piramideArray["a"])){
-                if(isset($userController->getReferred($piramideArray["a"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["a"]["id"])[1])&&$userController->getReferred($piramideArray["a"]["id"])[1]!=null) {
                     $piramideArray["ab"]=$userController->getReferred($piramideArray["a"]["id"])[1];
                     echo $userView->level3View($userController->getReferred($piramideArray["a"]["id"])[1]);
                 }else{
@@ -165,7 +165,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level3 " id="level2-3">
             <?php
             if(isset($piramideArray["b"])){
-                if(isset($userController->getReferred($piramideArray["b"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["b"]["id"])[0])&&$userController->getReferred($piramideArray["b"]["id"])[0]!=null) {
                     $piramideArray["ba"]=$userController->getReferred($piramideArray["b"]["id"])[0];
                     echo $userView->level3View($userController->getReferred($piramideArray["b"]["id"])[0]);
                 }else{
@@ -179,7 +179,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level3 " id="level2-4">
             <?php
             if(isset($piramideArray["b"])){
-                if(isset($userController->getReferred($piramideArray["b"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["b"]["id"])[1])&&$userController->getReferred($piramideArray["b"]["id"])[1]!=null) {
                     $piramideArray["bb"]=$userController->getReferred($piramideArray["b"]["id"])[1];
                     echo $userView->level3View($userController->getReferred($piramideArray["b"]["id"])[1]);
                 }else{
@@ -197,7 +197,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-1">
             <?php
             if(isset($piramideArray["aa"])){
-                if(isset($userController->getReferred($piramideArray["aa"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["aa"]["id"])[0])&&$userController->getReferred($piramideArray["aa"]["id"])[0]!=null) {
                     $piramideArray["aaa"]=$userController->getReferred($piramideArray["aa"]["id"])[0];
                     echo $userView->level4View($userController->getReferred($piramideArray["aa"]["id"])[0]);
                 }else{
@@ -211,7 +211,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-2">
             <?php
             if(isset($piramideArray["aa"])){
-                if(isset($userController->getReferred($piramideArray["aa"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["aa"]["id"])[1])&&$userController->getReferred($piramideArray["aa"]["id"])[1]!=null) {
                     $piramideArray["aab"]=$userController->getReferred($piramideArray["aa"]["id"])[1];
                     echo $userView->level4View($userController->getReferred($piramideArray["aa"]["id"])[1]);
                 }else{
@@ -225,7 +225,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-3">
             <?php
             if(isset($piramideArray["ab"])){
-                if(isset($userController->getReferred($piramideArray["ab"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["ab"]["id"])[0])&&$userController->getReferred($piramideArray["ab"]["id"])[0]!=null) {
                     $piramideArray["aba"]=$userController->getReferred($piramideArray["ab"]["id"])[0];
                     echo $userView->level4View($userController->getReferred($piramideArray["ab"]["id"])[0]);
                 }else{
@@ -239,7 +239,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-4">
             <?php
             if(isset($piramideArray["ab"])){
-                if(isset($userController->getReferred($piramideArray["ab"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["ab"]["id"])[1])&&$userController->getReferred($piramideArray["ab"]["id"])[1]!=null) {
                     $piramideArray["abb"]=$userController->getReferred($piramideArray["ab"]["id"])[1];
                     echo $userView->level4View($userController->getReferred($piramideArray["ab"]["id"])[1]);
                 }else{
@@ -253,7 +253,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-5">
             <?php
             if(isset($piramideArray["ba"])){
-                if(isset($userController->getReferred($piramideArray["ba"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["ba"]["id"])[0])&&$userController->getReferred($piramideArray["ba"]["id"])[0]!=null) {
                     $piramideArray["baa"]=$userController->getReferred($piramideArray["ba"]["id"])[0];
                     echo $userView->level4View($userController->getReferred($piramideArray["ba"]["id"])[0]);
                 }else{
@@ -267,7 +267,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-6">
             <?php
             if(isset($piramideArray["ba"])){
-                if(isset($userController->getReferred($piramideArray["ba"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["ba"]["id"])[1])&&$userController->getReferred($piramideArray["ba"]["id"])[1]!=null) {
                     $piramideArray["bab"]=$userController->getReferred($piramideArray["ba"]["id"])[1];
                     echo $userView->level4View($userController->getReferred($piramideArray["ba"]["id"])[1]);
                 }else{
@@ -281,7 +281,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-7">
             <?php
             if(isset($piramideArray["bb"])){
-                if(isset($userController->getReferred($piramideArray["bb"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["bb"]["id"])[0]) &&$userController->getReferred($piramideArray["bb"]["id"])[0]!=null) {
                     $piramideArray["bba"]=$userController->getReferred($piramideArray["bb"]["id"])[0];
                     echo $userView->level4View($userController->getReferred($piramideArray["bb"]["id"])[0]);
                 }else{
@@ -295,7 +295,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level4 " id="level2-8">
             <?php
             if(isset($piramideArray["bb"])){
-                if(isset($userController->getReferred($piramideArray["bb"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["bb"]["id"])[1])&&$userController->getReferred($piramideArray["bb"]["id"])[1]!=null) {
                     $piramideArray["bbb"]=$userController->getReferred($piramideArray["bb"]["id"])[1];
                     echo $userView->level4View($userController->getReferred($piramideArray["bb"]["id"])[1]);
                 }else{
@@ -321,7 +321,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level5 " id="level5-1">
             <?php
             if(isset($piramideArray["aaa"])){
-                if(isset($userController->getReferred($piramideArray["aaa"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["aaa"]["id"])[0])&&$userController->getReferred($piramideArray["aaa"]["id"])[0]!=null) {
                     echo $userView->level5View($userController->getReferred($piramideArray["aaa"]["id"])[0]);
                 }else{
                     echo $candado;
@@ -334,7 +334,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level5 " id="level5-2">
             <?php
             if(isset($piramideArray["aaa"])){
-                if(isset($userController->getReferred($piramideArray["aaa"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["aaa"]["id"])[1])&&$userController->getReferred($piramideArray["aaa"]["id"])[1]!=null) {
                     echo $userView->level5View($userController->getReferred($piramideArray["aaa"]["id"])[1]);
                 }else{
                     echo $candado;
@@ -347,7 +347,8 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level5 " id="level5-3">
             <?php
             if(isset($piramideArray["aab"])){
-                if(isset($userController->getReferred($piramideArray["aab"]["id"])[0])) {
+
+                if(isset($userController->getReferred($piramideArray["aab"]["id"])[0]) && $userController->getReferred($piramideArray["aab"]["id"])[0]!=null) {
                     echo $userView->level5View($userController->getReferred($piramideArray["aaa"]["id"])[0]);
                 }else{
                     echo $candado;
@@ -360,7 +361,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level5 " id="level5-4">
             <?php
             if(isset($piramideArray["aab"])){
-                if(isset($userController->getReferred($piramideArray["aab"]["id"])[1])) {
+                if(isset($userController->getReferred($piramideArray["aab"]["id"])[1]) && $userController->getReferred($piramideArray["aab"]["id"])[1]!=null) {
                     echo $userView->level5View($userController->getReferred($piramideArray["aab"]["id"])[1]);
                 }else{
                     echo $candado;
@@ -373,7 +374,7 @@ $candado= '<img src="/front/img/candado.png" alt=""/>';
         <div class="level-content level5 " id="level5-5">
             <?php
             if(isset($piramideArray["aba"])){
-                if(isset($userController->getReferred($piramideArray["aba"]["id"])[0])) {
+                if(isset($userController->getReferred($piramideArray["aba"]["id"])[0]) && $userController->getReferred($piramideArray["aba"]["id"])[0]!=null) {
                     echo $userView->level5View($userController->getReferred($piramideArray["aba"]["id"])[0]);
                 }else{
                     echo $candado;

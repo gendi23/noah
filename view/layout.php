@@ -21,6 +21,7 @@ if(isset($_GET["active"])){
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/front/css/popup.css"/>
     <link rel="stylesheet" href="/front/css/form.css"/>
+
 </head>
 <body>
     <div id="body">

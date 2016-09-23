@@ -12,6 +12,11 @@
         </div>
     </div>
     <div class="form-group">
+        <!--<div class="col-lg-12 col-md-12 col-sm-12">
+            <center>
+                <div class="g-recaptcha" data-sitekey="6LcWVwcUAAAAADjuNIPKWDgLJIJib63adsyfNP2r"></div>
+            </center>
+        </div>-->
         <label class="control-label col-sm-5" for="text">Escribe el código</label>
         <div class="col-sm-4">
             <input type="text" class="form-control" id="captcha" placeholder="Introduzca el Código" name="captcha" required>
